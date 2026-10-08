@@ -5,7 +5,20 @@ name: Gov Radar daily
 on:
   schedule:
     - cron: "17 11 * * *"      # 11:17 UTC every day (about 7am US Eastern)
-  workflow_dispatch: {}        # lets you press "Run workflow" by hand to test it
+  workflow_dispatch:           # the "Run workflow" button
+    inputs:
+      since:
+        description: "Backfill only: first date to fetch, YYYY-MM-DD (leave all three blank for a normal run)"
+        required: false
+        default: ""
+      until:
+        description: "Backfill only: last date to fetch, YYYY-MM-DD"
+        required: false
+        default: ""
+      max_docs:
+        description: "Backfill only: max new documents this run"
+        required: false
+        default: "800"
 
 permissions:
   contents: write              # needed to commit docs/data.json and radar.db back to the repo
@@ -17,7 +30,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -40,12 +53,19 @@ jobs:
       - name: Run the pipeline
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          IN_SINCE: ${{ inputs.since }}
+          IN_UNTIL: ${{ inputs.until }}
+          IN_MAX: ${{ inputs.max_docs }}
         run: |
           if [ -z "$ANTHROPIC_API_KEY" ]; then
             echo "::error::Repository secret ANTHROPIC_API_KEY is not set. Settings > Secrets and variables > Actions > New repository secret."
             exit 1
           fi
-          python run.py
+          if [ -n "$IN_SINCE" ]; then
+            python run.py --since "$IN_SINCE" --until "$IN_UNTIL" --max-docs "$IN_MAX"
+          else
+            python run.py
+          fi
 
       # Commit BOTH the page data and the database. The database is the memory of what was already
       # processed; without it every run would start from zero.

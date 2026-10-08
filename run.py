@@ -142,27 +142,41 @@ def confirm_fr_lanes(cfg, found):
     return {k: d for k, d in found.items() if d["lanes"]}
 
 
+def date_windows(since, until):
+    """Split a date range into month-sized pieces so no single search hits the API's result limit."""
+    out, a = [], dt.date.fromisoformat(since)
+    end = dt.date.fromisoformat(until)
+    while a <= end:
+        b = min(a + dt.timedelta(days=30), end)
+        out.append((a.isoformat(), b.isoformat()))
+        a = b + dt.timedelta(days=1)
+    return out
+
+
 def fetch_federal_register(cfg):
-    since = (dt.date.today() - dt.timedelta(days=cfg["fetch_days"])).isoformat()
+    since = cfg.get("_since") or (dt.date.today() - dt.timedelta(days=cfg["fetch_days"])).isoformat()
+    windows = date_windows(since, cfg["_until"]) if cfg.get("_until") else [(since, None)]
     found = {}
-    for lane, kws in cfg["lanes"].items():
-        for kw in kws:
-            page, total = 1, 1
-            while page <= total and page <= 10:
-                params = [("conditions[term]", f'"{kw}"'),
-                          ("conditions[publication_date][gte]", since),
-                          ("per_page", 100), ("page", page), ("order", "newest")]
-                params += [("fields[]", f) for f in FR_FIELDS]
-                data = http_get(FR_URL, params=params).json()
-                total = data.get("total_pages", 1) or 1
-                for rec in data.get("results", []):
-                    d = found.setdefault("fr:" + rec["document_number"], {
-                        "id": "fr:" + rec["document_number"], "source": "federal_register",
-                        "title": rec.get("title") or "", "url": rec.get("html_url"),
-                        "pub_date": rec.get("publication_date"), "lanes": set(), "raw": rec})
-                    d["lanes"].add(lane)
-                page += 1
-            time.sleep(0.2)
+    searches = [(lane, kw, w) for lane, kws in cfg["lanes"].items() for kw in kws for w in windows]
+    for lane, kw, (w_from, w_to) in searches:
+        page, total = 1, 1
+        while page <= total and page <= 10:
+            params = [("conditions[term]", f'"{kw}"'),
+                      ("conditions[publication_date][gte]", w_from),
+                      ("per_page", 100), ("page", page), ("order", "newest")]
+            if w_to:
+                params.append(("conditions[publication_date][lte]", w_to))
+            params += [("fields[]", f) for f in FR_FIELDS]
+            data = http_get(FR_URL, params=params).json()
+            total = data.get("total_pages", 1) or 1
+            for rec in data.get("results", []):
+                d = found.setdefault("fr:" + rec["document_number"], {
+                    "id": "fr:" + rec["document_number"], "source": "federal_register",
+                    "title": rec.get("title") or "", "url": rec.get("html_url"),
+                    "pub_date": rec.get("publication_date"), "lanes": set(), "raw": rec})
+                d["lanes"].add(lane)
+            page += 1
+        time.sleep(0.2)
     hits = len(found)
     found = confirm_fr_lanes(cfg, found)
     log(f"  Federal Register: {hits} full-text hits since {since}, {len(found)} with a keyword in the title/abstract")
@@ -198,7 +212,10 @@ def fetch_gao(cfg):
 def step_fetch(cfg, db):
     log("Step 1: fetch")
     records = []
-    for name, fn in (("Federal Register", fetch_federal_register), ("GAO", fetch_gao)):
+    sources = [("Federal Register", fetch_federal_register)]
+    if not cfg.get("_until"):        # GAO's feed has no archive, so it is skipped when backfilling
+        sources.append(("GAO", fetch_gao))
+    for name, fn in sources:
         try:
             records += fn(cfg)
         except Exception as e:      # one broken source should not stop the other
@@ -657,8 +674,16 @@ def step_link_cluster_export(cfg, db):
 def main():
     ap = argparse.ArgumentParser(description="Gov Radar daily pipeline")
     ap.add_argument("--no-fetch", action="store_true", help="skip downloading; rebuild outputs from radar.db")
+    ap.add_argument("--since", help="backfill: first publication date, YYYY-MM-DD (Federal Register only)")
+    ap.add_argument("--until", help="backfill: last publication date, YYYY-MM-DD")
+    ap.add_argument("--max-docs", type=int, help="override max_new_docs_per_run (use for backfills)")
     args = ap.parse_args()
     cfg = load_config()
+    if args.since or args.until:
+        cfg["_since"] = args.since or "2024-01-01"
+        cfg["_until"] = args.until or dt.date.today().isoformat()
+    if args.max_docs:
+        cfg["max_new_docs_per_run"] = args.max_docs
     db = open_db(cfg)
     stats = collections.Counter()
     started = time.time()
