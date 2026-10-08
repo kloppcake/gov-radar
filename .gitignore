@@ -1,0 +1,29 @@
+# secrets
+.env
+.env.*
+*.key
+*.pem
+
+# python junk
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+build/
+dist/
+*.egg-info/
+
+# model/pip caches
+.cache/
+huggingface/
+
+# editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# radar.db is intentionally NOT ignored: the daily workflow commits it so the library persists.

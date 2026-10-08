@@ -1,0 +1,66 @@
+# Runs Gov Radar once a day and commits the results.
+# Needs the repository secret ANTHROPIC_API_KEY (see README.md, "The daily run").
+name: Gov Radar daily
+
+on:
+  schedule:
+    - cron: "17 11 * * *"      # 11:17 UTC every day (about 7am US Eastern)
+  workflow_dispatch: {}        # lets you press "Run workflow" by hand to test it
+
+permissions:
+  contents: write              # needed to commit docs/data.json and radar.db back to the repo
+
+concurrency:
+  group: gov-radar
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      # The small embedding model is downloaded once, then reused.
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-all-MiniLM-L6-v2
+
+      - name: Install CPU-only PyTorch (much smaller download), then the rest
+        run: |
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+          pip install -r requirements.txt
+
+      - name: Run the pipeline
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::Repository secret ANTHROPIC_API_KEY is not set. Settings > Secrets and variables > Actions > New repository secret."
+            exit 1
+          fi
+          python run.py
+
+      # Commit BOTH the page data and the database. The database is the memory of what was already
+      # processed; without it every run would start from zero.
+      - name: Commit results
+        run: |
+          git config user.name "gov-radar-bot"
+          git config user.email "gov-radar-bot@users.noreply.github.com"
+          git add docs/data.json radar.db
+          for f in unknown_entities.txt skipped.log; do
+            if [ -f "$f" ]; then git add "$f"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Daily Gov Radar update"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

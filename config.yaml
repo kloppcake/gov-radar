@@ -1,0 +1,152 @@
+# Gov Radar settings. Edit this file to change what the tool watches and how it behaves.
+
+# ---- Model (summaries + tags). Needs the ANTHROPIC_API_KEY environment variable. ----
+model: claude-haiku-4-5-20251001
+# Prices in US dollars per million tokens, used ONLY for the cost estimate printed at the end of a run.
+# Check https://www.anthropic.com/pricing and update if you change the model.
+price_per_million_tokens:
+  input: 1.00
+  output: 5.00
+llm_workers: 4              # how many API calls run at once
+
+# ---- Fetching ----
+fetch_days: 2               # Federal Register look-back window (overlaps on purpose; duplicates are skipped)
+max_new_docs_per_run: 150   # newest first; the rest are written to skipped.log
+body_chars: 6000            # how much body text goes to the model (plus the abstract)
+db_path: radar.db
+site_dir: docs   # GitHub Pages serves this folder
+embedding_model: all-MiniLM-L6-v2
+
+# ---- Keyword lanes ----
+# A document that matches both lanes is flagged "crossover".
+lanes:
+  ai_tech:
+    - artificial intelligence
+    - machine learning
+    - generative AI
+    - large language model
+    - autonomous systems
+    - semiconductor
+    - export controls
+    - advanced computing
+    - data center
+    - cybersecurity
+    - quantum
+    - algorithmic
+  defense_spending:
+    - Department of Defense
+    - defense acquisition
+    - procurement
+    - NDAA
+    - National Defense Authorization Act
+    - weapon system
+    - defense contract
+    - DARPA
+    - defense budget
+    - unmanned
+    - munitions
+    - shipbuilding
+    - Defense Innovation Unit
+
+# ---- Linking rules ----
+# Two documents are linked only if they share a program or statute, OR share an agency AND a dollar amount.
+min_link_dollar_amount: 1000000   # ignore small dollar figures ($5,000 fees match by coincidence)
+max_docs_per_shared_key: 40       # if one program/statute is shared by more docs than this, it is too generic to be a link
+similar_docs_count: 5
+similar_min_score: 0.35
+top_clusters: 50
+
+# Laws and rules that appear in almost every Federal Register document. They are still shown as tags,
+# but they are never used to create a link (otherwise everything would connect to everything).
+# Entries are compared after normalization (lowercase, punctuation removed). Patterns are regular expressions
+# matched against the normalized key.
+boilerplate_entities:
+  - administrative procedure act
+  - paperwork reduction act
+  - regulatory flexibility act
+  - small business regulatory enforcement fairness act
+  - freedom of information act
+  - privacy act
+  - privacy act of 1974
+  - unfunded mandates reform act
+  - congressional review act
+  - federal register act
+  - national environmental policy act
+  - executive order 12866
+  - executive order 13563
+  - executive order 13132
+  - executive order 13175
+  - executive order 12988
+  - executive order 14192
+boilerplate_patterns:
+  - '^5 u\.?s\.?c\.? (55[0-9]|60[0-9]|80[0-9])$'
+  - '^44 u\.?s\.?c\.? 35[0-9][0-9]$'
+  - '^5 cfr part 1320$'
+
+# ---- Alias table ----
+# Format:  Canonical Name: [alias, alias, ...]
+# Matching ignores case, punctuation, a leading "the", and "U.S."/"United States".
+# Names the model returns that are not found here are logged to unknown_entities.txt after each run.
+aliases:
+  agencies:
+    Department of Defense: [DoD, DOD, Defense Department, Pentagon, Department of War, DoW, Office of the Secretary of Defense, OSD]
+    Department of the Army: [Army, Department of Army, U.S. Army]
+    Department of the Navy: [Navy, Department of Navy, U.S. Navy]
+    Department of the Air Force: [Air Force, Department of Air Force, USAF]
+    Space Force: [U.S. Space Force, USSF, Department of the Space Force]
+    Defense Advanced Research Projects Agency: [DARPA]
+    Defense Innovation Unit: [DIU, Defense Innovation Unit Experimental, DIUx]
+    Missile Defense Agency: [MDA]
+    Defense Logistics Agency: [DLA]
+    Defense Counterintelligence and Security Agency: [DCSA]
+    Defense Information Systems Agency: [DISA]
+    Defense Contract Management Agency: [DCMA]
+    Defense Acquisition Regulations System: [DARS, Defense Acquisition Regulations Council, DAR Council]
+    National Security Agency: [NSA, NSA/CSS]
+    Department of Commerce: [Commerce Department, DOC, Commerce]
+    Bureau of Industry and Security: [BIS]
+    National Institute of Standards and Technology: [NIST]
+    National Telecommunications and Information Administration: [NTIA]
+    Department of Energy: [DOE, Energy Department]
+    Department of Homeland Security: [DHS, Homeland Security]
+    Cybersecurity and Infrastructure Security Agency: [CISA]
+    Department of State: [State Department, DOS]
+    Department of the Treasury: [Treasury Department, Treasury, Department of Treasury]
+    Office of Foreign Assets Control: [OFAC]
+    Department of Justice: [DOJ, Justice Department]
+    Department of Veterans Affairs: [VA, Veterans Affairs]
+    Department of Health and Human Services: [HHS, Health and Human Services]
+    Department of Transportation: [DOT]
+    Federal Aviation Administration: [FAA]
+    National Aeronautics and Space Administration: [NASA]
+    National Science Foundation: [NSF]
+    Federal Communications Commission: [FCC]
+    Federal Trade Commission: [FTC]
+    Securities and Exchange Commission: [SEC, the Commission]
+    General Services Administration: [GSA]
+    Office of Management and Budget: [OMB]
+    Office of Science and Technology Policy: [OSTP]
+    Government Accountability Office: [GAO]
+    Executive Office of the President: [EOP, White House, The White House]
+    Office of the Director of National Intelligence: [ODNI, Director of National Intelligence]
+    Central Intelligence Agency: [CIA]
+    Federal Reserve System: [Federal Reserve, Fed, Board of Governors of the Federal Reserve System]
+    Environmental Protection Agency: [EPA]
+    Congress: [U.S. Congress, Congress of the United States]
+  programs:
+    Defense Production Act Title III: [DPA Title III]
+    Replicator Initiative: [Replicator, DoD Replicator]
+    Golden Dome: [Golden Dome for America]
+    Joint All-Domain Command and Control: [JADC2]
+  statutes:
+    National Defense Authorization Act: [NDAA]
+    CHIPS and Science Act: [CHIPS Act, CHIPS and Science Act of 2022, Creating Helpful Incentives to Produce Semiconductors]
+    Defense Production Act: [DPA, Defense Production Act of 1950]
+    Export Control Reform Act: [ECRA, Export Control Reform Act of 2018]
+    Export Administration Regulations: [EAR]
+    International Traffic in Arms Regulations: [ITAR]
+    Federal Acquisition Regulation: [FAR]
+    Defense Federal Acquisition Regulation Supplement: [DFARS]
+    National AI Initiative Act of 2020: [National Artificial Intelligence Initiative Act of 2020, National AI Initiative Act]
+    Federal Information Security Modernization Act: [FISMA, Federal Information Security Modernization Act of 2014]
+    Inflation Reduction Act: [IRA, Inflation Reduction Act of 2022]

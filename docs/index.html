@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gov Radar</title>
+<style>
+  :root {
+    --bg: #f6f7f9; --card: #ffffff; --text: #1c2430; --muted: #5b6676; --line: #d9dee6;
+    --ai: #2a6fdb; --def: #d9822b; --cross: #8e3fb0; --accent: #1f4e9c;
+    --warn-bg: #fff6dc; --warn-line: #e6c95b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12161c; --card: #1b212a; --text: #e6e9ee; --muted: #9aa5b5; --line: #2d3644;
+      --ai: #5b9cff; --def: #f0a050; --cross: #c27be6; --accent: #8db6f5;
+      --warn-bg: #3a3320; --warn-line: #7a6a2a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); }
+  header, main { max-width: 1200px; margin: 0 auto; padding: 0 16px; }
+  h1 { font-size: 1.5rem; margin: 16px 0 4px; }
+  h2 { font-size: 1.1rem; margin: 0 0 8px; }
+  .sub { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
+  .banner { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
+  #clusters { list-style: none; margin: 0; padding: 0; max-height: 280px; overflow-y: auto; }
+  #clusters li { margin: 0; }
+  .cl { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 10px 6px; cursor: pointer; color: inherit; font: inherit; display: flex; gap: 10px; align-items: baseline; }
+  .cl:hover, .cl[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .cl .rank { color: var(--muted); min-width: 1.8em; }
+  .cl .name { flex: 1; font-weight: 600; overflow-wrap: anywhere; }
+  .cl .counts { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+  .new { color: var(--cross); font-weight: 600; }
+  .toolbar { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-bottom: 10px; font-size: .9rem; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; margin-right: 12px; }
+  .sw { width: 12px; height: 12px; display: inline-block; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  @media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr; } }
+  #map { height: 62vh; min-height: 360px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  #detail { overflow-wrap: anywhere; }
+  #detail h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .meta { color: var(--muted); font-size: .85rem; margin-bottom: 8px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+  .chip { border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; font-size: .8rem; }
+  .chip.lane-ai_tech { border-color: var(--ai); } .chip.lane-defense_spending { border-color: var(--def); } .chip.lane-crossover { border-color: var(--cross); }
+  .label { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 10px 0 2px; }
+  blockquote { margin: 4px 0 8px; padding: 6px 10px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); font-size: .9rem; }
+  .linkbtn { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; font: inherit; text-align: left; text-decoration: underline; }
+  a { color: var(--accent); }
+  ul.plain { margin: 4px 0; padding-left: 18px; }
+  .hint { color: var(--muted); }
+  button.small { font: inherit; font-size: .85rem; padding: 3px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Gov Radar</h1>
+  <p class="sub" id="updated">Loading…</p>
+  <div class="banner" role="note">Shows documents that share programs, laws, or funding. It does not show intent or plans.</div>
+</header>
+<main>
+  <section class="card" aria-labelledby="ch">
+    <h2 id="ch">Top clusters <span class="hint" style="font-weight:400">(ranked by documents from the last 30 days; tap one to focus the map)</span></h2>
+    <ol id="clusters"></ol>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <div class="toolbar">
+        <span class="legend">
+          <span><i class="sw" style="background:var(--ai);border-radius:50%"></i>AI &amp; tech</span>
+          <span><i class="sw" style="background:var(--def)"></i>Defense spending</span>
+          <span><i class="sw" style="background:var(--cross);transform:rotate(45deg) scale(.85)"></i>Crossover (both)</span>
+        </span>
+        <label><input type="checkbox" id="showAll"> Show documents with no links</label>
+        <button class="small" id="reset" hidden>Show all clusters</button>
+      </div>
+      <div id="map" role="img" aria-label="Network map of linked government documents"></div>
+      <p class="sub" style="margin-top:8px">Tap a dot for the document. Tap a line to see why two documents are linked.</p>
+    </div>
+    <div class="card" id="detail" aria-live="polite"><p class="hint">Select a document or a link on the map.</p></div>
+  </section>
+</main>
+
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<script>
+"use strict";
+// All text from data.json is inserted with textContent (never innerHTML), because it comes from outside sources.
+function h(tag, attrs, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (k === "class") e.className = v;
+    else if (k === "href") { if (/^https?:\/\//i.test(v)) { e.href = v; e.target = "_blank"; e.rel = "noopener noreferrer"; } }
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else e.setAttribute(k, v);
+  }
+  for (const kid of kids.flat(Infinity)) if (kid != null) e.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  return e;
+}
+function fill(box, ...kids) { box.replaceChildren(...kids.flat(Infinity).filter(k => k != null)); }
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const LANE_NAMES = { ai_tech: "AI & tech", defense_spending: "Defense spending", crossover: "Crossover" };
+const laneOf = d => d.crossover ? "crossover" : d.lanes[0];
+
+let data, docs = {}, linkByEdgeId = {}, network, nodes, edges, focusCluster = null, selected = null;
+
+fetch("data.json").then(r => r.json()).then(init).catch(err => {
+  document.getElementById("updated").textContent = "Could not load data.json (" + err + "). If you opened this file directly, serve the folder instead: python -m http.server -d docs";
+});
+
+function init(d) {
+  data = d;
+  d.documents.forEach(x => docs[x.id] = x);
+  document.getElementById("updated").textContent =
+    `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents · ${d.links.length} links · ${d.clusters.length} clusters`;
+  renderClusters();
+  document.getElementById("showAll").addEventListener("change", drawMap);
+  document.getElementById("reset").addEventListener("click", () => { focusCluster = null; renderClusters(); drawMap(); });
+  drawMap();
+}
+
+function renderClusters() {
+  const ol = document.getElementById("clusters");
+  ol.replaceChildren();
+  document.getElementById("reset").hidden = focusCluster === null;
+  if (!data.clusters.length) ol.append(h("li", { class: "hint" }, "No clusters yet. Clusters appear once documents share a program, law, or funding amount."));
+  data.clusters.forEach((c, i) => {
+    ol.append(h("li", {}, h("button", {
+      class: "cl", "aria-pressed": String(focusCluster === c.id),
+      onclick: () => { focusCluster = focusCluster === c.id ? null : c.id; renderClusters(); drawMap(); }
+    },
+      h("span", { class: "rank" }, (i + 1) + "."),
+      h("span", { class: "name" }, c.name),
+      h("span", { class: "counts" }, c.size + " docs · ", h("span", { class: c.new_this_week ? "new" : "" }, c.new_this_week + " new this week")))));
+  });
+}
+
+function shortTitle(t) { return t.length > 34 ? t.slice(0, 33) + "…" : t; }
+
+function drawMap() {
+  const showAll = document.getElementById("showAll").checked;
+  const colors = { ai_tech: css("--ai"), defense_spending: css("--def"), crossover: css("--cross") };
+  const shapes = { ai_tech: "dot", defense_spending: "square", crossover: "diamond" };
+  let list = data.documents.filter(d => focusCluster !== null ? d.cluster === focusCluster : (showAll || d.cluster !== null));
+  const ids = new Set(list.map(d => d.id));
+  nodes = new vis.DataSet(list.map(d => {
+    const lane = laneOf(d);
+    return { id: d.id, label: shortTitle(d.title), title: d.title, shape: shapes[lane], size: 14,
+             color: { background: colors[lane], border: colors[lane] }, font: { size: 11, color: css("--text") } };
+  }));
+  linkByEdgeId = {};
+  const es = [];
+  data.links.forEach((l, i) => {
+    if (ids.has(l.a) && ids.has(l.b)) {
+      linkByEdgeId["e" + i] = l;
+      es.push({ id: "e" + i, from: l.a, to: l.b, width: 1 + Math.min(l.reasons.length, 4), color: { color: css("--muted"), opacity: .6 }, selectionWidth: 3 });
+    }
+  });
+  edges = new vis.DataSet(es);
+  if (network) network.destroy();
+  network = new vis.Network(document.getElementById("map"), { nodes, edges }, {
+    physics: { solver: "forceAtlas2Based", stabilization: { iterations: 250 } },
+    interaction: { hover: true, tooltipDelay: 150, hideEdgesOnDrag: false },
+    edges: { smooth: false }, nodes: { borderWidth: 1 }
+  });
+  network.once("stabilizationIterationsDone", () => network.setOptions({ physics: false }));
+  network.on("click", p => {
+    if (p.nodes.length) showDoc(p.nodes[0]);
+    else if (p.edges.length) showEdge(p.edges[0]);
+  });
+}
+
+function selectDoc(id) {                 // used by "similar documents" buttons
+  const d = docs[id];
+  if (!d) return;
+  if (!nodes.get(id)) {
+    if (d.cluster !== null && d.cluster !== undefined) focusCluster = null; else document.getElementById("showAll").checked = true;
+    renderClusters(); drawMap();
+  }
+  network.selectNodes([id]); network.focus(id, { scale: 1, animation: true });
+  showDoc(id);
+}
+
+function chips(label, arr) {
+  if (!arr || !arr.length) return null;
+  return [h("div", { class: "label" }, label), h("div", { class: "chips" }, arr.map(x => h("span", { class: "chip" }, x)))];
+}
+
+function showDoc(id) {
+  const d = docs[id], box = document.getElementById("detail");
+  fill(box,
+    h("h3", {}, d.title),
+    h("div", { class: "meta" }, `${d.source === "gao" ? "GAO" : "Federal Register"} · ${d.pub_date || ""} · ${d.doc_type || ""}`),
+    h("div", { class: "chips" }, (d.crossover ? ["crossover"] : []).concat(d.lanes).map(l => h("span", { class: "chip lane-" + l }, LANE_NAMES[l] || l))),
+    h("p", {}, d.summary),
+    h("p", {}, h("a", { href: d.url }, "Open original document ↗")),
+    chips("Agencies", d.agencies), chips("Programs", d.programs), chips("Laws & rules", d.statutes), chips("Dollar amounts", d.dollar_amounts),
+    similarBlock(d), linkedBlock(d));
+}
+
+function similarBlock(d) {
+  if (!d.similar.length) return null;
+  return [h("div", { class: "label" }, "Similar documents (by wording only, not a link)"),
+    h("ul", { class: "plain" }, d.similar.map(s => h("li", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(s.id) }, docs[s.id].title), ` (${Math.round(s.score * 100)}%)`)))];
+}
+
+function linkedBlock(d) {
+  const mine = data.links.filter(l => l.a === d.id || l.b === d.id);
+  if (!mine.length) return h("p", { class: "hint" }, "No linked documents.");
+  return [h("div", { class: "label" }, `Linked documents (${mine.length})`),
+    h("ul", { class: "plain" }, mine.map(l => {
+      const other = l.a === d.id ? l.b : l.a;
+      return h("li", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(other) }, docs[other].title),
+        " — ", [...new Set(l.reasons.map(r => r.label))].join("; "));
+    }))];
+}
+
+function quoteList(side, doc) {
+  return [h("div", { class: "label" }, doc.title),
+    side.map(q => h("blockquote", {}, h("strong", {}, q.role + ": "), "“" + q.quote + "”"))];
+}
+
+function showEdge(edgeId) {
+  const l = linkByEdgeId[edgeId], a = docs[l.a], b = docs[l.b], box = document.getElementById("detail");
+  fill(box,
+    h("h3", {}, "Why these two documents are linked"),
+    h("p", { class: "meta" }, "Each reason below is backed by exact words found in both documents."),
+    l.reasons.map(r => h("div", {},
+      h("p", {}, h("strong", {}, ({ program: "Shared program", statute: "Shared law or rule", "agency+amount": "Same agency and dollar amount" })[r.kind] || r.kind), ": ", r.label),
+      quoteList(r.a, a), quoteList(r.b, b))),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(a.id) }, "Open: " + a.title)),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(b.id) }, "Open: " + b.title)));
+}
+</script>
+</body>
+</html>
