@@ -1,148 +1,175 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
-agencies | 78 | Committee for Purchase From People Who Are Blind or Severely Disabled
-agencies | 18 | Federal Energy Regulatory Commission
-agencies | 17 | Office of Export Enforcement
-agencies | 12 | Department of Agriculture
-agencies | 12 | International Trade Administration
-agencies | 10 | Foreign-Trade Zones Board
-agencies | 10 | National Oceanic and Atmospheric Administration
-agencies | 9 | Department of Labor
-agencies | 9 | Food and Drug Administration
-agencies | 9 | Office of Federal Procurement Policy
-agencies | 9 | Transportation Security Administration
-agencies | 9 | U.S. International Trade Commission
-agencies | 8 | National Marine Fisheries Service
-agencies | 8 | National Park Service
-agencies | 8 | U.S. Coast Guard
-agencies | 7 | Department of Education
-agencies | 7 | National Institutes of Health
-agencies | 7 | Office of the United States Trade Representative
+agencies | 105 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 27 | Federal Energy Regulatory Commission
+agencies | 25 | Office of Export Enforcement
+agencies | 19 | Foreign-Trade Zones Board
+agencies | 15 | International Trade Administration
+agencies | 15 | Office of Federal Procurement Policy
+agencies | 14 | Department of Agriculture
+agencies | 14 | National Oceanic and Atmospheric Administration
+agencies | 14 | U.S. International Trade Commission
+agencies | 13 | Centers for Medicare & Medicaid Services
+agencies | 13 | Office of the United States Trade Representative
+agencies | 13 | Transportation Security Administration
+agencies | 12 | National Institutes of Health
+agencies | 12 | National Park Service
+agencies | 12 | U.S. Coast Guard
+agencies | 11 | Food and Drug Administration
+agencies | 11 | National Marine Fisheries Service
+agencies | 10 | Department of Education
+agencies | 10 | Department of Labor
+agencies | 9 | Department of the Interior
+agencies | 8 | Office of Exporter Services
+agencies | 7 | Cost Accounting Standards Board
+agencies | 7 | Health Resources and Services Administration
+agencies | 7 | Maritime Administration
+agencies | 7 | Nuclear Regulatory Commission
+agencies | 7 | Office of Personnel Management
+agencies | 7 | Secretary of Commerce
 agencies | 7 | Secretary of Defense
+agencies | 7 | Secretary of State
+agencies | 7 | Tennessee Valley Authority
+agencies | 7 | U.S. AbilityOne Commission
+agencies | 7 | U.S. Census Bureau
+agencies | 7 | U.S. Customs and Border Protection
+agencies | 6 | Antitrust Division
+agencies | 6 | Bureau of Land Management
+agencies | 6 | Centers for Disease Control and Prevention
+agencies | 6 | Defense Acquisition Regulations System, Department of Defense
 agencies | 6 | Defense Commissary Agency
-agencies | 6 | Health Resources and Services Administration
-agencies | 6 | Maritime Administration
-agencies | 6 | Nuclear Regulatory Commission
-agencies | 6 | Office of Exporter Services
+agencies | 6 | Defense Manpower Data Center
+agencies | 6 | Secretary of Energy
 agencies | 6 | Small Business Administration
-agencies | 6 | U.S. Census Bureau
-agencies | 6 | U.S. Customs and Border Protection
-agencies | 5 | Bureau of Land Management
-agencies | 5 | Centers for Disease Control and Prevention
+agencies | 6 | United States Coast Guard
+agencies | 5 | Board of Visitors of the U.S. Air Force Academy
 agencies | 5 | DLA TROOP SUPPORT
-agencies | 5 | Defense Acquisition Regulations System, Department of Defense
-agencies | 5 | Department of the Interior
-agencies | 5 | Secretary of Commerce
-agencies | 5 | Secretary of Energy
-agencies | 5 | Tennessee Valley Authority
-agencies | 5 | United States Coast Guard
-agencies | 4 | Antitrust Division
-agencies | 4 | Cost Accounting Standards Board
+agencies | 5 | Internal Revenue Service
+agencies | 5 | Secretary of the Interior
+agencies | 5 | Secretary of the Treasury
+agencies | 5 | The Nasdaq Stock Market LLC
+agencies | 5 | U.S. Army Corps of Engineers
+agencies | 5 | U.S. Department of Education
+agencies | 4 | Coast Guard
 agencies | 4 | Defense Logistics Agency Troop Support
-agencies | 4 | Defense Manpower Data Center
 agencies | 4 | Federal Acquisition Regulatory Council
-agencies | 4 | Internal Revenue Service
-agencies | 4 | Office of Personnel Management
+agencies | 4 | Federal Bureau of Investigation
+agencies | 4 | Federal Emergency Management Agency
+agencies | 4 | Federal Highway Administration
+agencies | 4 | National Cancer Institute
+agencies | 4 | Office of the Secretary
 agencies | 4 | Office of the Under Secretary of Defense (Acquisition and Sustainment)
 agencies | 4 | Procurement Policy and Warrant Management Service
-agencies | 4 | Secretary of State
-agencies | 4 | Secretary of the Interior
-agencies | 4 | U.S. AbilityOne Commission
-agencies | 4 | U.S. Army Corps of Engineers
-agencies | 4 | U.S. Department of Education
+agencies | 4 | U.S. Department of Agriculture
+agencies | 4 | U.S. Fish and Wildlife Service
 agencies | 4 | U.S. Postal Service
-agencies | 3 | Coast Guard
+agencies | 4 | US Air Force
+agencies | 4 | Under Secretary of Defense for Personnel and Readiness
+agencies | 4 | Veterans Health Administration
+agencies | 3 | Committee for Purchase from People Who Are Blind or Severely Disabled
 agencies | 3 | Council on Environmental Quality
-agencies | 3 | Federal Bureau of Investigation
+agencies | 3 | Energy Information Administration
+agencies | 3 | Maritime Administration (MARAD)
 agencies | 3 | National Energy Dominance Council
+agencies | 3 | National Marine Fisheries Service (NMFS)
+agencies | 3 | National Oceanic and Atmospheric Administration (NOAA)
+agencies | 3 | New York Stock Exchange LLC
 agencies | 3 | North American Electric Reliability Corporation
-agencies | 3 | The Nasdaq Stock Market LLC
-agencies | 3 | U.S. Department of Agriculture
-agencies | 3 | U.S. Fish and Wildlife Service
-agencies | 3 | US Air Force
+agencies | 3 | Office of Unfair Import Investigations
+agencies | 3 | Office of the National Cyber Director
+agencies | 3 | Public Safety and Homeland Security Bureau
+agencies | 2 | Agency for International Development
 agencies | 2 | Agricultural Marketing Service
-agencies | 2 | Board of Visitors of the U.S. Air Force Academy
+agencies | 2 | Attorney General
 agencies | 2 | Bureau of International Security and Nonproliferation
+agencies | 2 | Bureau of Labor Statistics
 agencies | 2 | Bureau of the Census
 agencies | 2 | Consumer Financial Protection Bureau
+agencies | 2 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 2 | Defense Logistics Agency Aviation
+agencies | 2 | Defense Nuclear Facilities Safety Board
 agencies | 2 | Department of the Air Force Scientific Advisory Board
-agencies | 2 | Energy Information Administration
+agencies | 2 | Deputy Assistant Secretary of Defense for Military Community and Family Policy
 agencies | 2 | Export-Import Bank of the United States
-agencies | 2 | Federal Emergency Management Agency
-agencies | 2 | Federal Highway Administration
 agencies | 2 | Federal Transit Administration
 agencies | 2 | Financial Crimes Enforcement Network (FinCEN)
 agencies | 2 | Forest Service
 agencies | 2 | GSA/FAS ADMIN SVCS ACQUISITION BR
+agencies | 2 | General Services Administration Public Buildings Service
 agencies | 2 | Infrastructure Security Division
-agencies | 2 | National Cancer Institute
+agencies | 2 | National Commission on the Future of the Navy
 agencies | 2 | National Credit Union Administration
 agencies | 2 | National Institute of Allergy and Infectious Diseases
+agencies | 2 | Office of Federal Activities
 agencies | 2 | Office of Missile, Biological, and Chemical Nonproliferation
 agencies | 2 | Office of Naval Research
 agencies | 2 | Office of Nuclear Energy, Department of Energy
 agencies | 2 | Office of Partnerships and Public Engagement
+agencies | 2 | Office of Professional Responsibility
 agencies | 2 | Office of Strategic Industries and Economic Security
-agencies | 2 | Office of Unfair Import Investigations
 agencies | 2 | Office of the Federal Register
-agencies | 2 | Office of the National Cyber Director
-agencies | 2 | Office of the Secretary
 agencies | 2 | Office of the Under Secretary of Defense for Personnel and Readiness
-agencies | 2 | Public Safety and Homeland Security Bureau
+agencies | 2 | Pipeline and Hazardous Materials Safety Administration
 agencies | 2 | Secretary of Agriculture
 agencies | 2 | Secretary of Homeland Security
-agencies | 2 | Secretary of the Treasury
+agencies | 2 | Secretary of War
+agencies | 2 | Surface Transportation Board
+agencies | 2 | U.S. Commission on Civil Rights
 agencies | 2 | U.S. Department of Defense, Navy
 agencies | 2 | U.S. Geological Survey
 agencies | 2 | USDA Agricultural Research Service
 agencies | 2 | United States Agency for International Development
+agencies | 2 | United States Army Corps of Engineers
 agencies | 2 | United States Department of Agriculture
 agencies | 2 | United States Geological Survey
 agencies | 2 | United States International Trade Commission
 agencies | 2 | Utah Department of Transportation
+agencies | 2 | VA Office of Research and Development
 agencies | 2 | Veterans Benefits Administration
 agencies | 2 | W6QK ACC-APG NATICK
 agencies | 1 | ACC-APG NATICK
 agencies | 1 | Administrative Conference of the United States
 agencies | 1 | Advisory Committee on Reactor Safeguards
 agencies | 1 | Agency for Healthcare Research and Quality
-agencies | 1 | Agency for International Development
 agencies | 1 | Agency for Toxic Substances and Disease Registry
 agencies | 1 | Argonne National Laboratory
 agencies | 1 | Atomic Energy Commission
-agencies | 1 | Attorney General
 agencies | 1 | Bureau of Alcohol, Tobacco, Firearms and Explosives
 agencies | 1 | Bureau of Indian Affairs
 agencies | 1 | Bureau of Industry and Security, U.S. Department of Commerce
 agencies | 1 | Bureau of Prisons
+agencies | 1 | Center for AI Standards and Innovation
 agencies | 1 | Center for Biologics Evaluation and Research
 agencies | 1 | Center for Devices and Radiological Health
 agencies | 1 | Center for Drug Evaluation and Research
+agencies | 1 | Center for Scientific Review
 agencies | 1 | Center for Veterinary Medicine
-agencies | 1 | Centers for Medicare & Medicaid Services
-agencies | 1 | Committee for Purchase from People Who Are Blind or Severely Disabled
+agencies | 1 | City of San Jose Office of Economic Development
+agencies | 1 | Civilian Board of Contract Appeals
+agencies | 1 | Commission on Civil Rights
+agencies | 1 | Committee on Foreign Investment in the United States
 agencies | 1 | Connecticut Department of Energy and Environmental Protection
 agencies | 1 | Corps of Engineers, Department of the Army
 agencies | 1 | Council of Advisors on Science and Technology
 agencies | 1 | Council of Economic Advisers
-agencies | 1 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 1 | Cybersecurity Division
 agencies | 1 | DLA AVIATION
 agencies | 1 | DLA LAND AND MARITIME
 agencies | 1 | DOD Office of the Chief Information Officer
+agencies | 1 | Defense Health Agency
 agencies | 1 | Defense Logistics Agency Land and Maritime
 agencies | 1 | Defense Logistics Agency, DLA Troop Support
 agencies | 1 | Department of Commerce International Trade Administration
 agencies | 1 | Department of Defense, Defense Logistics Agency
 agencies | 1 | Department of Housing and Urban Development
 agencies | 1 | Department of Justice Antitrust Division
-agencies | 1 | Deputy Assistant Secretary of Defense for Military Community and Family Policy
 agencies | 1 | Director, Office of Export Enforcement
 agencies | 1 | Directorate of Defense Trade Controls
 agencies | 1 | Drug Enforcement Administration
+agencies | 1 | Emergency Communications Division
 agencies | 1 | Emergency Communications Division (ECD)
+agencies | 1 | Employment and Training Administration
 agencies | 1 | Employment and Training Administration, U.S. Department of Labor
 agencies | 1 | Environmental Protection Agency, Region 4
 agencies | 1 | Federal Acquisition Security Council
@@ -155,7 +182,7 @@ agencies | 1 | Food and Nutrition Service
 agencies | 1 | GSA Public Buildings Service
 agencies | 1 | General Accounting Office (GAO)
 agencies | 1 | General Services Administration Federal Acquisition Service
-agencies | 1 | General Services Administration Public Buildings Service
+agencies | 1 | General Services Administration Public Buildings Service Region 3
 agencies | 1 | Government Printing Office
 agencies | 1 | Government of Japan
 agencies | 1 | Grid Deployment Office
@@ -164,29 +191,32 @@ agencies | 1 | Idaho National Laboratory
 agencies | 1 | Infrastructure Security Division (ISD)
 agencies | 1 | Institute of Museum and Library Services
 agencies | 1 | International Trade Administration, U.S. Department of Commerce
-agencies | 1 | Maritime Administration (MARAD)
+agencies | 1 | Interstate Commerce Commission
+agencies | 1 | Legal Services Corporation
+agencies | 1 | Make America Healthy Again (MAHA) Commission
 agencies | 1 | NSWC CRANE
 agencies | 1 | NYSE Arca, Inc.
 agencies | 1 | Nasdaq GEMX, LLC
+agencies | 1 | National Center for Environmental Health
 agencies | 1 | National Center for Health Statistics
-agencies | 1 | National Commission on the Future of the Navy
+agencies | 1 | National Counterintelligence and Security Center
 agencies | 1 | National Endowment for the Arts
 agencies | 1 | National Endowment for the Humanities
 agencies | 1 | National Eye Institute
 agencies | 1 | National Institute for Occupational Safety and Health
 agencies | 1 | National Interagency Fire Center
-agencies | 1 | National Marine Fisheries Service (NMFS)
 agencies | 1 | National Museum of Health and Medicine
-agencies | 1 | National Oceanic and Atmospheric Administration (NOAA)
+agencies | 1 | National Science and Technology Council
 agencies | 1 | National Space Council
 agencies | 1 | National Technical Information Service
 agencies | 1 | National Transportation Safety Board
+agencies | 1 | Natural Resources Conservation Service
+agencies | 1 | Naval Facilities Engineering Northwest Command
 agencies | 1 | Naval Facilities Engineering Systems Command Southwest
 agencies | 1 | Naval Supply Systems Command
 agencies | 1 | Networking and Information Technology Research and Development (NITRD) National Coordination Office (NCO)
 agencies | 1 | Networking and Information Technology Research and Development National Coordination Office
 agencies | 1 | New York City Housing Authority
-agencies | 1 | New York Stock Exchange LLC
 agencies | 1 | North American Energy Standards Board
 agencies | 1 | Office for Civil Rights
 agencies | 1 | Office for Coastal Management
@@ -194,7 +224,6 @@ agencies | 1 | Office of Acquisition Policy
 agencies | 1 | Office of Acquisition and Logistics
 agencies | 1 | Office of Combination Products
 agencies | 1 | Office of Defense Trade Controls Policy
-agencies | 1 | Office of Federal Activities
 agencies | 1 | Office of Federal Contract Compliance Programs
 agencies | 1 | Office of Federal Public Procurement Policy
 agencies | 1 | Office of Government-wide Policy
@@ -203,45 +232,56 @@ agencies | 1 | Office of Inspections and Investigations
 agencies | 1 | Office of Legislative Affairs
 agencies | 1 | Office of Local Defense Community Cooperation
 agencies | 1 | Office of Management and Budget's Office of Federal Procurement Policy
+agencies | 1 | Office of Oceanic and Atmospheric Research
 agencies | 1 | Office of Policy, Department of Energy
 agencies | 1 | Office of Procurement Policy, Systems and Oversight
-agencies | 1 | Office of Professional Responsibility
 agencies | 1 | Office of Research Integrity
+agencies | 1 | Office of Science
 agencies | 1 | Office of Small Business Programs
 agencies | 1 | Office of Special Education and Rehabilitative Services
 agencies | 1 | Office of Special Education and Rehabilitative Services, Department of Education
+agencies | 1 | Office of Surface Mining
+agencies | 1 | Office of WMD and Missile Controls, Bureau of Arms Control and Nonproliferation
 agencies | 1 | Office of the Assistant Secretary for Health
 agencies | 1 | Office of the Assistant Secretary for Preparedness and Response
 agencies | 1 | Office of the Assistant Secretary of Defense (Industrial Base Policy)
 agencies | 1 | Office of the Assistant to the Secretary of Defense for Privacy, Civil Liberties, and Transparency
 agencies | 1 | Office of the Chief Acquisition Executive (OCAE)
+agencies | 1 | Office of the Chief Information Officer
 agencies | 1 | Office of the Chief Security Officer (OCSO)
 agencies | 1 | Office of the Department of Defense Chief Information Officer
+agencies | 1 | Office of the Deputy Secretary and Assistant Secretary for Technology Policy (ASTP) and Office of the National Coordinator for Health Information Technology (ONC)
 agencies | 1 | Office of the President / Assistant to the President for National Security Affairs
 agencies | 1 | Office of the Procurement Executive
+agencies | 1 | Office of the Procurement Executive, Department of State
 agencies | 1 | Office of the U.S. Trade Representative
 agencies | 1 | Office of the Under Secretary of Defense (Acquisition and Sustainment), Department of Defense
 agencies | 1 | Office of the Under Secretary of Defense for Acquisition and Sustainment
 agencies | 1 | Office of the Under Secretary of Defense for Research and Engineering
 agencies | 1 | Office of the Undersecretary of Defense
 agencies | 1 | Oncology Center of Excellence
+agencies | 1 | Options Price Reporting Authority
 agencies | 1 | Permitting Council
-agencies | 1 | Pipeline and Hazardous Materials Safety Administration
 agencies | 1 | Postal Service
 agencies | 1 | Public Company Accounting Oversight Board
 agencies | 1 | Railroad Retirement Board
 agencies | 1 | Rural Business-Cooperative Service
 agencies | 1 | Sandia National Laboratories
 agencies | 1 | Secretary of Health and Human Services
+agencies | 1 | Secretary of Transportation
+agencies | 1 | Securities Industry Automation Corporation
 agencies | 1 | Social Security Administration
 agencies | 1 | State Department's Directorate of Defense Trade Controls
+agencies | 1 | State of Texas
 agencies | 1 | Substance Abuse and Mental Health Services Administration
 agencies | 1 | Trade and Development Agency
 agencies | 1 | U.S. Artificial Intelligence Safety Institute (AISI)
 agencies | 1 | U.S. Citizenship and Immigration Services
-agencies | 1 | U.S. Commission on Civil Rights
+agencies | 1 | U.S. Department of Defense, Air Force, Eglin Air Force Base
 agencies | 1 | U.S. Department of Defense, Defense Health Agency
+agencies | 1 | U.S. Department of Defense, Division of Air Force
 agencies | 1 | U.S. Department of Defense, Navy, Naval Weapons Station Seal Beach Detachment Fallbrook
+agencies | 1 | U.S. Department of Transportation's Pipeline and Hazardous Materials Safety Administration
 agencies | 1 | U.S. Department of the Interior
 agencies | 1 | U.S. Marine Corps
 agencies | 1 | U.S. Nuclear Regulatory Commission
@@ -249,13 +289,13 @@ agencies | 1 | U.S. Small Business Administration
 agencies | 1 | US Army
 agencies | 1 | US Census Bureau
 agencies | 1 | Under Secretary of Defense for Acquisition & Sustainment
-agencies | 1 | Under Secretary of Defense for Personnel and Readiness
 agencies | 1 | United Nations
-agencies | 1 | United States Army Corps of Engineers
 agencies | 1 | United States Border Patrol
 agencies | 1 | United States Commission on Civil Rights
+agencies | 1 | United States District Court for the District of Columbia
 agencies | 1 | United States Immigration and Customs Enforcement
 agencies | 1 | United States International Development Finance Corporation
+agencies | 1 | United States Marine Corps
 agencies | 1 | United States Marshals Service
 agencies | 1 | United States Merchant Marine
 agencies | 1 | United States Northern Command
@@ -263,108 +303,160 @@ agencies | 1 | United States Semiquincentennial Commission
 agencies | 1 | United States Strategic Command
 agencies | 1 | United States Trade Representative
 agencies | 1 | Universal Service Administrative Company
+agencies | 1 | University of Florida-Florida Museum of Natural History
+agencies | 1 | Virginia Department of Environmental Quality
 agencies | 1 | White House Task Force to Address Online Harassment and Abuse
 agencies | 1 | Wireline Competition Bureau
-programs | 78 | Procurement List
-programs | 34 | Fixed Income and Data Services
-programs | 32 | Connectivity Fee Schedule
-programs | 20 | Javits-Wagner-O'Day Act
-programs | 18 | Export Administration Regulations
-programs | 17 | Office of Exporter Services
-programs | 16 | Office of Export Enforcement
-programs | 9 | Mahwah Data Center
+programs | 107 | Procurement List
+programs | 42 | Fixed Income and Data Services
+programs | 41 | Connectivity Fee Schedule
+programs | 27 | Office of Exporter Services
+programs | 26 | Office of Export Enforcement
+programs | 25 | Javits-Wagner-O'Day Act
+programs | 22 | Export Administration Regulations
+programs | 12 | Equalization Project
+programs | 11 | Mahwah Data Center
+programs | 10 | U.S. AbilityOne Commission
+programs | 9 | Commercial Distribution Program
 programs | 8 | Cboe BYX Exchange, Inc.
 programs | 8 | Cboe EDGX Exchange, Inc.
 programs | 8 | NY11-4
+programs | 8 | Organ Procurement and Transplantation Network
+programs | 7 | AbilityOne Program
 programs | 7 | Cboe BZX Exchange, Inc.
 programs | 7 | Cboe EDGA Exchange, Inc.
-programs | 7 | Organ Procurement and Transplantation Network
 programs | 7 | Virtual Control Circuit Service
-programs | 6 | Commercial Distribution Program
-programs | 6 | U.S. AbilityOne Commission
-programs | 5 | Federal Acquisition Regulation
+programs | 6 | Entity List
+programs | 6 | Federal Acquisition Regulation
+programs | 6 | TNO Cross Connect
+programs | 5 | Commerce Control List
+programs | 5 | Cost Accounting Standards
+programs | 5 | Export Control Reform Act
+programs | 5 | Regulation NMS
+programs | 4 | America's AI Action Plan
 programs | 4 | Cboe BZX Exchange
 programs | 4 | Cboe C2 Exchange, Inc.
 programs | 4 | Cboe EDGX Exchange
-programs | 4 | Commerce Control List
-programs | 4 | Entity List
+programs | 4 | Defense Federal Acquisition Regulation Supplement
 programs | 4 | Fixed Income and Data Services (FIDS)
 programs | 4 | International Traffic in Arms Regulations
 programs | 4 | National Artificial Intelligence Advisory Committee
+programs | 4 | OpenGMSL Association
 programs | 4 | Scientific Registry of Transplant Recipients
 programs | 4 | System for Award Management
+programs | 4 | UAS Integration Office
+programs | 4 | UAS Traffic Management
 programs | 4 | Validated End-User (VEU) Program
-programs | 3 | AbilityOne Program
 programs | 3 | Air University Board of Visitors
 programs | 3 | American Rescue Plan
 programs | 3 | Bipartisan Infrastructure Law
 programs | 3 | Cboe BYX Exchange
 programs | 3 | Cboe C2 Exchange
+programs | 3 | Co-Location Services
 programs | 3 | Community College of the Air Force
-programs | 3 | Cost Accounting Standards
-programs | 3 | Defense Federal Acquisition Regulation Supplement
+programs | 3 | Defense Federal Acquisition Regulation Supplement (DFARS)
 programs | 3 | Defense Industrial Based Consortium
 programs | 3 | Department of the Air Force Scientific Advisory Board
-programs | 3 | Export Control Reform Act
+programs | 3 | DoD Wage Committee
+programs | 3 | Electronic Document Information System (EDIS)
 programs | 3 | FIDS Circuits
+programs | 3 | Foreign-Trade Zone (FTZ) 45
 programs | 3 | Inflation Reduction Act
+programs | 3 | MIAX Sapphire Options Exchange
+programs | 3 | Nasdaq MRX co-location services
 programs | 3 | National Artificial Intelligence Initiative
+programs | 3 | National Research Advisory Council
 programs | 3 | Office for Bombing Prevention
+programs | 3 | Online FTZ Information System
+programs | 3 | Ordering Window
+programs | 3 | Secretary's Supplemental Priorities on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
 programs | 3 | Secretary's Supplemental Priority on Artificial Intelligence
+programs | 3 | Small Unmanned Aircraft Registration System
+programs | 3 | Toxics Release Inventory
+programs | 3 | Training & Readiness Accelerator II
+programs | 3 | U.S. AbilityOne Commission's Commercial Distribution Program
 programs | 3 | U.S. Munitions Import List
 programs | 3 | U.S. Munitions List
-programs | 3 | UAS Integration Office
 programs | 2 | Adaptative Acquisition Framework
 programs | 2 | Arctic Research Activities
 programs | 2 | Automated Export System (AES) Program
+programs | 2 | Board of Visitors of the U.S. Air Force Academy
 programs | 2 | Board of Visitors, United States Military Academy
 programs | 2 | CHIPS Act of 2022
 programs | 2 | CHIPS and Science Act
 programs | 2 | CISA Speakers Bureau
 programs | 2 | Cboe EDGA Exchange
 programs | 2 | Census Household Panel
+programs | 2 | Co-location services
 programs | 2 | Commodity Supplemental Food Program
 programs | 2 | Compensation and Pension Benefits Programs
 programs | 2 | Coordinated Vulnerability Disclosure (CVD)
 programs | 2 | Data Center Validated End User authorization
-programs | 2 | Defense Federal Acquisition Regulation Supplement (DFARS)
 programs | 2 | Defense Sexual Assault Incident Database
+programs | 2 | DroneZone
+programs | 2 | Effective U.S. Control (EUSC)/Parent Company
+programs | 2 | Electronic Tax Administration Advisory Committee
+programs | 2 | Emerging Technologies Division
+programs | 2 | Exemption No. 23205
 programs | 2 | FAA Drone Zone
 programs | 2 | FAA UAS Data Delivery System
 programs | 2 | FAA-Recognized Identification Areas
 programs | 2 | FORCE Mid-Scale Research Instrumentation Project
 programs | 2 | Food Distribution Program on Indian Reservations
 programs | 2 | Foreign-Trade Zone (FTZ) 143
+programs | 2 | Foreign-Trade Zone (FTZ) 18
 programs | 2 | Foreign-Trade Zone 143
+programs | 2 | Foreign-Trade Zone 18
+programs | 2 | Hawaii Range Complex
+programs | 2 | Hawaii-California Training and Testing
 programs | 2 | Integrated Airman Certification and Rating Application
+programs | 2 | Iran Freedom and Counter-Proliferation Act of 2012
 programs | 2 | Known Exploited Vulnerabilities Catalog
 programs | 2 | License Exception Commercial Space Activities
+programs | 2 | Liquid-Cooled Cabinet service
 programs | 2 | Low Altitude Authorization and Notification Capability
 programs | 2 | Manufactured Products General Waiver
 programs | 2 | Maritime Action Plan
+programs | 2 | Maritime Security Program
 programs | 2 | Military Panel
+programs | 2 | Nasdaq GEMX co-location services
+programs | 2 | Nasdaq ISE co-location services
+programs | 2 | National Commission on the Future of the Navy
+programs | 2 | National Emergency Communications Plan
+programs | 2 | National NAGPRA Program
 programs | 2 | National Strategy to End the Use of Paper Straws
 programs | 2 | Naval Surface Technology & Innovation
+programs | 2 | Nondestructive Testing of Certain Cargo Tanks on Unmanned Barges
 programs | 2 | Nutrition Service Incentive Program
+programs | 2 | Office of Counterproliferation Initiatives
 programs | 2 | Outreach and Assistance to Socially Disadvantaged Farmers and Ranchers and Veteran Farmers and Ranchers Program (2501 Program)
+programs | 2 | Pipeline Corporate Security Review
 programs | 2 | Pipeline Security Guidelines
+programs | 2 | Point Mugu Sea Range
 programs | 2 | Port Readiness Plan
 programs | 2 | Quarterly Readiness of Strategic Seaport Facilities Reporting
 programs | 2 | Research Data Center
 programs | 2 | SDVOSB Program
-programs | 2 | Secretary's Supplemental Priorities on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
+programs | 2 | Secretary's Supplemental Priority and Definitions on Meaningful Learning Opportunities
 programs | 2 | Secretary's Supplemental Priority on Promoting Patriotic Education
 programs | 2 | Section 1260H List of Chinese Military Companies Operating in the United States
+programs | 2 | Section 301 Committee
+programs | 2 | Section 301 Investigation
+programs | 2 | Security Summit
+programs | 2 | Senior Executive Service Performance Review Board
 programs | 2 | Shipping Coordinating Committee
+programs | 2 | Silicon Integration Initiative, Inc.
+programs | 2 | State Policy Priorities
 programs | 2 | Statutory Import Programs Staff
 programs | 2 | Supplier Performance Risk System (SPRS)
 programs | 2 | Suspension and Debarment Records
-programs | 2 | Toxics Release Inventory
-programs | 2 | Training & Readiness Accelerator II
-programs | 2 | UAS Traffic Management
+programs | 2 | TSA Airspace Waiver Program
+programs | 2 | TSA Security Directive Pipeline-2021-02 series
+programs | 2 | U.S. Air Force Academy
 programs | 2 | USDA Web Based Supply Chain Management System (WBSCM)
 programs | 2 | Ultra High Density Cabinet
 programs | 2 | United States Military Academy Board of Visitors
+programs | 2 | Unmanned Aircraft Systems (UAS) Support Center Case Management System (CMS)
 programs | 2 | VA Form 10101
 programs | 2 | VA Form 6298
 programs | 2 | Veteran Small Business Certification Program
@@ -375,13 +467,16 @@ programs | 1 | 2023 Section 1260H List of Chinese Military Companies Operating i
 programs | 1 | 2025 Minimum Elements for a Software Bill of Materials (SBOM)
 programs | 1 | 2025 National Household Food Acquisition and Purchase Survey (FoodAPS) Pilot Test
 programs | 1 | 2027 Farm to School Census
+programs | 1 | 23/5 trading
 programs | 1 | 8(a) Business Development
 programs | 1 | 988 Suicide and Crisis Lifeline
 programs | 1 | ADVANCE Act
 programs | 1 | AFIT Subcommittee
 programs | 1 | AI Action Plan
 programs | 1 | AI Futures-Preparedness, Opportunities, and Competitiveness Working Group
+programs | 1 | AI Litigation Task Force
 programs | 1 | Actively Exploited Vulnerability Submission Form
+programs | 1 | Administrative False Claims Act
 programs | 1 | Advanced Manufacturing Investment Credit
 programs | 1 | Advanced Manufacturing Sprint
 programs | 1 | Advanced Photon Source
@@ -392,57 +487,78 @@ programs | 1 | Advisory Committee to the Director
 programs | 1 | African Growth and Opportunity Act
 programs | 1 | Agile Learning Concept
 programs | 1 | Agreement on Port State Measures to Prevent, Deter and Eliminate Illegal, Unreported and Unregulated Fishing
+programs | 1 | Agricultural Foreign Investment Disclosure Act
 programs | 1 | Air Force Austere Custom Packs
 programs | 1 | Airspace Access Program
 programs | 1 | Allergy, Immunology, and Transplantation Research
-programs | 1 | America's AI Action Plan
+programs | 1 | America First Arms Transfer Strategy
 programs | 1 | American AI Exports Program
+programs | 1 | American Institute for Manufacturing Integrated Photonics
+programs | 1 | American Science and Security Platform
 programs | 1 | Application(s) for Duty-Free Entry of Scientific Instruments
 programs | 1 | Apprenticeship Ambassador Initiative
 programs | 1 | Armed Forces
+programs | 1 | Arms Export Control Act
 programs | 1 | Army Civil Works programs
 programs | 1 | Artificial Intelligence Action Plan
 programs | 1 | Artificial Intelligence Safety and Security Board
+programs | 1 | Artificial Intelligence and Technology Collaboratory
 programs | 1 | Artificial Intelligence in Healthcare Safety Program
 programs | 1 | Assessment of Environmental Performance Standards and Ecolabels for Federal Procurement
 programs | 1 | Atlantic Fleet Training and Testing
+programs | 1 | Atlantic Fleet Training and Testing Study Area
 programs | 1 | Automated Export System
 programs | 1 | Avery Point Public Oil Docks Redevelopment--Phase 1: Expanding Oil Dock 3
 programs | 1 | BIS Program Evaluation
 programs | 1 | BMAP Stakeholder Feedback Form
 programs | 1 | BRAC
+programs | 1 | BRAC Program
 programs | 1 | Balance of Payments Program
+programs | 1 | Battery Options to Support TVA Capacity Needs
 programs | 1 | Benefits Delivery Network
+programs | 1 | Bethlehem Energy Center
 programs | 1 | BioPreferred Program
 programs | 1 | Biobased Markets (BioPreferred) Program
-programs | 1 | Board of Visitors of the U.S. Air Force Academy
+programs | 1 | Black Butte Coal Company Federal Lease WYW-6266 Mining Plan Modification
+programs | 1 | Board of Contract Appeals
 programs | 1 | Board of Visitors of the United States Air Force Academy
 programs | 1 | Board of Visitors, United States Military Academy (USMA BoV)
+programs | 1 | Broadband Equity Access and Deployment (BEAD) Program
 programs | 1 | Build America, Buy America Act
 programs | 1 | Bureau of Indian Education Schools
 programs | 1 | Buy America waiver
+programs | 1 | Buy American Act
 programs | 1 | Buy American statute
+programs | 1 | CCDI Data Ecosystem
 programs | 1 | CISA Incident Reporting System
 programs | 1 | CISA Industry Engagement Registration & Account in ServiceNow
 programs | 1 | CISA Speaker Request Form
 programs | 1 | CISA Visitor Request Form
 programs | 1 | CISE
+programs | 1 | CSX Settlement Agreement
 programs | 1 | Cabinet Proximity Option Program
+programs | 1 | Caldwell Canyon Revised Mine and Reclamation Plan
+programs | 1 | Cape Cod Bridges Program
 programs | 1 | Carl D. Perkins Career and Technical Education (Perkins V) Act
 programs | 1 | Catalog Data Standard
+programs | 1 | Catalyze Research on Heart, Lung, Blood, and Sleep Diseases and Disorder
 programs | 1 | Catch a Serial Offender (CATCH) Program Records
 programs | 1 | CeNTREX
+programs | 1 | Center for AI Standards and Innovation
 programs | 1 | Center of Independent Experts
 programs | 1 | Central Liquidity Facility
 programs | 1 | Certificates of Authorization
 programs | 1 | ChemLock Program
 programs | 1 | Chemical Facility Anti-Terrorism Standards
 programs | 1 | Child Care and Development Block Grant
+programs | 1 | Childhood Cancer Data Initiative
 programs | 1 | China Censorship Monitor and Action Group
 programs | 1 | Civilian Agency Acquisition Council
+programs | 1 | Clarke County Water Supply Project
+programs | 1 | Clinch River Nuclear Site
 programs | 1 | Co-location Services
-programs | 1 | Co-location services
 programs | 1 | Cold molecular Nuclear Time-Reversal Experiment (CeNTREX)
+programs | 1 | Colocation Note 8
 programs | 1 | Commercial Space Activities (CSA)
 programs | 1 | Common Formats
 programs | 1 | Community Food Systems Division
@@ -450,19 +566,26 @@ programs | 1 | Computer and Information Science and Engineering
 programs | 1 | Configuration Steering Board
 programs | 1 | Connect America Fund
 programs | 1 | Consent Order 8381
+programs | 1 | Consolidated Trade Association
 programs | 1 | Consumer Financial Protection Circular 2024-06
 programs | 1 | Contractor Conflict of Interest Screening
 programs | 1 | Controlled Unclassified Information Program
 programs | 1 | Coral Reef Conservation Program
 programs | 1 | Cost Accounting Standards Board
+programs | 1 | Cost Accounting Standards Program
+programs | 1 | Council on National Security
 programs | 1 | Counter Unmanned Aircraft Systems
+programs | 1 | Counter-Unmanned Aircraft System Deployment
 programs | 1 | Countering Economic Coercion Task Force
 programs | 1 | Counterintelligence Functional Services (CIFS)
 programs | 1 | Counterintelligence Investigations and Collection Activities (CICA)
 programs | 1 | Covered Component Project
+programs | 1 | Covered List
 programs | 1 | Critical Infrastructure Partnership Advisory Council
 programs | 1 | Critical Infrastructure Protection Reliability Standards
+programs | 1 | Critical Infrastructure Security and Resilience
 programs | 1 | Critical Minerals List
+programs | 1 | Customer Contact Center 2
 programs | 1 | Cyber Investigations Advisory Board
 programs | 1 | Cyber Threat Indicator and Defensive Measure Submission System
 programs | 1 | Cybersecurity Assessment Plan
@@ -482,13 +605,18 @@ programs | 1 | Data Privacy and Integrity Advisory Committee
 programs | 1 | Defense Acquisition Regulations Council
 programs | 1 | Defense Advisory Committee for the Prevention of Sexual Misconduct
 programs | 1 | Defense Advisory Committee on Diversity and Inclusion
+programs | 1 | Defense Advisory Committee on Women in the Services
 programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 215, Only One Offer
 programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 237
+programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 246, Quality Assurance
 programs | 1 | Defense Health Board
 programs | 1 | Defense Industrial Base
+programs | 1 | Defense Manpower Data Center Data Base
 programs | 1 | Defense Policy Board
 programs | 1 | Defense-State Liaison Office
 programs | 1 | Delegated Examining
+programs | 1 | Delta Conveyance Project
+programs | 1 | Department of Defense Medicare-Eligible Retiree Health Care Board of Actuaries (DoD MERHC BoA)
 programs | 1 | Department of Defense Wage Committee
 programs | 1 | Department of Government Efficiency
 programs | 1 | Department of Veteran Affairs Acquisition Regulation
@@ -499,24 +627,29 @@ programs | 1 | Discharge Appeal Review Board
 programs | 1 | Discretionary Pegged Order
 programs | 1 | District of Columbia Advisory Committee
 programs | 1 | Diversity, Equity, and Inclusion (DEI) programs
+programs | 1 | Do Not Pay Working System
 programs | 1 | DoD Insider Threat Management and Analysis Center (DITMAC)
 programs | 1 | DoD Medicare-Eligible Retiree Health Care Board of Actuaries
 programs | 1 | DoD Medicare-Eligible Retiree Health Care Fund
-programs | 1 | DoD Wage Committee
 programs | 1 | DoD-0020, Military Human Resource Records
 programs | 1 | DoD-0023, Military Corrections and Parole Board Records
 programs | 1 | Docket 055
-programs | 1 | DroneZone
 programs | 1 | Drug Testing Advisory Board
 programs | 1 | Earned Value Management System
 programs | 1 | Economic Diplomacy Action Group
+programs | 1 | Edge Moor Energy Center
+programs | 1 | Education and Training Vouchers
 programs | 1 | Electronic Data Access (EDA) system
-programs | 1 | Electronic Document Information System (EDIS)
-programs | 1 | Electronic Tax Administration Advisory Committee
+programs | 1 | Elk Basin--Billings Replacement Project
 programs | 1 | Emergency Communications Division
 programs | 1 | Emergency Communications Division (ECD)
 programs | 1 | Emergency Food Assistance Program
 programs | 1 | Emergency Veterans' Job Training Act of 1983
+programs | 1 | Emerging Leaders Council
+programs | 1 | Enbridge Line 5 Tunnel Project
+programs | 1 | Enhanced End Use Monitoring
+programs | 1 | Enhanced Spouse License Portability
+programs | 1 | Enhancing Data-driven Disease Detection in Newborns (ED3N)
 programs | 1 | Entity List Foreign-Direct Product rule
 programs | 1 | Environmental Planning and Historic Preservation Program
 programs | 1 | Exascale Computing Program
@@ -524,13 +657,18 @@ programs | 1 | Executive Order on Restoring America's Maritime Dominance
 programs | 1 | Explosive Blast Modeling Stakeholder Feedback Form
 programs | 1 | Export Control Reform Act of 2018
 programs | 1 | External Affairs (EA)
+programs | 1 | FAA Request Form for CUAS Coordination
 programs | 1 | FAA UAS Test Ranges
 programs | 1 | FCC IoT Label
 programs | 1 | FIPS 203
 programs | 1 | FTZ 24
+programs | 1 | Falcon Launch Program
+programs | 1 | False Claims Act
 programs | 1 | Family Advocacy Program
 programs | 1 | Farm to School Program
+programs | 1 | Federal Acquisition Regulatory Council
 programs | 1 | Federal Acquisition System
+programs | 1 | Federal Claims Control Center (FCCC)
 programs | 1 | Federal Docket Management System
 programs | 1 | Federal IT Dashboard
 programs | 1 | Federal Research and Development in Support of Domestic Manufacturing and United States Jobs
@@ -540,123 +678,184 @@ programs | 1 | Federal Task Force to Restore American Airspace Sovereignty
 programs | 1 | Federal Workplace Drug Testing Program
 programs | 1 | Federal information security incident center
 programs | 1 | Federal workforce development programs
+programs | 1 | Financial Improvement and Audit Remediation Plan
 programs | 1 | Firearms IFR
+programs | 1 | Foreign Military Sales
 programs | 1 | Foreign Military Sales (FMS) program
+programs | 1 | Foreign-Trade Zone (FTZ) 110
 programs | 1 | Foreign-Trade Zone (FTZ) 12
-programs | 1 | Foreign-Trade Zone (FTZ) 18
+programs | 1 | Foreign-Trade Zone (FTZ) 183
+programs | 1 | Foreign-Trade Zone (FTZ) 230
+programs | 1 | Foreign-Trade Zone (FTZ) 39
 programs | 1 | Foreign-Trade Zone (FTZ) 41
-programs | 1 | Foreign-Trade Zone (FTZ) 45
 programs | 1 | Foreign-Trade Zone 24
 programs | 1 | Formerly Utilized Sites Remedial Action Program
+programs | 1 | Fostering the Future
 programs | 1 | Framework for Artificial Intelligence Diffusion
 programs | 1 | Framework for Nucleic Acid Synthesis Screening
 programs | 1 | Framework for the Assessment of Environmental Performance Standards and Ecolabels for Federal Purchasing
+programs | 1 | Freedom 250 Grand Prix
 programs | 1 | Fulton Elliott-Chelsea Redevelopment Project
 programs | 1 | GI Bill
 programs | 1 | GPS Operational Control Segment
 programs | 1 | General License 25
 programs | 1 | General Order No. 2
+programs | 1 | Genesis Mission
+programs | 1 | Global Positioning System (GPS) antenna service
+programs | 1 | Gould Wash Flood Protection Project
 programs | 1 | Governor's Challenge to Prevent Suicide Among Service Members, Veterans, and their Families
+programs | 1 | Green Chile Project
+programs | 1 | Gregory Energy Center
 programs | 1 | Grid Resiliency and Innovation Partnerships Grants
 programs | 1 | Gross Income Assessment
 programs | 1 | Guidelines for Designating Biobased Products for Federal Procurement
 programs | 1 | Gulf of Mexico Alliance
 programs | 1 | HALEU Availability Program
+programs | 1 | HAVANA Act of 2021
+programs | 1 | HHS Artificial Intelligence (AI) Strategy
 programs | 1 | HHS-NIH-CDC-SBIR PHS 2023-1 Phase II
 programs | 1 | HIV Organ Policy Equity Act
 programs | 1 | Harmonized Tariff Schedule of the United States
-programs | 1 | Hawaii Range Complex
-programs | 1 | Hawaii-California Training and Testing
+programs | 1 | Hawaii-California Training and Testing Study Area
 programs | 1 | Hawaii-Southern California Training and Testing Study Area
+programs | 1 | Hay Road Energy Center
 programs | 1 | Headquarters Ruling Letter H338728
 programs | 1 | Hillsboro Solar
 programs | 1 | Homeland Security Academic Partnership Council
 programs | 1 | Homeland Security Science and Technology Advisory Committee
 programs | 1 | Homeport
+programs | 1 | Hospital Inpatient Quality Reporting (IQR) Program
 programs | 1 | Hypersonic and Ballistic Tracking Space Sensor
+programs | 1 | I-270 Corridor Improvements Project
+programs | 1 | I-285 Top End Express Lanes
 programs | 1 | ICE Global Network
+programs | 1 | IEEE Certified Professional Certification
+programs | 1 | IEEE Industry Connections Activities
+programs | 1 | IEEE Responsible Procurement of AI training
 programs | 1 | IEX Fee Schedule
 programs | 1 | IMO Facilitation Committee (FAL 49)
+programs | 1 | IUID registry
+programs | 1 | Ice Exercise Activities 2026 (ICEX26)
 programs | 1 | Icebreaker Collaboration Effort (ICE) Pact
 programs | 1 | Illinois Advisory Committee
 programs | 1 | Incident Reporting Form
 programs | 1 | Incident Reporting Portal
 programs | 1 | Incidental Harassment Authorization
+programs | 1 | Independence Boulevard Extension
 programs | 1 | Information Systems Technical Advisory Committee
 programs | 1 | Infrastructure Visualization Platform (IVP)
 programs | 1 | Infrastructure Visualization Platform (IVP) Pre-Collection Questionnaire
+programs | 1 | Integrated Photonics Institute for Manufacturing Innovation
+programs | 1 | Interagency CUAS Application Data Collection
 programs | 1 | Interagency Suspension and Debarment Committee
+programs | 1 | Interagency Task Force
+programs | 1 | International Maritime Organization's Facilitation Committee
 programs | 1 | International Security Advisory Board
 programs | 1 | Investigation No. 337-TA-1429
 programs | 1 | Investing in America Workforce Hubs
+programs | 1 | Investors Exchange LLC
 programs | 1 | IoT Cybersecurity Improvement Act of 2020
 programs | 1 | IoT Labeling Program
-programs | 1 | Iran Freedom and Counter-Proliferation Act of 2012
+programs | 1 | Jack A. Fusco Energy Center
 programs | 1 | Joining Forces
 programs | 1 | Joint Capabilities Integration and Development System
 programs | 1 | Joint Cyber Defense Collaborative (JCDC)
 programs | 1 | KF-21 aircraft
+programs | 1 | Kuala Lumpur Joint Arrangement
+programs | 1 | LAANC
+programs | 1 | Leaders Council
+programs | 1 | Learning Agenda
 programs | 1 | Letters of Authorization
 programs | 1 | License Exception Commercial Space Activities (CSA)
 programs | 1 | License Exception Implemented Export Controls (IEC)
+programs | 1 | License Exception Strategic Trade Authorization
 programs | 1 | Liquefaction Project
 programs | 1 | Liquidity Center Network
+programs | 1 | Lisbon Valley Mining Company Copper Mine Plan of Operations Modification Project
 programs | 1 | Lobito Corridor
-programs | 1 | MIAX Sapphire Options Exchange
+programs | 1 | MARAD Mariner Preparedness Exercise Survey (Mariner PrepEx Survey)
 programs | 1 | MISSION ACT
 programs | 1 | MLCommons Association
 programs | 1 | Machine Learning Coupled with Fourier Transform Near-infrared Spectroscopy of Otoliths to Age Fish
 programs | 1 | Made in America Office
 programs | 1 | Made in China 2025
+programs | 1 | Make America Healthy Again
 programs | 1 | Make America Healthy Again Commission
 programs | 1 | Malcolm Baldrige National Quality Award
 programs | 1 | Mandatory Guidelines
 programs | 1 | Manual for Courts-Martial, United States
 programs | 1 | Manufacturing Extension Partnership
+programs | 1 | Mariner Preparedness Exercise Program
 programs | 1 | Maritime Safety Committee
 programs | 1 | Maritime Safety Committee (MSC 109)
-programs | 1 | Maritime Security Program
+programs | 1 | Maryland Advisory Committee
+programs | 1 | Means of Compliance with Sec. Sec. 107.120(a) and 107.130(a) for Small Unmanned Aircraft
 programs | 1 | Medicaid
+programs | 1 | Medical Affirmative Claims
 programs | 1 | Medical Radiation Safety Team
+programs | 1 | Medical Services Account
 programs | 1 | Medicare
+programs | 1 | Medicare-Eligible Retiree Health Care Fund
+programs | 1 | Mentored, Career Transition, and Mid-Career K Awards
 programs | 1 | Microbiology and Infectious Diseases Research
+programs | 1 | Micron Semiconductor Manufacturing Facility
 programs | 1 | Mid-Atlantic Regional Council on the Ocean
+programs | 1 | Military Exigency Clause in State Family Leave Laws
+programs | 1 | Military Health System
+programs | 1 | Military Health System Modified Payment and Waiver Program
 programs | 1 | Missile Technology Control Regime
 programs | 1 | Modernization of Special Airworthiness Certification
+programs | 1 | Multiple Award Schedule
+programs | 1 | NAGPRA
 programs | 1 | NESHAP for Shipbuilding and Ship Repair Facilities--Surface Coating
 programs | 1 | NICCS
 programs | 1 | NICE Workforce Framework for Cybersecurity
 programs | 1 | NIH Grants Policy Statement
 programs | 1 | NIST AI 800-1
 programs | 1 | NIST Cybersecurity Framework
+programs | 1 | NMS Network
 programs | 1 | NY11-4 data center expansion
 programs | 1 | NYSE Texas Order Imbalances
-programs | 1 | Nasdaq ISE co-location services
-programs | 1 | Nasdaq MRX co-location services
+programs | 1 | Nasdaq BX
+programs | 1 | Nasdaq BX, Inc.
+programs | 1 | Nasdaq Bond Exchange
+programs | 1 | Nasdaq GEMX
+programs | 1 | Nasdaq GEMX, LLC
+programs | 1 | Nasdaq ISE
+programs | 1 | Nasdaq ISE, LLC
+programs | 1 | Nasdaq MRX
+programs | 1 | Nasdaq Options Market
+programs | 1 | Nasdaq PHLX LLC co-location services
+programs | 1 | Nasdaq PHLX co-location services
+programs | 1 | Nasdaq PSX
+programs | 1 | Nasdaq Stock Market
+programs | 1 | Nasdaq Texas Co-Location Services
 programs | 1 | National Academic Affiliations Council
 programs | 1 | National Advanced Mobility Consortium, Inc.
 programs | 1 | National Airspace System
 programs | 1 | National Artificial Intelligence Research and Development Strategic Plan
+programs | 1 | National Cancer Institute Clinical Trials and Translational Research Advisory Committee (CTAC)
 programs | 1 | National Center for Health Statistics
-programs | 1 | National Commission on the Future of the Navy
+programs | 1 | National Coordination Center
 programs | 1 | National Cyber Incident Response Plan (NCIRP)
 programs | 1 | National Cyber Incident Response Plan (NCIRP) Update
+programs | 1 | National Cybersecurity Awareness Month
 programs | 1 | National Cybersecurity Center of Excellence
 programs | 1 | National Cybersecurity Center of Excellence (NCCoE)
 programs | 1 | National Cybersecurity Strategy
 programs | 1 | National Defense Stockpile
 programs | 1 | National Earthquake Hazards Reduction Program
-programs | 1 | National Emergency Communications Plan
 programs | 1 | National Emergency Communications Plan (NECP)
 programs | 1 | National Energy Dominance Council
 programs | 1 | National Energy Dominance Strategy
 programs | 1 | National Garden of American Heroes
 programs | 1 | National Initiative for Cybersecurity Careers and Studies
 programs | 1 | National Initiative for Cybersecurity Education
+programs | 1 | National Institute of Standards and Technology Special Publication 800-171
 programs | 1 | National Laboratories
+programs | 1 | National Laboratory complex
 programs | 1 | National Maritime Security Advisory Committee
 programs | 1 | National Mental Health Strategy
-programs | 1 | National NAGPRA Program
 programs | 1 | National Nanotechnology Advisory Panel
 programs | 1 | National School Lunch Program
 programs | 1 | National School Lunch Program/Child & Adult Care Food Program
@@ -671,44 +870,54 @@ programs | 1 | Natural Resource Damages Assessment and Restoration Fund
 programs | 1 | Naval Base Ventura County
 programs | 1 | Naval Surface Technology & Innovation Consortium
 programs | 1 | Network of Patient Safety Databases
+programs | 1 | Newborn Screening and Molecular Biology Branch
 programs | 1 | Next Generation Operational Control System
-programs | 1 | Nondestructive Testing of Certain Cargo Tanks on Unmanned Barges
 programs | 1 | Nonprocurement Common Rule
 programs | 1 | Northeast Regional Ocean Council
 programs | 1 | Northeast Unmanned Aviation Research Alliance
+programs | 1 | Northern California Range Complex
 programs | 1 | Northridge Center for Public Archaeology
+programs | 1 | OPM/Internal-3, Information Technology, Information System, and Network Activity and Access Records
+programs | 1 | OPRA Plan
+programs | 1 | Ocean Policy Committee
+programs | 1 | Ocean Research Advisory Panel
 programs | 1 | Office for Special Peace Missions
-programs | 1 | Office of Counterproliferation Initiatives
+programs | 1 | Office of Compliance and Enforcement
 programs | 1 | Office of Electronic Government
 programs | 1 | Office of Federal Financial Management
 programs | 1 | Office of Federal Procurement Policy
 programs | 1 | Office of Information and Regulatory Affairs
+programs | 1 | Office of Inspector General
 programs | 1 | Office of Strategic Capital
 programs | 1 | Office of Unfair Import Investigations
-programs | 1 | Online FTZ Information System
+programs | 1 | One Big Beautiful Bill Act
+programs | 1 | Online Age Verification
 programs | 1 | Open FAR Cases report
-programs | 1 | OpenGMSL Association
 programs | 1 | Operation Economic Outcast
 programs | 1 | Operation of Small Unmanned Aircraft Systems Over People
 programs | 1 | Optic Low Latency Circuit
 programs | 1 | Order No. 587 series
+programs | 1 | PHLX Options
 programs | 1 | PNT Oversight Council
+programs | 1 | ParaZero Part 107 Operations Over People Means of Compliance
 programs | 1 | Partnership for Global Infrastructure and Investment
 programs | 1 | Partnership for Safety Plan (PSP)
+programs | 1 | Partnerships for Transformational Artificial Intelligence Models
+programs | 1 | Pathways Programs
 programs | 1 | Pennsylvania Advisory Committee
 programs | 1 | Performance Review Board
 programs | 1 | Permitting Dashboard
 programs | 1 | Personnel Assessment
 programs | 1 | Pilot Program To Incentivize Contracting With Employee-Owned Businesses
-programs | 1 | Pipeline Corporate Security Review
 programs | 1 | Pipeline Modifications Project
-programs | 1 | Point Mugu Sea Range
+programs | 1 | Pistoia Alliance, Inc.
 programs | 1 | Port Infrastructure Development Program
 programs | 1 | Predetermined Change Control Plan (PCCP)
 programs | 1 | President's Advisory Council on Doing Business in Africa
 programs | 1 | President's Council of Advisors on Science and Technology
 programs | 1 | President's Export Council
 programs | 1 | President's Innovation and Technology Advisory Committee
+programs | 1 | President's artificial intelligence (AI) Action Plan
 programs | 1 | Presidential Artificial Intelligence Challenge
 programs | 1 | Procurement Collusion Strike Force
 programs | 1 | Procurement Collusion Strike Force Complaint Form
@@ -723,15 +932,20 @@ programs | 1 | Proliferated Warfighter Space Architecture
 programs | 1 | Promoting Patriotic Education
 programs | 1 | Promoting the Use of Trustworthy Artificial Intelligence in the Federal Government
 programs | 1 | Proposed Means of Compliance for Operations Over People (OOP)
+programs | 1 | Public Assistance Reporting Information System
 programs | 1 | Public-Private Analytic Exchange Program
 programs | 1 | Pueblo Chemical Agent-Destruction Pilot Plant
 programs | 1 | Pueblo Depot Activity Development Authority (PuebloPlex)
 programs | 1 | Qualifying Project
+programs | 1 | Quality Assessment Performance Improvement
 programs | 1 | Rapid Capabilities Office
+programs | 1 | Ratepayer Protection Pledge
+programs | 1 | Ready Reserve Force (RRF) program
 programs | 1 | Reciprocal Defense Procurement Agreements
 programs | 1 | Recommendation 2024-5: Using Algorithmic Tools in Regulatory Enforcement
 programs | 1 | Recommendation 2024-6: Public Engagement in Agency Rulemaking Under the Good Cause Exemption
 programs | 1 | Recommendation 2024-7: Nonlawyer Assistance and Representation in Agency Adjudications
+programs | 1 | Reconnecting Communities Pilot Program
 programs | 1 | Reefense Program
 programs | 1 | Registered Apprenticeship programs
 programs | 1 | Registered Apprenticeships
@@ -739,80 +953,99 @@ programs | 1 | Regulatory Implementation & Guidance Program
 programs | 1 | Reliability Backstop Procurement
 programs | 1 | Remain in Mexico policy
 programs | 1 | Repository for Software Attestation and Artifacts
+programs | 1 | Reserve Officer Training Corps (ROTC)
 programs | 1 | Resilient Infrastructure + Secure Energy Consortium
+programs | 1 | Resource Grants in Biotechnology, National Centers for Biomedical Imaging and Bioengineering
+programs | 1 | Ridgeline Expansion Project
 programs | 1 | Right to Try
 programs | 1 | Ronald Reagan Washington National Airport Access Standard Security Program
+programs | 1 | Rule General 8, Section 1
 programs | 1 | Rule of Many
 programs | 1 | Russian and Belarusian Industry Sector Sanctions
 programs | 1 | SAFECOM
 programs | 1 | SAFECOM Membership Questionnaire
+programs | 1 | SAFECOM Nationwide Survey
+programs | 1 | SAFECOM Nationwide Surveys Generic Clearance
+programs | 1 | SFTI
 programs | 1 | SR-CboeBZX-2025-043
+programs | 1 | STB Procurement Management System
 programs | 1 | Sabine Pass to Galveston Bay Coastal Storm Risk Management and Ecosystem Restoration Project
 programs | 1 | Savannah River Site Saltstone Disposal Facility
 programs | 1 | Scaling Apprenticeship Readiness Across the Building Trades Initiative
 programs | 1 | Schools and Libraries Cybersecurity Pilot Program
 programs | 1 | Secretary's Supplemental Priority and Definitions on Career Pathways and Workforce Readiness
-programs | 1 | Secretary's Supplemental Priority and Definitions on Meaningful Learning Opportunities
 programs | 1 | Secretary's Supplemental Priority on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
 programs | 1 | Secretary's Supplemental Priority on Meaningful Learning Opportunities
 programs | 1 | Section 1260H List of Chinese Military Companies
 programs | 1 | Section 232 Program
 programs | 1 | Section 232 program
-programs | 1 | Section 301 Committee
-programs | 1 | Section 301 Investigation
+programs | 1 | Section 301 investigation
 programs | 1 | Section 32
 programs | 1 | Section 809 Panel
+programs | 1 | Secure American Medical Supplies
 programs | 1 | Secure by Design
-programs | 1 | Security Summit
 programs | 1 | Selective Midpoint Order
-programs | 1 | Senior Executive Service Performance Review Board
+programs | 1 | Seminoe Pumped Storage Project
 programs | 1 | Sergeant First Class Heath Robinson Honoring our Promise to Address Comprehensive Toxics (PACT) Act
 programs | 1 | Service Request Form for Enterprise Assessment Services
 programs | 1 | Shawnee SO 2 Controls project
-programs | 1 | Silicon Integration Initiative, Inc.
+programs | 1 | Significant New Alternatives Policy
+programs | 1 | Silver Strand Training Complex
 programs | 1 | SkillBridge
 programs | 1 | SkillBridge Application
+programs | 1 | Skookum Educational Program
 programs | 1 | Small Business Innovation Research
+programs | 1 | Small Business Innovation Research Program
 programs | 1 | Small Business Technology Transfer
+programs | 1 | Small Business Technology Transfer Program
 programs | 1 | Small Entity Compliance Guide
-programs | 1 | Small Unmanned Aircraft Registration System
+programs | 1 | Southeast Virginia Energy Storage Project
+programs | 1 | Southern California Range Complex
 programs | 1 | Speaker Request Form
 programs | 1 | Spring Valley II Solar Project
+programs | 1 | Stakeholder Engagement Division Convenings Evaluation
 programs | 1 | State Advisory Committee
 programs | 1 | State Implementation Plan
 programs | 1 | State Order 7002B
 programs | 1 | State Order 8027
-programs | 1 | State Policy Priorities
 programs | 1 | Statewide Communication Interoperability Plan (SCIP) Template and Progress Report
 programs | 1 | Strategic Academic Advisory Council
 programs | 1 | Strategic Active Pharmaceutical Ingredients Reserve
+programs | 1 | Strategic Capabilities Office
 programs | 1 | Strategic and Critical Materials Board of Directors
+programs | 1 | Subzone 110E
 programs | 1 | Subzone 143F
+programs | 1 | Subzone 18R
+programs | 1 | Subzone 230K
 programs | 1 | Subzone 24I
+programs | 1 | Subzone 45K
 programs | 1 | Supplemental Nutrition Assistance Program (SNAP)
 programs | 1 | Supplier Registration System
 programs | 1 | Supplier Risk Management Offeror Questionnaire
 programs | 1 | Supply Chain Risk Management
 programs | 1 | Supply Chain Risk Management (SCRM)
+programs | 1 | Surveillance Towed Array Sensor System Low Frequency Active Sonar
 programs | 1 | Sustainable Development Goals
 programs | 1 | System Operations Support Center
+programs | 1 | TAKE IT DOWN Act
 programs | 1 | TRICARE
-programs | 1 | TSA Airspace Waiver Program
-programs | 1 | TSA Security Directive Pipeline-2021-02 series
+programs | 1 | TRISO-X Special Nuclear Material License Application for a Fuel Fabrication Facility
 programs | 1 | Technical Assistance Program Stakeholder Nomination Form
 programs | 1 | Technical Assistance Stakeholder Feedback Forms
 programs | 1 | Technical Assistance on State Data Collection
 programs | 1 | Technical Assistance on State Data Collection program
 programs | 1 | Technology Transfer Center
+programs | 1 | Telehealth Services
 programs | 1 | The Emergency Food Assistance Program
+programs | 1 | Third Party Collections
 programs | 1 | Third Party Contracting Guidance
 programs | 1 | Toxics Release Inventory (TRI)
 programs | 1 | Trading Activity Fee
+programs | 1 | Trading Floor
 programs | 1 | Transmission Facilitation Program
 programs | 1 | Transportation Avalanche Research Pool
 programs | 1 | Tribal Homeland Security Advisory Council
-programs | 1 | U.S. AbilityOne Commission's Commercial Distribution Program
-programs | 1 | U.S. Air Force Academy
+programs | 1 | U.S. Navy Ice Exercise Activities 2026
 programs | 1 | U.S.-Africa Leaders Summit and Business Forum
 programs | 1 | UAS Declaration of Compliance
 programs | 1 | UAS Declaration of Compliance website
@@ -820,9 +1053,11 @@ programs | 1 | UHD Alliance
 programs | 1 | USDA Certified Biobased Product Label
 programs | 1 | USDA Farmers Market Application
 programs | 1 | USF/ICC Transformation Order
+programs | 1 | Unemployment Compensation for Ex-Servicemembers (UCX)
 programs | 1 | Unemployment Compensation for Ex-Servicemembers (UCX) Program
 programs | 1 | Unified Facilities Criteria
 programs | 1 | Unified Regulatory Agenda
+programs | 1 | Uniformed Services Human Resources Information System
 programs | 1 | Unit Level Assessment Tool
 programs | 1 | United States Government Policy for Oversight of Dual Use Research of Concern and Pathogens with Enhanced Pandemic Potential
 programs | 1 | United States Marine Highway Program
@@ -830,20 +1065,22 @@ programs | 1 | United States Marine Highway Program Grant Program
 programs | 1 | United States Naval Academy Board of Visitors
 programs | 1 | United States Port Security Initiative
 programs | 1 | Unmanned Aircraft Systems (UAS) BEYOND
-programs | 1 | Unmanned Aircraft Systems (UAS) Support Center Case Management System (CMS)
 programs | 1 | Unmanned and Autonomous Flight Advisory Committee
 programs | 1 | VA FY 2021 Service Contract Inventory Analysis Report
 programs | 1 | VAAR Clause 852.211-70
 programs | 1 | Veteran Service Member Family Fraud Evasion initiative
 programs | 1 | Veterans Affairs/Department of Defense Identity Repository (VADIR)-VA
 programs | 1 | Veterans Service Network
+programs | 1 | Victims Restoration Program
 programs | 1 | Violence Against Women Act
 programs | 1 | Virginia Tech Mid-Atlantic Aviation Partnership
+programs | 1 | Visitor Request Form
 programs | 1 | VoiceBrain
 programs | 1 | Voluntary Intermodal Sealift Agreement
 programs | 1 | Voluntary Labeling Program for Biobased Products
 programs | 1 | Vulnerability Management
 programs | 1 | Wassenaar Arrangement Munitions List
+programs | 1 | Waverly Energy Storage Facility
 programs | 1 | West Coast Ocean Alliance
 programs | 1 | White House Task Force on Artificial Intelligence Education
 programs | 1 | White House Task Force on Celebrating America's 250th Birthday
@@ -853,6 +1090,7 @@ programs | 1 | Women, Infants, and Children (WIC)
 programs | 1 | Women-Owned Small Business Federal Contract Program
 programs | 1 | Workforce Framework for Cybersecurity
 programs | 1 | World Trade Center Health Program
+programs | 1 | York Energy Center
 programs | 1 | Youth Research Cohort
 programs | 1 | areawide contracts
 programs | 1 | dynamic frequency management systems
@@ -863,110 +1101,186 @@ programs | 1 | program of record for the utilization of nuclear energy
 programs | 1 | regional ocean partnership
 programs | 1 | temporary denial order
 programs | 1 | wildland fire programs
-statutes | 53 | Paperwork Reduction Act of 1995
-statutes | 25 | Section 19(b)(1) of the Securities Exchange Act of 1934
-statutes | 25 | Securities Exchange Act of 1934, Section 19(b)(1)
-statutes | 19 | Javits-Wagner-O'Day Act
-statutes | 18 | National Cooperative Research and Production Act of 1993
-statutes | 16 | Federal Advisory Committee Act
-statutes | 13 | Securities Exchange Act of 1934
-statutes | 11 | Paperwork Reduction Act
-statutes | 11 | Privacy Act of 1974
-statutes | 10 | International Emergency Economic Powers Act
-statutes | 8 | James M. Inhofe National Defense Authorization Act for Fiscal Year 2023
-statutes | 7 | Federal Advisory Committee Act of 1972
-statutes | 7 | Government in the Sunshine Act of 1976
-statutes | 7 | National Defense Authorization Act for Fiscal Year 2022
-statutes | 7 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
-statutes | 6 | Arms Export Control Act
-statutes | 6 | Educational, Scientific and Cultural Materials Importation Act of 1966
-statutes | 6 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
-statutes | 6 | Marine Mammal Protection Act
-statutes | 6 | National Defense Authorization Act for Fiscal Year 2004
-statutes | 6 | National Emergencies Act
-statutes | 5 | 5 U.S.C. Chapter 10
+statutes | 66 | Paperwork Reduction Act of 1995
+statutes | 50 | Securities Exchange Act of 1934, Section 19(b)(1)
+statutes | 40 | Section 19(b)(1) of the Securities Exchange Act of 1934
+statutes | 29 | Javits-Wagner-O'Day Act
+statutes | 27 | National Cooperative Research and Production Act of 1993
+statutes | 21 | Federal Advisory Committee Act
+statutes | 18 | Securities Exchange Act of 1934
+statutes | 17 | Paperwork Reduction Act
+statutes | 15 | International Emergency Economic Powers Act
+statutes | 14 | Privacy Act of 1974
+statutes | 11 | National Defense Authorization Act for Fiscal Year 2004
+statutes | 10 | James M. Inhofe National Defense Authorization Act for Fiscal Year 2023
+statutes | 10 | Marine Mammal Protection Act
+statutes | 10 | Rule General 8, Section 1
+statutes | 9 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
+statutes | 9 | National Defense Authorization Act for Fiscal Year 2022
+statutes | 9 | Rule 19b-4
+statutes | 9 | section 337 of the Tariff Act of 1930
+statutes | 8 | Educational, Scientific and Cultural Materials Importation Act of 1966
+statutes | 8 | Federal Advisory Committee Act of 1972
+statutes | 8 | Government in the Sunshine Act of 1976
+statutes | 8 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
+statutes | 7 | Arms Export Control Act
+statutes | 7 | National Defense Authorization Act for Fiscal Year 2019
+statutes | 7 | National Emergencies Act
+statutes | 7 | National Environmental Policy Act
+statutes | 7 | Public Health Service Act section 371(b)(1)
+statutes | 7 | Section 6(b) of the Act
+statutes | 7 | Social Security Act section 1138(a)(1)(C)
+statutes | 6 | 5 U.S.C. Chapter 10
+statutes | 6 | International Emergency Economic Powers Act section 1702(a)(1)(B)
+statutes | 6 | National Defense Authorization Act for Fiscal Year 2020
+statutes | 6 | Social Security Act section 1138(a)(1)(A)(iii)
+statutes | 6 | Social Security Act section 1138(a)(2)(A)
+statutes | 6 | Social Security Act section 1138(a)(2)(B)
+statutes | 6 | Trade Act of 1974 section 301
+statutes | 6 | Trade Expansion Act of 1962 section 232
+statutes | 5 | 44 U.S.C. Chapter 35
+statutes | 5 | Government in the Sunshine Act
 statutes | 5 | National Defense Authorization Act for Fiscal Year 2024
-statutes | 5 | Rule 19b-4
-statutes | 5 | Section 6(b) of the Act
-statutes | 5 | section 337 of the Tariff Act of 1930
+statutes | 5 | Sunshine Act
+statutes | 5 | section 232 of the Trade Expansion Act of 1962
+statutes | 4 | 44 U.S.C. chapter 35
+statutes | 4 | 5 U.S.C. chapter 10
+statutes | 4 | Atomic Energy Act of 1954
 statutes | 4 | Congressional Review Act
+statutes | 4 | Export Administration Act
+statutes | 4 | FTZ Act
 statutes | 4 | Infrastructure Investment and Jobs Act
-statutes | 4 | National Defense Authorization Act for Fiscal Year 2019
-statutes | 4 | National Defense Authorization Act for Fiscal Year 2020
-statutes | 4 | National Environmental Policy Act
 statutes | 4 | Section 1260H
+statutes | 4 | Section 303 of the Trade Act
 statutes | 4 | Section 6(b)(5) of the Act
-statutes | 4 | Sunshine Act
-statutes | 3 | 44 U.S.C. chapter 35
+statutes | 4 | Section 766.24 of the Export Administration Regulations
 statutes | 3 | 48 CFR Chapter 1
 statutes | 3 | Chemical and Biological Weapons Control and Warfare Elimination Act of 1991
 statutes | 3 | Energy Act of 2020
 statutes | 3 | FAA Reauthorization Act of 2024
-statutes | 3 | FTZ Act
+statutes | 3 | False Claims Act
 statutes | 3 | Foreign Assistance Act of 1961, Section 621
+statutes | 3 | Homeland Security Act of 2002
+statutes | 3 | Individuals with Disabilities Education Act (IDEA)
+statutes | 3 | National Environmental Policy Act of 1969
 statutes | 3 | Native American Graves Protection and Repatriation Act (NAGPRA)
+statutes | 3 | Natural Gas Act
+statutes | 3 | Section 205(d)
 statutes | 3 | Section 232 of the Trade Expansion Act of 1962
-statutes | 3 | Section 303 of the Trade Act
+statutes | 3 | Section 301 of the Trade Act of 1974
 statutes | 3 | Section 372 of the Public Health Service Act
+statutes | 3 | Securities Exchange Act of 1934, Section 6(b)
+statutes | 3 | Trade Act of 1974, section 301
+statutes | 3 | Trade Agreements Act of 1979
+statutes | 3 | Trade Expansion Act of 1962, section 232
 statutes | 3 | chapter 10 of title 5, United States Code
+statutes | 2 | 21st Century Emergency Communications Act of 2006
 statutes | 2 | 34 CFR Chapter III
-statutes | 2 | 44 U.S.C. Chapter 35
 statutes | 2 | 5 U.S.C. appendix
 statutes | 2 | 50 U.S.C. App. 2401 et seq.
+statutes | 2 | 50 U.S.C. App. Sec. 2401 et seq.
+statutes | 2 | Administrative False Claims Act of 2023
 statutes | 2 | American Security Drone Act of 2023
-statutes | 2 | Atomic Energy Act of 1954
+statutes | 2 | Aviation and Transportation Security Act
 statutes | 2 | Bank Secrecy Act
+statutes | 2 | Build America, Buy America Act
 statutes | 2 | Buy American Act
+statutes | 2 | Clean Air Act
+statutes | 2 | Clean Air Act Section 309(a)
 statutes | 2 | Combating Russian Money Laundering Act
 statutes | 2 | Computer Matching and Privacy Protection Act of 1988
+statutes | 2 | Consolidated Appropriations Act, 2023
+statutes | 2 | DFARS 252.204-7008
+statutes | 2 | DFARS 252.204-7012
 statutes | 2 | DFARS 252.209-7012
+statutes | 2 | DFARS 252.239-7009
+statutes | 2 | DFARS 252.239-7010
 statutes | 2 | Defense Base Closure and Realignment Act of 1990
+statutes | 2 | Department of Treasury Directive 21-03
 statutes | 2 | DoD Instruction 5200.01
+statutes | 2 | Emergency Planning and Community Right-to-Know Act
 statutes | 2 | Executive Order on Removing Barriers to American Leadership in Artificial Intelligence
-statutes | 2 | Export Administration Act
+statutes | 2 | FAA Order 1050.1G
 statutes | 2 | Farm Security and Rural Investment Act of 2002
+statutes | 2 | Federal Advisory Committee Act, 5 U.S.C. Ch. 10
 statutes | 2 | Federal Food, Drug, and Cosmetic Act
+statutes | 2 | Fiscal Year 2023 National Defense Authorization Act
+statutes | 2 | Foreign Assistance Act of 1961
 statutes | 2 | Foreign Assistance Act of 1961, Section 506(a)(1)
-statutes | 2 | Government in the Sunshine Act
+statutes | 2 | Freedom of Information Act
 statutes | 2 | Health Insurance Portability and Accountability Act of 1996
-statutes | 2 | Homeland Security Act of 2002
 statutes | 2 | Immigration and Nationality Act of 1952
-statutes | 2 | Individuals with Disabilities Education Act (IDEA)
+statutes | 2 | Implementing Recommendations of the 9/11 Commission Act of 2007
+statutes | 2 | Inspector General Act of 1978
+statutes | 2 | Inspector General Reform Act of 2008
+statutes | 2 | Iran, North Korea, and Syria Nonproliferation Act
+statutes | 2 | Marine Mammal Protection Act (MMPA)
+statutes | 2 | National Defense Authorization Act for Fiscal Year 2012
+statutes | 2 | National Defense Authorization Act for Fiscal Year 2013
 statutes | 2 | National Defense Authorization Act for Fiscal Year 2021
-statutes | 2 | National Environmental Policy Act of 1969
+statutes | 2 | National Defense Authorization Act of 2023
+statutes | 2 | National Organ Transplant Act
+statutes | 2 | National Security Memorandum 22
+statutes | 2 | Native American Graves Protection and Repatriation Act
+statutes | 2 | Order No. 881
+statutes | 2 | Pollution Prevention Act
+statutes | 2 | Presidential Memorandum of June 3, 2013
 statutes | 2 | Preventing Emerging Threats Act of 2018
 statutes | 2 | Proclamation 10962
 statutes | 2 | Proclamation 9704
 statutes | 2 | Proclamation 9705
 statutes | 2 | Proclamation 9888
+statutes | 2 | Program Fraud Civil Remedies Act of 1986
+statutes | 2 | Regulation NMS
+statutes | 2 | Regulatory Flexibility Act of 1980
+statutes | 2 | Sec. 201.14(a)
+statutes | 2 | Sec. 210.8(b)
 statutes | 2 | Section 1760(e) of the Export Control Reform Act
 statutes | 2 | Section 19(b)(2) of the Securities Exchange Act of 1934
-statutes | 2 | Section 205(d)
+statutes | 2 | Section 203 of the Federal Power Act
 statutes | 2 | Section 301 of the Trade Act
-statutes | 2 | Section 301 of the Trade Act of 1974
 statutes | 2 | Section 302 of the Trade Act of 1974
+statutes | 2 | Section 337 of the Tariff Act of 1930
 statutes | 2 | Section 3506(c)(2)(A) of the PRA
 statutes | 2 | Section 48D
 statutes | 2 | Section 50
-statutes | 2 | Trade Act of 1974, section 301
+statutes | 2 | Section 766.24
+statutes | 2 | Section 820 of the 2017 National Defense Authorization Act
+statutes | 2 | Social Security Act Section 1138
+statutes | 2 | Trade Act of 1974, section 604
+statutes | 2 | Trade Act of 1974, sections 301(b), 301(c), and 304(a)
 statutes | 2 | Trade Expansion Act of 1962
+statutes | 2 | USDOT Order 5610.1D
+statutes | 2 | Unfunded Mandates Reform Act of 1995
 statutes | 2 | Uniform Code of Military Justice
 statutes | 2 | VA Acquisition Regulation Clause 852.236-79
-statutes | 2 | section 232 of the Trade Expansion Act of 1962
+statutes | 2 | section 301 of the Trade Act of 1974
 statutes | 2 | section 508 of the Rehabilitation Act of 1973
+statutes | 1 | 10 U.S.C. chapter 56
 statutes | 1 | 10 United States Code section 1143
 statutes | 1 | 12 CFR Chapter X
 statutes | 1 | 14 CFR Section 107.120
 statutes | 1 | 14 CFR Section 107.130
 statutes | 1 | 14 CFR Section 107.160
+statutes | 1 | 14 CFR Section 108.180(b)
+statutes | 1 | 14 CFR Section 108.185(d)(5)(ii)
+statutes | 1 | 14 CFR Section 108.195(a)(2)
+statutes | 1 | 14 CFR Section 91.113
 statutes | 1 | 14 CFR, section 89.210
+statutes | 1 | 14 Code of Federal Regulations Part 1
+statutes | 1 | 14 Code of Federal Regulations Part 135
 statutes | 1 | 15 CFR Section 705.4
 statutes | 1 | 15 CFR chapter VII, subchapter C
+statutes | 1 | 15 CFR section 400.14
+statutes | 1 | 18 U.S.C. Sec. 202
 statutes | 1 | 2021 National Defense Authorization Act
-statutes | 1 | 21st Century Emergency Communications Act of 2006
 statutes | 1 | 21st Century Nanotechnology Research and Development Act
 statutes | 1 | 22 CFR chapter I, subchapter M
 statutes | 1 | 22 U.S.C. Chapter 52, Subchapter X
+statutes | 1 | 252.246-7003
+statutes | 1 | 252.246-7005
+statutes | 1 | 252.246-7006
+statutes | 1 | 252.246-7008
 statutes | 1 | 3 U.S. Code 301
 statutes | 1 | 31 U.S. Code Section 3729(b)(4)
 statutes | 1 | 35.13(a)(2)(iii)
@@ -982,6 +1296,7 @@ statutes | 1 | 38 U.S.C. chapter 23
 statutes | 1 | 40 Code of Federal Regulations parts 1500-1508
 statutes | 1 | 40 U.S.C. chapter 11
 statutes | 1 | 41 CFR Chapter 102-3.50(d)
+statutes | 1 | 41 CFR Chapter 102-3.55(2)
 statutes | 1 | 41 CFR chapter 102-3.50(c)
 statutes | 1 | 41 CFR chapter 102-3.55(a)(4)
 statutes | 1 | 41 U.S.C. chapter 83
@@ -992,21 +1307,29 @@ statutes | 1 | 48 CFR CMMC
 statutes | 1 | 48 CFR Ch. 1
 statutes | 1 | 5 Code of Federal Regulations 532.209
 statutes | 1 | 5 Code of Federal Regulations 532.227
+statutes | 1 | 5 U.S.C. Ch. 10
 statutes | 1 | 5 U.S.C. Chapter 71
-statutes | 1 | 5 U.S.C. chapter 10
 statutes | 1 | 5 United States Code 5343
+statutes | 1 | 5 United States Code 552a(r)
 statutes | 1 | 5 United States Code 553(d)
-statutes | 1 | 50 U.S.C. App. Sec. 2401 et seq.
 statutes | 1 | 50 U.S.C. Chapter 58
 statutes | 1 | 50 U.S.C. app. section 2401 et seq.
+statutes | 1 | 51-5.2(a)
+statutes | 1 | 90 Fed. Reg. 25498
+statutes | 1 | Administrative False Claims Act of 1986
 statutes | 1 | Administrative Procedure Act Section 553
+statutes | 1 | Age Discrimination Act of 1975
 statutes | 1 | Agricultural Act of 2014
+statutes | 1 | Agricultural Foreign Investment Disclosure Act of 1978
 statutes | 1 | Agricultural Marketing Act of 1946
 statutes | 1 | Agriculture Improvement Act of 2018
+statutes | 1 | American Innovation and Manufacturing Act of 2020
 statutes | 1 | American Security Drone Act
-statutes | 1 | Aviation and Transportation Security Act
+statutes | 1 | Americans with Disabilities Act of 1990
+statutes | 1 | Antitrust Procedures and Penalties Act
+statutes | 1 | Article I, section 8, United States Constitution
+statutes | 1 | Article VI, clause 2, United States Constitution
 statutes | 1 | Bipartisan Budget Act of 2018
-statutes | 1 | Build America, Buy America Act
 statutes | 1 | CABDA § 708
 statutes | 1 | CERCLA section 107(a)
 statutes | 1 | CERCLA section 113(f)(2)
@@ -1014,13 +1337,12 @@ statutes | 1 | Caesar Syria Civilian Protection Act of 2019
 statutes | 1 | Chemical Weapons Convention
 statutes | 1 | Chief Financial Officer Act
 statutes | 1 | Civil Rights Act of 1964
-statutes | 1 | Clean Air Act
-statutes | 1 | Clean Air Act Section 309(a)
 statutes | 1 | Commerce Control List
+statutes | 1 | Communications Assistance for Law Enforcement Act (CALEA)
 statutes | 1 | Comprehensive Environmental Response, Compensation and Liability Act of 1980
 statutes | 1 | Comprehensive Environmental Response, Compensation, and Liability Act
 statutes | 1 | Consolidated Appropriations Act, 2019
-statutes | 1 | Consolidated Appropriations Act, 2023
+statutes | 1 | Contract Disputes Act
 statutes | 1 | Controlled Substances Act
 statutes | 1 | Coral Reef Conservation Act of 2000
 statutes | 1 | Cyber Incident Reporting for Critical Infrastructure Act of 2022
@@ -1032,25 +1354,30 @@ statutes | 1 | DFARS 225.003
 statutes | 1 | DFARS 225.872-1(a)
 statutes | 1 | DFARS 232.502-4-70
 statutes | 1 | DFARS 235.010-70
+statutes | 1 | DFARS 237.270(e)(3)
+statutes | 1 | DFARS 237.270(e)(4)
 statutes | 1 | DFARS 252.204-7021
 statutes | 1 | DFARS 252.204-7025
+statutes | 1 | DFARS 252.225-7039
+statutes | 1 | DFARS 252.228-7005
 statutes | 1 | DFARS 252.232-7002
 statutes | 1 | DFARS 252.235-7010
 statutes | 1 | DFARS 252.237-7000
 statutes | 1 | DFARS 252.237-7011
 statutes | 1 | DFARS 252.237-7023
 statutes | 1 | DFARS 252.237-7024
+statutes | 1 | DFARS 252.237-7025
 statutes | 1 | DFARS 252.242-7004
 statutes | 1 | DFARS Part 232
 statutes | 1 | DFARS Part 242
-statutes | 1 | Department of Treasury Directive 21-03
+statutes | 1 | Debt Collection Improvement Act of 1996
+statutes | 1 | Department of Transportation Act Section 4(f)
 statutes | 1 | DoDI 1322.29
 statutes | 1 | DoDI 6130.03 Volume 1
 statutes | 1 | DoDI 6130.03 Volume 2
 statutes | 1 | Docket No. RM20-12-000
 statutes | 1 | Duncan Hunter NDAA for Fiscal Year 2009
 statutes | 1 | Earthquake Hazards Reduction Act of 1977
-statutes | 1 | Emergency Planning and Community Right-to-Know Act
 statutes | 1 | Emergency Planning and Community Right-to-Know Act (EPCRA)
 statutes | 1 | Emergency Planning and Community Right-to-Know Act section 313
 statutes | 1 | Emergency Veterans' Job Training Act of 1983
@@ -1072,6 +1399,7 @@ statutes | 1 | FAR 9.407-3(b)(1)
 statutes | 1 | FAR part 41
 statutes | 1 | FAR section 41.103
 statutes | 1 | FAR subpart 23.1
+statutes | 1 | FOIA Improvement Act of 2016
 statutes | 1 | FTC Rule 2.51
 statutes | 1 | FTC Rule 4.10(a)(2)
 statutes | 1 | FTC Rule 4.9(b)
@@ -1083,11 +1411,13 @@ statutes | 1 | Federal Acquisition Regulation 1.603
 statutes | 1 | Federal Acquisition Regulation 8.705-2
 statutes | 1 | Federal Acquisition Regulation part 12
 statutes | 1 | Federal Acquisition Regulation, Subpart 9.4
+statutes | 1 | Federal Acquisition Regulations
 statutes | 1 | Federal Acquisition Streamlining Act of 1994
 statutes | 1 | Federal Acquisition Supply Chain Security Act
 statutes | 1 | Federal Advisory Committee Act (FACA)
 statutes | 1 | Federal Advisory Committee Act (FACA) of 1972
 statutes | 1 | Federal Advisory Committee Act section 1009
+statutes | 1 | Federal Advisory Committee Act, section 1009
 statutes | 1 | Federal Cybersecurity Enhancement Act of 2015
 statutes | 1 | Federal Information Security Management Act of 2002
 statutes | 1 | Federal Land Policy and Management Act
@@ -1095,22 +1425,23 @@ statutes | 1 | Federal Power Act Section 204
 statutes | 1 | Federal Power Act section 202
 statutes | 1 | Federal Power Act section 202(c)
 statutes | 1 | Federal Power Act section 206
+statutes | 1 | Federal Property and Administrative Services Act of 1949
+statutes | 1 | Federal Trade Commission Act
 statutes | 1 | Federal Trade Commission Act, section 6(g)
 statutes | 1 | Federal Vacancies Reform Act of 1998
-statutes | 1 | Fiscal Year 2023 National Defense Authorization Act
 statutes | 1 | Fixing America's Surface Transportation Act
 statutes | 1 | Food, Conservation, and Energy Act of 2008
-statutes | 1 | Foreign Assistance Act of 1961
 statutes | 1 | Foreign Assistance Act of 1961, Section 506(a)(3)
 statutes | 1 | Foreign Assistance Act of 1961, Section 614(a)(1)
 statutes | 1 | Foreign Assistance Act of 1961, section 506(a)(3)
 statutes | 1 | Foreign Assistance Act of 1961, section 621
 statutes | 1 | Foreign-Trade Zones Act
+statutes | 1 | Foundations for Evidence-Based Policymaking Act of 2018
 statutes | 1 | Frank LoBiondo Coast Guard Authorization Act of 2018
 statutes | 1 | Frederick Douglass Trafficking Victims Prevention and Protection Reauthorization Act of 2018
-statutes | 1 | Freedom of Information Act
 statutes | 1 | Freedom of Information Act (FOIA)
 statutes | 1 | GSAR part 541
+statutes | 1 | General 8, Section 1(d)
 statutes | 1 | Government Performance and Results Act
 statutes | 1 | Government in Sunshine Act
 statutes | 1 | Hazardous and Solid Waste Amendments of 1984
@@ -1119,28 +1450,25 @@ statutes | 1 | High Seas Driftnet Fishing Moratorium Protection Act
 statutes | 1 | High-Performance Computing Act of 1991
 statutes | 1 | Homebuyers Privacy Protection Act
 statutes | 1 | Homeland Security Act Section 201
+statutes | 1 | ICC Termination Act of 1995
 statutes | 1 | IFCA Section 1245(a)(1)(B)
 statutes | 1 | IFCA Section 1245(a)(1)(C)
 statutes | 1 | IFCA Section 1245(d)
 statutes | 1 | IFCA Section 1245(e)
+statutes | 1 | IRS Restructuring and Reform Act of 1998
 statutes | 1 | ITAR Sec. 121.1
 statutes | 1 | ITAR Section 120.1(b)
 statutes | 1 | ITAR Section 121.1
 statutes | 1 | ITAR Section 126.2
 statutes | 1 | Illegal, Unreported, and Unregulated Fishing Enforcement Act of 2015
 statutes | 1 | Illicit Captagon Trafficking Suppression Act of 2023
-statutes | 1 | Implementing Recommendations of the 9/11 Commission Act of 2007
-statutes | 1 | Inspector General Act of 1978
-statutes | 1 | Inspector General Reform Act of 2008
 statutes | 1 | Internal Revenue Code sections 48D and 50(a)
 statutes | 1 | Internal Revenue Service Restructuring and Reform Act of 1998
-statutes | 1 | International Emergency Economic Powers Act section 1702(a)(1)(B)
 statutes | 1 | IoT Cybersecurity Improvement Act of 2020
-statutes | 1 | Iran, North Korea, and Syria Nonproliferation Act
 statutes | 1 | James Zadroga 9/11 Health and Compensation Act of 2010
 statutes | 1 | Javits-Wagner-O'Day Act (41 U.S.C. chapter 85)
+statutes | 1 | John S. McCain National Defense Authorization Act (NDAA) for Fiscal Year (FY) 2019
 statutes | 1 | Joint Resolution approved May 20, 1933
-statutes | 1 | Marine Mammal Protection Act (MMPA)
 statutes | 1 | Maritime Transportation Security Act of 2002
 statutes | 1 | Mineral Leasing Act for Acquired Lands of 1947
 statutes | 1 | Mineral Leasing Act of 1920
@@ -1148,46 +1476,48 @@ statutes | 1 | Mining Act of 1872
 statutes | 1 | Multiple Mineral Development Act of 1954
 statutes | 1 | Mutual Educational and Cultural Exchange Act of 1961
 statutes | 1 | NDAA for FY 2021 section 535
+statutes | 1 | NDAA for Fiscal Year 2019
 statutes | 1 | NDAA section 7321
+statutes | 1 | NIST SP 800-171
 statutes | 1 | NIST Special Publication 800-181
 statutes | 1 | NYSE Arca Rule 7.31-E
 statutes | 1 | National Defense Authorization Act for FY 2019
+statutes | 1 | National Defense Authorization Act for FY 2026
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2004 (NDAA)
+statutes | 1 | National Defense Authorization Act for Fiscal Year 2006
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2011
-statutes | 1 | National Defense Authorization Act for Fiscal Year 2012
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2012, Section 1245(d)(4)(B) and (C)
-statutes | 1 | National Defense Authorization Act for Fiscal Year 2013
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2018
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2020 (NDAA)
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2020, section 1648
+statutes | 1 | National Defense Authorization Act for Fiscal Year 2025
 statutes | 1 | National Defense Authorization Act for Fiscal Year 2026
-statutes | 1 | National Defense Authorization Act of 2023
 statutes | 1 | National Environmental Policy Act (NEPA)
 statutes | 1 | National Environmental Policy Act (NEPA) of 1969
-statutes | 1 | National Organ Transplant Act
+statutes | 1 | National Historic Preservation Act Section 106
 statutes | 1 | National Organ Transplant Act of 1984
 statutes | 1 | National Register of Historic Places (NRHP)
 statutes | 1 | National School Lunch Act
 statutes | 1 | National Security Memorandum 10
-statutes | 1 | National Security Memorandum 22
 statutes | 1 | National Security Presidential Directive 54/HSPD-23
 statutes | 1 | National Security Presidential Memorandum 10 of April 19, 2018
-statutes | 1 | Native American Graves Protection and Repatriation Act
-statutes | 1 | Natural Gas Act
 statutes | 1 | OMB Circular A-130
 statutes | 1 | OMB Circular No. A-108
 statutes | 1 | OMB Circular No. A-130
+statutes | 1 | OMB Memorandum 25-21
+statutes | 1 | OPEN Government Act of 2007
 statutes | 1 | Office of Federal Procurement Policy (OFPP) Act
 statutes | 1 | Office of Federal Procurement Policy Act
-statutes | 1 | Order No. 881
+statutes | 1 | Order No. 1920
+statutes | 1 | Order No. 2023
 statutes | 1 | Part 107
 statutes | 1 | Patient Protection and Affordable Care Act, Section 1557
 statutes | 1 | Patient Safety and Quality Improvement Act of 2005
+statutes | 1 | Payment Integrity Information Act of 2019
+statutes | 1 | Pension Protection Act of 2006
 statutes | 1 | Plain Writing Act of 2010
-statutes | 1 | Pollution Prevention Act
 statutes | 1 | Pollution Prevention Act (PPA)
 statutes | 1 | Pollution Prevention Act section 6607
-statutes | 1 | Presidential Memorandum of June 3, 2013
 statutes | 1 | Presidential Policy Directive 21
 statutes | 1 | Presidential Policy Directive 41
 statutes | 1 | Proclamation 10908
@@ -1201,26 +1531,32 @@ statutes | 1 | Public Health Service Act Section 372
 statutes | 1 | Public Health Service Act, Section 306(b)(4)
 statutes | 1 | Pueblo Depot Activity Development Authority Act
 statutes | 1 | Regulatory Flexibility Act
-statutes | 1 | Regulatory Flexibility Act of 1980
 statutes | 1 | Resource Conservation and Recovery Act (RCRA)
 statutes | 1 | Richard B. Russell National School Lunch Act
 statutes | 1 | Ronald W. Reagan National Defense Authorization Act for Fiscal Year 2005
+statutes | 1 | Rule 608
 statutes | 1 | SBIR and STTR Extension Act of 2022
+statutes | 1 | SCRA
 statutes | 1 | Sarbanes-Oxley Act of 2002
-statutes | 1 | Sec. 201.14(a)
-statutes | 1 | Sec. 210.8(b)
+statutes | 1 | Sec. 210.8(b) of the Commission's Rules of Practice and Procedure
 statutes | 1 | Sec. 744.11
 statutes | 1 | Sec. 744.11(b)
+statutes | 1 | Section 1055(c) of the William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
+statutes | 1 | Section 106 of the National Historic Preservation Act
 statutes | 1 | Section 107.120
 statutes | 1 | Section 107.130
 statutes | 1 | Section 107.155
 statutes | 1 | Section 107.160
 statutes | 1 | Section 110 of the Rivers and Harbors Act of 1962
+statutes | 1 | Section 11A of the Securities Exchange Act of 1934
+statutes | 1 | Section 1245 of the National Defense Authorization Act for Fiscal Year 2013
 statutes | 1 | Section 1245(d)(4)(B) and (C) of the National Defense Authorization Act for Fiscal Year 2012
 statutes | 1 | Section 1760(e) of ECRA
+statutes | 1 | Section 1806 of the 2026 National Defense Authorization Act
+statutes | 1 | Section 19(b)(2)(D) of the Act
 statutes | 1 | Section 192.705
 statutes | 1 | Section 195.412
-statutes | 1 | Section 203 of the Federal Power Act
+statutes | 1 | Section 204 of the Federal Power Act
 statutes | 1 | Section 2203 of the FAA Extension, Safety, and Security Act of 2016
 statutes | 1 | Section 301
 statutes | 1 | Section 301(b)
@@ -1230,50 +1566,63 @@ statutes | 1 | Section 302(b)(1)(A) of the Trade Act of 1974
 statutes | 1 | Section 302(b)(1)(B) of the Trade Act
 statutes | 1 | Section 303(a) of the Trade Act
 statutes | 1 | Section 304 of the Trade Act
+statutes | 1 | Section 307(a)(1) of the Trade Act
 statutes | 1 | Section 32 of the Act of August 24, 1935
 statutes | 1 | Section 336 of the FAA Modernization and Reform Act of 2012
-statutes | 1 | Section 337 of the Tariff Act of 1930
 statutes | 1 | Section 38 of the Arms Export Control Act
+statutes | 1 | Section 4(f) of the Department of Transportation Act
 statutes | 1 | Section 44803 of title 49, United States Code
+statutes | 1 | Section 504 of the Rehabilitation Act of 1973
 statutes | 1 | Section 523 of the National Defense Authorization Act for Fiscal Year 2020
 statutes | 1 | Section 538 of FY18 NDAA
+statutes | 1 | Section 6(b) of the Securities Exchange Act
+statutes | 1 | Section 6(b)(4) and 6(b)(5)
+statutes | 1 | Section 6(b)(4) and 6(b)(5) of the Act
 statutes | 1 | Section 611(c)(1) of IDEA
 statutes | 1 | Section 616(i) of IDEA
+statutes | 1 | Section 7 of the Clayton Act
+statutes | 1 | Section 7(c) of the Natural Gas Act
 statutes | 1 | Section 708 of the Defense Production Act of 1950
 statutes | 1 | Section 743 of Division C of the Consolidated Appropriations Act of 2010
-statutes | 1 | Section 766.24
-statutes | 1 | Section 766.24 of the Export Administration Regulations
 statutes | 1 | Section 766.25 of the Export Administration Regulations
+statutes | 1 | Section 809 of the 2016 National Defense Authorization Act
 statutes | 1 | Section 812
 statutes | 1 | Section 812 of the National Defense Authorization Act for Fiscal Year 2024
-statutes | 1 | Section 820 of the 2017 National Defense Authorization Act
 statutes | 1 | Section 874 of the National Defense Authorization Act for Fiscal Year 2024
 statutes | 1 | Section 9002 of FSRIA
 statutes | 1 | Section 916 of the FAA Reauthorization Act of 2024
+statutes | 1 | Section 933 of the FAA Reauthorization Act of 2024
 statutes | 1 | Sections 766.23 and 766.25
 statutes | 1 | Securities Exchange Act of 1934, Section 19(b)(2)
+statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and (5)
+statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and 6(b)(5)
+statutes | 1 | Securities Exchange Act of 1934, Sections 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, section 19(b)(1)
 statutes | 1 | Service Members Occupational Conversion and Training Act of 1992
 statutes | 1 | Small Business Paperwork Relief Act of 2002
-statutes | 1 | Social Security Act Section 1138
+statutes | 1 | Small Business Regulatory Enforcement Fairness Act of 1996
+statutes | 1 | Social Security Act section 1138(a)(2)(D)
+statutes | 1 | Staggers Rail Act of 1980
 statutes | 1 | Syria Accountability and Lebanese Sovereignty Restoration Act of 2003
+statutes | 1 | Tenth Amendment of the United States Constitution
 statutes | 1 | Title 10 of the Code of Federal Regulations, Part 7
 statutes | 1 | Title 13, U.S. Code, Section 9
 statutes | 1 | Title 3, U.S. Code, Section 301
 statutes | 1 | Title 30, U.S.C., Sec. 1606(a)(3)
+statutes | 1 | Title 41 of the U.S. Code of Federal Regulations, Section 102-3.65(a)
+statutes | 1 | Title 5 U.S.C. sections 552b(c)(4) and 552b(c)(6)
 statutes | 1 | Title 7, Section 3171 and 2026 (a) (1)
 statutes | 1 | Title III of the Trade Agreements Act of 1979
 statutes | 1 | Title IX
 statutes | 1 | Title VII of the U.S. Code
-statutes | 1 | Trade Act of 1974 section 301
-statutes | 1 | Trade Act of 1974, section 604
-statutes | 1 | Trade Agreements Act of 1979
-statutes | 1 | Trade Expansion Act of 1962 section 232
-statutes | 1 | Trade Expansion Act of 1962, section 232
+statutes | 1 | Trade Act of 1974, Section 301(b)
+statutes | 1 | Trade Act of 1974, Section 307(a)
+statutes | 1 | Trade Act of 1974, Section 307(a)(2)(b)
+statutes | 1 | Trade Act, Section 307(a)
 statutes | 1 | Trading With the Enemy Act (50 U.S.C. App. 1 et seq.)
 statutes | 1 | Treasury Order 180-01
 statutes | 1 | USA PATRIOT Act section 311
-statutes | 1 | Unfunded Mandates Reform Act of 1995
+statutes | 1 | VA MISSION Act of 2018
 statutes | 1 | VAAR Clause 852.228-71
 statutes | 1 | VAAR Clause 852.237-7
 statutes | 1 | Victims of Crime Act
@@ -1285,7 +1634,8 @@ statutes | 1 | William M. Thornberry National Defense Authorization Act for Fisc
 statutes | 1 | section 1009(a)(3) of title 5, United States Code
 statutes | 1 | section 1009(d) of title 5, United States Code
 statutes | 1 | section 1012 of the National Defense Authorization Act for Fiscal Year 1995
-statutes | 1 | section 301 of the Trade Act of 1974
+statutes | 1 | section 1108 of the John S. McCain National Defense Authorization Act for Fiscal Year 2019
+statutes | 1 | section 1702(a)(1)(B) of the International Emergency Economic Powers Act
 statutes | 1 | section 337 of Tariff Act of 1930
 statutes | 1 | section 400.14
 statutes | 1 | section 552b of title 5, United States Code
