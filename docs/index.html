@@ -116,6 +116,8 @@ function init(d) {
   document.getElementById("updated").textContent =
     `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents · ${d.links.length} links · ${d.clusters.length} clusters`;
   renderClusters();
+  // With no clusters yet the map would be empty, so show every document until links appear.
+  if (!d.clusters.length) document.getElementById("showAll").checked = true;
   document.getElementById("showAll").addEventListener("change", drawMap);
   document.getElementById("reset").addEventListener("click", () => { focusCluster = null; renderClusters(); drawMap(); });
   drawMap();
