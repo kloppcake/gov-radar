@@ -336,7 +336,7 @@ def validate_entities(parsed, source_text):
 def summarize_one(client, cfg, row):
     prompt = USER_PROMPT.format(text=row["text"])
     for attempt in range(2):
-        resp = client.messages.create(model=cfg["model"], max_tokens=2000, temperature=0,
+        resp = client.messages.create(model=cfg["model"], max_tokens=2000,
                                       system=SYSTEM_PROMPT, messages=[{"role": "user", "content": prompt}])
         usage = (resp.usage.input_tokens, resp.usage.output_tokens)
         try:
@@ -367,6 +367,7 @@ def step_summarize(cfg, db, stats):
             return row, None, (0, 0), e
 
     done = 0
+    stats["summary_attempted"] = len(rows)
     with ThreadPoolExecutor(cfg["llm_workers"]) as ex:
         for row, parsed, (tin, tout), err in ex.map(work, rows):
             stats["tokens_in"] += tin
@@ -679,6 +680,9 @@ def main():
     log(f"Estimated cost                : ${cost:.4f}  ({cfg['model']})")
     log(f"Site data                     : {n_docs} documents, {n_links} links, {n_clusters} clusters")
     log(f"Time                          : {time.time() - started:.0f}s")
+    if stats["summary_attempted"] and not stats["docs_summarized"]:
+        log("ERROR: every summary failed (see 'failed ...' lines above). Failing the run so it is not mistaken for success.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
