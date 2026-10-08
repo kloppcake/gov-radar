@@ -948,7 +948,7 @@ def step_link_cluster_export(cfg, db, stats):
     # --- AI-written text (cached); falls back to plain templates without an API key
     tasks = [{"key": f"group:{g['id']}", "prompt": group_prompt(g), "validate": ok_text("descriptor", 90)} for g in groups]
     tasks += [{"key": f"cluster:{c['id']}", "prompt": cluster_prompt(c, doc_by_id),
-               "validate": lambda p: ok_text("summary", 700)(p) and ok_text("title", 80)(p)} for c in clusters]
+               "validate": lambda p: ok_text("summary", 1000)(p) and ok_text("title", 80)(p)} for c in clusters]
     ai = step_ai_text(cfg, db, tasks, stats)
     for g in groups:
         g["descriptor"] = (ai.get(f"group:{g['id']}") or {}).get("descriptor")
