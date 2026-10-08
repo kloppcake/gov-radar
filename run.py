@@ -791,7 +791,11 @@ def cluster_relations(cfg, clusters, links, cluster_of_unit):
 
 # --------------------------------------------------------------------------- step 9: build-time AI text (cached)
 
-SPECULATION = re.compile(r"\b(intend\w*|intent|secret\w*|conspir\w*|agenda|hidden|really)\b", re.I)
+# Phrasings that signal guessing about motive or secrecy. Plain words like "hidden ownership" or "intended use" can
+# legitimately appear in what a document says, so only speculative phrasings are blocked.
+SPECULATION = re.compile(r"\b(secret\w*|conspir\w*|agenda|really|behind the scenes"
+                         r"|(intends?|plans?|aims?|seeks?) to (secretly|covertly|quietly|undermine|control|circumvent)"
+                         r"|hidden (plan|agenda|motive)s?)\b", re.I)
 AI_SYSTEM = ("You write short, neutral descriptions of groups of US government documents. Use ONLY the facts supplied. "
              "Describe what the documents share. Never guess at motives, intent, or plans, never say or imply that "
              "anyone is coordinating, and never add facts that are not in the input. Reply with one JSON object only.")
@@ -864,7 +868,7 @@ def step_ai_text(cfg, db, tasks, stats):
             stats["tokens_out"] += tout
             if parsed is None or not t["validate"](parsed):
                 stats["ai_rejected"] += 1
-                log(f"  AI text rejected for {t['key']} ({err or 'failed checks'}); using template")
+                log(f"  AI text rejected for {t['key']} ({err or 'failed checks'}); using template. Text was: {str(parsed)[:260]}")
                 continue
             db.execute("INSERT OR REPLACE INTO ai_text (hash, kind, text, created) VALUES (?,?,?,?)",
                        (h, t["key"].split(":")[0], json.dumps(parsed), dt.datetime.now().isoformat(timespec="seconds")))
