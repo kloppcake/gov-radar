@@ -25,20 +25,37 @@
   .sub { color: var(--muted); font-size: .85rem; margin: 0 0 12px; }
   .banner { background: var(--warn-bg); border: 1px solid var(--warn-line); border-radius: 8px; padding: 10px 14px; margin-bottom: 16px; }
   .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 14px; margin-bottom: 16px; }
-  #clusters { list-style: none; margin: 0; padding: 0; max-height: 280px; overflow-y: auto; }
-  #clusters li { margin: 0; }
-  .cl { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 10px 6px; cursor: pointer; color: inherit; font: inherit; display: flex; gap: 10px; align-items: baseline; }
+  .filters { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: end; }
+  .filters label { display: flex; flex-direction: column; font-size: .8rem; color: var(--muted); gap: 2px; }
+  .filters input[type=search], .filters select { font: inherit; font-size: .95rem; padding: 6px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--text); min-width: 140px; }
+  .filters input[type=search] { min-width: 220px; flex: 1; }
+  .filters .check { flex-direction: row; align-items: center; gap: 6px; color: var(--text); font-size: .9rem; padding-bottom: 6px; }
+  #clusters { list-style: none; margin: 0; padding: 0; max-height: 330px; overflow-y: auto; }
+  .cl { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 8px 6px; cursor: pointer; color: inherit; font: inherit; display: block; }
   .cl:hover, .cl[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  .cl .top { display: flex; gap: 10px; align-items: baseline; }
   .cl .rank { color: var(--muted); min-width: 1.8em; }
   .cl .name { flex: 1; font-weight: 600; overflow-wrap: anywhere; }
   .cl .counts { color: var(--muted); font-size: .85rem; white-space: nowrap; }
+  .cl .about { color: var(--muted); font-size: .82rem; margin: 2px 0 0 2.2em; overflow-wrap: anywhere; }
   .new { color: var(--cross); font-weight: 600; }
-  .toolbar { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin-bottom: 10px; font-size: .9rem; }
-  .legend span { display: inline-flex; align-items: center; gap: 5px; margin-right: 12px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
+  .tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: inherit; cursor: pointer; }
+  .tab[aria-selected="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
+  .count { color: var(--muted); font-size: .85rem; margin-left: auto; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; margin-right: 12px; font-size: .85rem; }
   .sw { width: 12px; height: 12px; display: inline-block; }
   .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
-  @media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr; } }
-  #map { height: 62vh; min-height: 360px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); }
+  @media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr; } #detail { position: sticky; top: 8px; align-self: start; max-height: 92vh; overflow-y: auto; } }
+  #map { height: 62vh; min-height: 360px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); position: relative; }
+  .mapmsg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--muted); }
+  #list { list-style: none; margin: 0; padding: 0; }
+  .row { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 10px 4px; cursor: pointer; color: inherit; font: inherit; display: block; }
+  .row:hover, .row[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .row .t { font-weight: 600; overflow-wrap: anywhere; }
+  .row .m { color: var(--muted); font-size: .8rem; margin: 1px 0; }
+  .row .s { font-size: .88rem; overflow-wrap: anywhere; }
+  .dot { display: inline-block; width: 9px; height: 9px; margin-right: 6px; }
   #detail { overflow-wrap: anywhere; }
   #detail h3 { margin: 0 0 6px; font-size: 1.05rem; }
   .meta { color: var(--muted); font-size: .85rem; margin-bottom: 8px; }
@@ -51,7 +68,7 @@
   a { color: var(--accent); }
   ul.plain { margin: 4px 0; padding-left: 18px; }
   .hint { color: var(--muted); }
-  button.small { font: inherit; font-size: .85rem; padding: 3px 10px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+  button.small { font: inherit; font-size: .85rem; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
 </style>
 </head>
 <body>
@@ -61,26 +78,60 @@
   <div class="banner" role="note">Shows documents that share programs, laws, or funding. It does not show intent or plans.</div>
 </header>
 <main>
+  <section class="card" aria-label="Filters">
+    <div class="filters">
+      <label>Search (title, summary, agency, law…)<input type="search" id="q" placeholder="e.g. quantum, Navy, export controls"></label>
+      <label>Topic
+        <select id="lane">
+          <option value="all">All topics</option>
+          <option value="ai_tech">AI &amp; tech</option>
+          <option value="defense_spending">Defense spending</option>
+          <option value="crossover">Crossover only (both)</option>
+        </select></label>
+      <label>Published
+        <select id="time">
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 3 months</option>
+          <option value="365">Last year</option>
+          <option value="all" selected>All time</option>
+        </select></label>
+      <label>Source
+        <select id="source">
+          <option value="all">All sources</option>
+          <option value="federal_register">Federal Register</option>
+          <option value="gao">GAO reports</option>
+        </select></label>
+      <button class="small" id="clear">Clear filters</button>
+    </div>
+  </section>
+
   <section class="card" aria-labelledby="ch">
-    <h2 id="ch">Top clusters <span class="hint" style="font-weight:400">(ranked by documents from the last 30 days; tap one to focus the map)</span></h2>
-    <ol id="clusters"></ol>
+    <h2 id="ch">Clusters <span class="hint" style="font-weight:400">(groups of documents sharing a law, program, or funding; tap one to focus)</span></h2>
+    <ol id="clusters" style="padding:0"></ol>
   </section>
 
   <section class="grid">
     <div class="card">
-      <div class="toolbar">
-        <span class="legend">
-          <span><i class="sw" style="background:var(--ai);border-radius:50%"></i>AI &amp; tech</span>
-          <span><i class="sw" style="background:var(--def)"></i>Defense spending</span>
-          <span><i class="sw" style="background:var(--cross);transform:rotate(45deg) scale(.85)"></i>Crossover (both)</span>
-        </span>
-        <label><input type="checkbox" id="showAll"> Show documents with no links</label>
-        <button class="small" id="reset" hidden>Show all clusters</button>
+      <div class="tabs">
+        <button class="tab" id="tab-list" role="tab" aria-selected="true">Document list</button>
+        <button class="tab" id="tab-map" role="tab" aria-selected="false">Map</button>
+        <span class="count" id="count"></span>
       </div>
-      <div id="map" role="img" aria-label="Network map of linked government documents"></div>
-      <p class="sub" style="margin-top:8px">Tap a dot for the document. Tap a line to see why two documents are linked.</p>
+      <div id="listview"><ul id="list"></ul><p><button class="small" id="more" hidden>Show more</button></p></div>
+      <div id="mapview" hidden>
+        <div class="filters" style="margin-bottom:8px">
+          <span class="legend">
+            <span><i class="sw" style="background:var(--ai);border-radius:50%"></i>AI &amp; tech</span>
+            <span><i class="sw" style="background:var(--def)"></i>Defense spending</span>
+            <span><i class="sw" style="background:var(--cross);transform:rotate(45deg) scale(.85)"></i>Crossover</span>
+          </span>
+          <label class="check"><input type="checkbox" id="showAll"> Include documents with no links</label>
+        </div>
+        <div id="map" role="img" aria-label="Network map of linked government documents"></div>
+        <p class="sub" style="margin-top:8px">Tap a dot for the document. Tap a line to see why two documents are linked.</p>
+      </div>
     </div>
-    <div class="card" id="detail" aria-live="polite"><p class="hint">Select a document or a link on the map.</p></div>
+    <div class="card" id="detail" aria-live="polite"><p class="hint">Pick a cluster to see what it is about, or tap a document to read its summary.</p></div>
   </section>
 </main>
 
@@ -100,56 +151,152 @@ function h(tag, attrs, ...kids) {
   return e;
 }
 function fill(box, ...kids) { box.replaceChildren(...kids.flat(Infinity).filter(k => k != null)); }
+const $ = id => document.getElementById(id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
 const LANE_NAMES = { ai_tech: "AI & tech", defense_spending: "Defense spending", crossover: "Crossover" };
 const laneOf = d => d.crossover ? "crossover" : d.lanes[0];
+const MAP_LIMIT = 400, PAGE = 50;
 
-let data, docs = {}, linkByEdgeId = {}, network, nodes, edges, focusCluster = null, selected = null;
+let data, docs = {}, clusterInfo = {}, linkByEdgeId = {}, network, nodes, edges;
+let focusCluster = null, view = "list", shown = PAGE, now = new Date();
 
 fetch("data.json").then(r => r.json()).then(init).catch(err => {
-  document.getElementById("updated").textContent = "Could not load data.json (" + err + "). If you opened this file directly, serve the folder instead: python -m http.server -d docs";
+  $("updated").textContent = "Could not load data.json (" + err + "). If you opened this file directly, serve the folder instead: python -m http.server -d docs";
 });
 
 function init(d) {
   data = d;
+  now = new Date(d.generated_at);
   d.documents.forEach(x => docs[x.id] = x);
-  document.getElementById("updated").textContent =
-    `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents · ${d.links.length} links · ${d.clusters.length} clusters`;
-  renderClusters();
-  // With no clusters yet the map would be empty, so show every document until links appear.
-  if (!d.clusters.length) document.getElementById("showAll").checked = true;
-  document.getElementById("showAll").addEventListener("change", drawMap);
-  document.getElementById("reset").addEventListener("click", () => { focusCluster = null; renderClusters(); drawMap(); });
-  drawMap();
+  d.clusters.forEach(c => clusterInfo[c.id] = describeCluster(c));
+  $("updated").textContent = `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents · ${d.links.length} links · ${d.clusters.length} clusters`;
+  for (const id of ["q", "lane", "time", "source"]) $(id).addEventListener(id === "q" ? "input" : "change", refresh);
+  $("clear").addEventListener("click", () => { $("q").value = ""; $("lane").value = "all"; $("time").value = "all"; $("source").value = "all"; focusCluster = null; refresh(); });
+  $("showAll").addEventListener("change", drawMap);
+  $("tab-list").addEventListener("click", () => setView("list"));
+  $("tab-map").addEventListener("click", () => setView("map"));
+  $("more").addEventListener("click", () => { shown += PAGE; renderList(); });
+  refresh();
 }
 
+// ---- cluster descriptions (computed here from the data, no extra model calls) ----
+function topN(items, n, skip) {
+  const c = {};
+  items.forEach(x => { if (!skip || !skip.has(x)) c[x] = (c[x] || 0) + 1; });
+  return Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, n).map(e => e[0]);
+}
+function describeCluster(c) {
+  const ds = c.doc_ids.map(i => docs[i]);
+  const dates = ds.map(d => d.pub_date).filter(Boolean).sort();
+  const common = new Set(["Government Accountability Office", "Office of Management and Budget"]);
+  return {
+    agencies: topN(ds.flatMap(d => d.agencies), 3, common),
+    laws: topN(ds.flatMap(d => d.statutes.concat(d.programs)), 3),
+    from: dates[0], to: dates[dates.length - 1],
+    newest: ds.slice().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || ""))[0]
+  };
+}
+const fmtMonth = s => s ? new Date(s + "T00:00:00").toLocaleDateString(undefined, { month: "short", year: "numeric" }) : "";
+
+// ---- filtering ----
+function matches(d) {
+  const lane = $("lane").value, time = $("time").value, src = $("source").value, q = $("q").value.trim().toLowerCase();
+  if (focusCluster !== null && d.cluster !== focusCluster) return false;
+  if (lane === "crossover" ? !d.crossover : (lane !== "all" && !d.lanes.includes(lane))) return false;
+  if (src !== "all" && d.source !== src) return false;
+  if (time !== "all" && d.pub_date && (now - new Date(d.pub_date + "T00:00:00")) / 864e5 > Number(time)) return false;
+  if (q) {
+    const hay = (d.title + " " + d.summary + " " + [].concat(d.agencies, d.programs, d.statutes, d.dollar_amounts).join(" ")).toLowerCase();
+    if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
+  }
+  return true;
+}
+const visible = () => data.documents.filter(matches);
+
+function refresh() { shown = PAGE; renderClusters(); renderList(); if (view === "map") drawMap(); updateCount(); }
+
+function setView(v) {
+  view = v;
+  $("tab-list").setAttribute("aria-selected", v === "list");
+  $("tab-map").setAttribute("aria-selected", v === "map");
+  $("listview").hidden = v !== "list"; $("mapview").hidden = v !== "map";
+  if (v === "map") drawMap();
+}
+function updateCount() {
+  const n = visible().length;
+  $("count").textContent = `${n} of ${data.documents.length} documents` + (focusCluster !== null ? " · one cluster" : "");
+}
+
+// ---- clusters ----
 function renderClusters() {
-  const ol = document.getElementById("clusters");
-  ol.replaceChildren();
-  document.getElementById("reset").hidden = focusCluster === null;
-  if (!data.clusters.length) ol.append(h("li", { class: "hint" }, "No clusters yet. Clusters appear once documents share a program, law, or funding amount."));
-  data.clusters.forEach((c, i) => {
-    ol.append(h("li", {}, h("button", {
-      class: "cl", "aria-pressed": String(focusCluster === c.id),
-      onclick: () => { focusCluster = focusCluster === c.id ? null : c.id; renderClusters(); drawMap(); }
-    },
-      h("span", { class: "rank" }, (i + 1) + "."),
-      h("span", { class: "name" }, c.name),
-      h("span", { class: "counts" }, c.size + " docs · ", h("span", { class: c.new_this_week ? "new" : "" }, c.new_this_week + " new this week")))));
-  });
+  const ol = $("clusters"), saved = focusCluster;
+  const counts = {};
+  const keep = focusCluster; focusCluster = null;          // count per cluster using the other filters
+  data.documents.forEach(d => { if (d.cluster !== null && matches(d)) counts[d.cluster] = (counts[d.cluster] || 0) + 1; });
+  focusCluster = keep;
+  const rows = data.clusters.map((c, i) => ({ c, i, n: counts[c.id] || 0 })).filter(r => r.n > 0 || saved === r.c.id);
+  if (!rows.length) { fill(ol, h("li", { class: "hint" }, "No clusters match these filters.")); return; }
+  fill(ol, rows.map(({ c, i, n }) => {
+    const info = clusterInfo[c.id];
+    const about = [info.agencies.length ? "Agencies: " + info.agencies.join(", ") : null, fmtMonth(info.from) + " – " + fmtMonth(info.to)].filter(Boolean).join(" · ");
+    return h("li", {}, h("button", { class: "cl", "aria-pressed": String(saved === c.id), onclick: () => pickCluster(c.id) },
+      h("span", { class: "top" },
+        h("span", { class: "rank" }, (i + 1) + "."),
+        h("span", { class: "name" }, c.name),
+        h("span", { class: "counts" }, n + (n === c.size ? "" : " of " + c.size) + " docs · ", h("span", { class: c.new_this_week ? "new" : "" }, c.new_this_week + " new this week"))),
+      h("span", { class: "about" }, about)));
+  }));
+}
+function pickCluster(id) {
+  focusCluster = focusCluster === id ? null : id;
+  refresh();
+  if (focusCluster !== null) showCluster(id); else fill($("detail"), h("p", { class: "hint" }, "Pick a cluster to see what it is about, or tap a document to read its summary."));
+}
+function showCluster(id) {
+  const c = data.clusters[id], info = clusterInfo[id];
+  fill($("detail"),
+    h("h3", {}, c.name),
+    h("div", { class: "meta" }, `${c.size} documents · ${fmtMonth(info.from)} – ${fmtMonth(info.to)} · ${c.new_this_week} new this week`),
+    h("p", {}, "These documents are linked because they cite the same program, law, or funding. That shows a shared reference, not a shared plan."),
+    chipsBlock("Most common agencies", info.agencies), chipsBlock("Most common laws & programs", info.laws),
+    h("div", { class: "label" }, "Newest document"),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => showDoc(info.newest.id) }, info.newest.title)),
+    h("p", { class: "hint" }, "The list on the left now shows only this cluster. Use the Map tab to see how its documents connect."),
+    h("button", { class: "small", onclick: () => pickCluster(id) }, "Show all clusters"));
 }
 
-function shortTitle(t) { return t.length > 34 ? t.slice(0, 33) + "…" : t; }
+// ---- list ----
+function renderList() {
+  const list = visible().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || ""));
+  const colors = { ai_tech: "var(--ai)", defense_spending: "var(--def)", crossover: "var(--cross)" };
+  if (!list.length) { fill($("list"), h("li", { class: "hint" }, "No documents match these filters.")); $("more").hidden = true; return; }
+  fill($("list"), list.slice(0, shown).map(d => h("li", {},
+    h("button", { class: "row", "aria-pressed": "false", onclick: () => showDoc(d.id) },
+      h("div", { class: "t" }, h("i", { class: "dot", style: "background:" + colors[laneOf(d)] }), d.title),
+      h("div", { class: "m" }, `${d.source === "gao" ? "GAO" : "Federal Register"} · ${d.pub_date || ""} · ${LANE_NAMES[laneOf(d)]}` + (d.cluster !== null ? ` · cluster: ${data.clusters[d.cluster].name}` : "")),
+      h("div", { class: "s" }, d.summary)))));
+  $("more").hidden = list.length <= shown;
+  $("more").textContent = `Show more (${list.length - shown} left)`;
+}
 
+// ---- map ----
 function drawMap() {
-  const showAll = document.getElementById("showAll").checked;
+  const showAll = $("showAll").checked;
   const colors = { ai_tech: css("--ai"), defense_spending: css("--def"), crossover: css("--cross") };
   const shapes = { ai_tech: "dot", defense_spending: "square", crossover: "diamond" };
-  let list = data.documents.filter(d => focusCluster !== null ? d.cluster === focusCluster : (showAll || d.cluster !== null));
+  const list = visible().filter(d => showAll || d.cluster !== null);
+  const box = $("map");
+  if (network) { network.destroy(); network = null; }
+  if (list.length > MAP_LIMIT) {
+    fill(box, h("div", { class: "mapmsg" }, `${list.length} documents match, which is too many to read on one map (limit ${MAP_LIMIT}). Pick a cluster above, or narrow the filters (topic, dates, search).`));
+    return;
+  }
+  if (!list.length) { fill(box, h("div", { class: "mapmsg" }, "No linked documents match these filters.")); return; }
+  box.replaceChildren();
   const ids = new Set(list.map(d => d.id));
   nodes = new vis.DataSet(list.map(d => {
     const lane = laneOf(d);
-    return { id: d.id, label: shortTitle(d.title), title: d.title, shape: shapes[lane], size: 14,
+    return { id: d.id, label: list.length > 120 ? undefined : shortTitle(d.title), title: d.title, shape: shapes[lane], size: 14,
              color: { background: colors[lane], border: colors[lane] }, font: { size: 11, color: css("--text") } };
   }));
   linkByEdgeId = {};
@@ -157,15 +304,13 @@ function drawMap() {
   data.links.forEach((l, i) => {
     if (ids.has(l.a) && ids.has(l.b)) {
       linkByEdgeId["e" + i] = l;
-      es.push({ id: "e" + i, from: l.a, to: l.b, width: 1 + Math.min(l.reasons.length, 4), color: { color: css("--muted"), opacity: .6 }, selectionWidth: 3 });
+      es.push({ id: "e" + i, from: l.a, to: l.b, width: 1 + Math.min(l.reasons.length, 4), color: { color: css("--muted"), opacity: .55 }, selectionWidth: 3 });
     }
   });
   edges = new vis.DataSet(es);
-  if (network) network.destroy();
-  network = new vis.Network(document.getElementById("map"), { nodes, edges }, {
-    physics: { solver: "forceAtlas2Based", stabilization: { iterations: 250 } },
-    interaction: { hover: true, tooltipDelay: 150, hideEdgesOnDrag: false },
-    edges: { smooth: false }, nodes: { borderWidth: 1 }
+  network = new vis.Network(box, { nodes, edges }, {
+    physics: { solver: "forceAtlas2Based", stabilization: { iterations: 200 } },
+    interaction: { hover: true, tooltipDelay: 150 }, edges: { smooth: false }, nodes: { borderWidth: 1 }
   });
   network.once("stabilizationIterationsDone", () => network.setOptions({ physics: false }));
   network.on("click", p => {
@@ -173,32 +318,31 @@ function drawMap() {
     else if (p.edges.length) showEdge(p.edges[0]);
   });
 }
+const shortTitle = t => t.length > 34 ? t.slice(0, 33) + "…" : t;
 
-function selectDoc(id) {                 // used by "similar documents" buttons
+function selectDoc(id) {          // used by "similar" / "linked" buttons
   const d = docs[id];
   if (!d) return;
-  if (!nodes.get(id)) {
-    if (d.cluster !== null && d.cluster !== undefined) focusCluster = null; else document.getElementById("showAll").checked = true;
-    renderClusters(); drawMap();
-  }
-  network.selectNodes([id]); network.focus(id, { scale: 1, animation: true });
+  if (view === "map" && network && nodes && nodes.get(id)) { network.selectNodes([id]); network.focus(id, { scale: 1, animation: true }); }
   showDoc(id);
 }
 
-function chips(label, arr) {
+// ---- detail panel ----
+function chipsBlock(label, arr) {
   if (!arr || !arr.length) return null;
   return [h("div", { class: "label" }, label), h("div", { class: "chips" }, arr.map(x => h("span", { class: "chip" }, x)))];
 }
 
 function showDoc(id) {
-  const d = docs[id], box = document.getElementById("detail");
-  fill(box,
+  const d = docs[id];
+  fill($("detail"),
     h("h3", {}, d.title),
     h("div", { class: "meta" }, `${d.source === "gao" ? "GAO" : "Federal Register"} · ${d.pub_date || ""} · ${d.doc_type || ""}`),
     h("div", { class: "chips" }, (d.crossover ? ["crossover"] : []).concat(d.lanes).map(l => h("span", { class: "chip lane-" + l }, LANE_NAMES[l] || l))),
     h("p", {}, d.summary),
     h("p", {}, h("a", { href: d.url }, "Open original document ↗")),
-    chips("Agencies", d.agencies), chips("Programs", d.programs), chips("Laws & rules", d.statutes), chips("Dollar amounts", d.dollar_amounts),
+    d.cluster !== null ? h("p", {}, "Cluster: ", h("button", { class: "linkbtn", onclick: () => { focusCluster = d.cluster; refresh(); showCluster(d.cluster); } }, data.clusters[d.cluster].name)) : null,
+    chipsBlock("Agencies", d.agencies), chipsBlock("Programs", d.programs), chipsBlock("Laws & rules", d.statutes), chipsBlock("Dollar amounts", d.dollar_amounts),
     similarBlock(d), linkedBlock(d));
 }
 
@@ -211,22 +355,23 @@ function similarBlock(d) {
 function linkedBlock(d) {
   const mine = data.links.filter(l => l.a === d.id || l.b === d.id);
   if (!mine.length) return h("p", { class: "hint" }, "No linked documents.");
+  const shownLinks = mine.slice(0, 15);
   return [h("div", { class: "label" }, `Linked documents (${mine.length})`),
-    h("ul", { class: "plain" }, mine.map(l => {
+    h("ul", { class: "plain" }, shownLinks.map(l => {
       const other = l.a === d.id ? l.b : l.a;
       return h("li", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(other) }, docs[other].title),
-        " — ", [...new Set(l.reasons.map(r => r.label))].join("; "));
-    }))];
+        " — ", [...new Set(l.reasons.map(r => r.label))].join("; "), " ", h("button", { class: "linkbtn", onclick: () => showEdgeFor(l) }, "(why?)"));
+    })), mine.length > 15 ? h("p", { class: "hint" }, `…and ${mine.length - 15} more. Use the Map tab to explore them.`) : null];
 }
 
 function quoteList(side, doc) {
   return [h("div", { class: "label" }, doc.title),
     side.map(q => h("blockquote", {}, h("strong", {}, q.role + ": "), "“" + q.quote + "”"))];
 }
-
-function showEdge(edgeId) {
-  const l = linkByEdgeId[edgeId], a = docs[l.a], b = docs[l.b], box = document.getElementById("detail");
-  fill(box,
+function showEdge(edgeId) { showEdgeFor(linkByEdgeId[edgeId]); }
+function showEdgeFor(l) {
+  const a = docs[l.a], b = docs[l.b];
+  fill($("detail"),
     h("h3", {}, "Why these two documents are linked"),
     h("p", { class: "meta" }, "Each reason below is backed by exact words found in both documents."),
     l.reasons.map(r => h("div", {},
