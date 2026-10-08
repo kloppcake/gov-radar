@@ -55,6 +55,7 @@ max_docs_per_shared_key: 40       # if one program/statute is shared by more doc
 similar_docs_count: 5
 similar_min_score: 0.35
 top_clusters: 50
+cluster_resolution: 1.5          # higher = more, smaller clusters (Louvain community detection)
 
 # Laws and rules that appear in almost every Federal Register document. They are still shown as tags,
 # but they are never used to create a link (otherwise everything would connect to everything).
@@ -78,10 +79,19 @@ boilerplate_entities:
   - executive order 13175
   - executive order 12988
   - executive order 14192
+  - securities exchange act of 1934
+  - national cooperative research and production act of 1993
 boilerplate_patterns:
   - '^5 u\.?s\.?c\.? (55[0-9]|60[0-9]|80[0-9])$'
   - '^44 u\.?s\.?c\.? 35[0-9][0-9]$'
   - '^5 cfr part 1320$'
+  # citations that recur in routine filings and chain unrelated documents into one giant cluster
+  - '^15 cfr part 400$'          # Foreign-Trade Zone notices
+  - '^17 cfr part 240$'          # SEC exchange rule filings
+  - '^15 usc 78[a-z]*$'          # Securities Exchange Act sections
+  - '^41 cfr part 51$'           # AbilityOne Procurement List additions
+  - '^41 usc 8503$'
+  - '^21 cfr part 10$'
 
 # ---- Alias table ----
 # Format:  Canonical Name: [alias, alias, ...]

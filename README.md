@@ -35,7 +35,7 @@ The first run downloads the small embedding model (~90 MB) once.
 | 4 | **Normalize** names with the alias table in `config.yaml`: "DoD", "Defense Department", and "Department of Defense" become one entity. Executive orders, CFR parts, U.S. Code sections, and public laws are standardized by pattern. Unrecognized names go to `unknown_entities.txt`. | Without this, the same agency written three ways would never match. Normalization happens when links are built, not when stored, so adding an alias takes effect on the next run with no re-summarizing. |
 | 5 | **Embed** each summary on your own machine (`all-MiniLM-L6-v2`, free, offline). | Powers the "similar documents" list only. Similarity is fuzzy, so it never creates a link on the map. |
 | 6 | **Link.** Two documents are linked only if they share a program or a law, **or** share an agency **and** a dollar amount. Agency alone is not enough. Each link stores the reason and both quotes. | "Everyone mentions the Department of Defense" would connect everything to everything. Requiring a specific shared fact keeps the map meaningful. |
-| 7 | **Cluster.** Linked documents are grouped into connected clusters. A cluster is named after its most common shared program or law and ranked by documents published in the last 30 days. | Gives you a short list of "what topics have fresh activity". |
+| 7 | **Cluster.** Linked documents are grouped with Louvain community detection (a standard method that keeps tightly linked groups together and cuts weak bridges). Simply grouping everything that is connected at all turned 640 unrelated documents into one blob once the library grew. A cluster is named after its most common shared program or law and ranked by documents published in the last 30 days. | Gives you a short list of "what topics have fresh activity". |
 | 8 | **Export** `docs/data.json` (documents, links, top 50 clusters). | The web page is just a viewer for this one file. |
 
 ### Guardrails built in
@@ -81,6 +81,10 @@ The workflow in `.github/workflows/daily.yml` runs every day at 11:17 UTC and ca
 If the secret is missing, the run stops with a clear error instead of quietly doing nothing. To pause the automation, **Actions → Gov Radar daily → ⋯ → Disable workflow**.
 
 After each run it commits `docs/data.json` (what the web page reads) **and** `radar.db` (the memory of what has already been processed) back to `main`. Without the database every run would start from zero. The database grows slowly (a few KB per document). The web page is published by GitHub Pages from the `/docs` folder on `main`.
+
+## Backfilling history
+
+`python run.py --since 2024-10-08 --until 2025-03-31 --max-docs 800` fetches an older date range (Federal Register only; GAO's feed has no archive, so GAO builds up from the day you start). On GitHub use **Actions → Gov Radar daily → Run workflow** and fill in the dates (leave blank for a normal run). Do about six months per run, one run at a time. The two years from Oct 2024 were loaded this way for roughly $4.50 total.
 
 ## Rough daily cost
 

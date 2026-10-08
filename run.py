@@ -592,19 +592,16 @@ def build_links(cfg, docs):
 # --------------------------------------------------------------------------- step 7: cluster
 
 def build_clusters(cfg, doc_by_id, links):
-    parent = {}
-
-    def find(x):
-        while parent.setdefault(x, x) != x:
-            parent[x] = parent[parent[x]]
-            x = parent[x]
-        return x
-
-    for a, b in links:
-        parent[find(a)] = find(b)
-    groups = collections.defaultdict(list)
-    for x in list(parent):
-        groups[find(x)].append(x)
+    """Group linked documents. Plain 'connected at all' grouping chains thousands of documents into one blob
+    once the library is large, so we use Louvain community detection: it keeps tightly linked groups together
+    and cuts the weak bridges between them."""
+    import networkx as nx
+    graph = nx.Graph()
+    for (a, b), reasons in links.items():
+        graph.add_edge(a, b, weight=len(reasons))
+    communities = nx.community.louvain_communities(
+        graph, weight="weight", resolution=cfg.get("cluster_resolution", 1.5), seed=42) if graph else []
+    groups = {i: list(c) for i, c in enumerate(communities) if len(c) >= 2}
     today = dt.date.today()
 
     def days_old(did):
@@ -619,7 +616,7 @@ def build_clusters(cfg, doc_by_id, links):
         names = collections.Counter()
         fallback = collections.Counter()
         for (a, b), reasons in links.items():
-            if a in mset:
+            if a in mset and b in mset:
                 for r in reasons:
                     (fallback if r["kind"] == "agency+amount" else names)[r["label"]] += 1
         counter = names or fallback
