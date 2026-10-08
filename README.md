@@ -34,9 +34,10 @@ The first run downloads the small embedding model (~90 MB) once.
 | 3 | **Summarize and tag** with Claude Haiku. The model must return JSON, and **every entity must come with an exact quote**. Code then checks that each quote really appears in the text. If not, the entity is thrown away. | Language models sometimes invent plausible details. Links built on invented details would be worse than no links. This check is the safety net. |
 | 4 | **Normalize** names with the alias table in `config.yaml`: "DoD", "Defense Department", and "Department of Defense" become one entity. Executive orders, CFR parts, U.S. Code sections, and public laws are standardized by pattern. Unrecognized names go to `unknown_entities.txt`. | Without this, the same agency written three ways would never match. Normalization happens when links are built, not when stored, so adding an alias takes effect on the next run with no re-summarizing. |
 | 5 | **Embed** each summary on your own machine (`all-MiniLM-L6-v2`, free, offline). | Powers the "similar documents" list only. Similarity is fuzzy, so it never creates a link on the map. |
-| 6 | **Link.** Two documents are linked only if they share a program or a law, **or** share an agency **and** a dollar amount. Agency alone is not enough. Each link stores the reason and both quotes. | "Everyone mentions the Department of Defense" would connect everything to everything. Requiring a specific shared fact keeps the map meaningful. |
-| 7 | **Cluster.** Linked documents are grouped with Louvain community detection (a standard method that keeps tightly linked groups together and cuts weak bridges). Simply grouping everything that is connected at all turned 640 unrelated documents into one blob once the library grew. A cluster is named after its most common shared program or law and ranked by documents published in the last 30 days. | Gives you a short list of "what topics have fresh activity". |
-| 8 | **Export** `docs/data.json` (documents, links, top 50 clusters). | The web page is just a viewer for this one file. |
+| 6 | **Collapse near-identical notices.** Documents from the same agency, of the same type, with the same kind of title and similar summaries (for example the dozens of "Procurement List; Deletions" or "Order Denying Export Privileges" notices) become ONE node. | Repetitive notices were about 45% of the library and made the map a hairball. One node labelled "51 similar notices: Procurement List; Deletions (Committee for Purchase...)" tells the story once. |
+| 7 | **Link, weighted by rarity.** Two nodes are linked if they share a program or law, **or** share an agency **and** a dollar amount. Each shared thing gets a weight: the rarer it is, the heavier. Weak links are dropped. | A law cited by 300 documents tells you nothing; one cited by 3 tells you a lot. Each link keeps its reason and both quotes. |
+| 8 | **Cluster and describe.** Linked nodes are grouped (Louvain community detection). For each cluster the pipeline stores its size, date range, agencies, and most-shared laws/programs/funding; the AI writes a short title and a 2-3 sentence summary. For each pair of related clusters it writes one sentence on how they relate. | So the page can answer "what is this group?" without you opening twenty documents. AI text is written at build time and cached (see below). |
+| 9 | **Export** `docs/data.json` (documents, groups, links, clusters, cluster relations). | The web page is just a viewer for this one file. No API key is ever on the web page. |
 
 ### Guardrails built in
 - The prompt tells the model to describe the document only, never to guess at intent.
@@ -81,6 +82,55 @@ The workflow in `.github/workflows/daily.yml` runs every day at 11:17 UTC and ca
 If the secret is missing, the run stops with a clear error instead of quietly doing nothing. To pause the automation, **Actions → Gov Radar daily → ⋯ → Disable workflow**.
 
 After each run it commits `docs/data.json` (what the web page reads) **and** `radar.db` (the memory of what has already been processed) back to `main`. Without the database every run would start from zero. The database grows slowly (a few KB per document). The web page is published by GitHub Pages from the `/docs` folder on `main`.
+
+## What changed in the "big picture" update
+
+**The problem:** with 1,400 documents the map was a hairball of dots and lines you could not read, and search only gave a list.
+
+### Link weighting (fewer, better links)
+- Every shared law, program, or funding line gets a **rarity weight**: `ln(total nodes / nodes that share it)`. Shared by 3 of 800 nodes is about 5.5; shared by 100 of 800 is about 2.1. (This is "IDF" weighting, the same idea search engines use.)
+- A link's strength is its strongest reason in full, plus half of the next, a quarter of the next, and so on. Ten weak reasons do not beat one rare one.
+- Links below `min_link_weight` (4.5 in `config.yaml`) are dropped. On the real data this removed about three quarters of the links while keeping 1,100 documents in clusters.
+- Clustering uses the weights, so weak bridges no longer glue unrelated groups together.
+
+### Collapsing near-identical notices
+Two documents are grouped when they have the same source, agency, and type **and** either (a) the same "notice type" title (the last `;` part of the title, with numbers ignored) with similar summaries, or (b) almost the same wording. Groups of 3 or more become one hexagon node. Tapping it lists the member documents in the side panel. The label is `N similar notices: <what they are> (<agency>)`; the "what they are" part is written by the AI when a key is available, otherwise it is the shared title. Settings are under "Collapsing" in `config.yaml`.
+
+Each run prints a before/after comparison. On the current data: **1,371 nodes / 6,954 links before**, **810 nodes / 1,908 links after**.
+
+### Build-time summaries (no AI in the browser)
+- During `python run.py` the pipeline asks the model (the same Haiku model, same API key as the summaries) for a title and 2-3 sentence summary per cluster, one sentence per related cluster pair, and a short label per group of notices. It is told to use only the shared entities and sample documents it is given and never to guess at intent.
+- Results are saved in `radar.db` keyed by a fingerprint of the exact prompt, so **unchanged clusters cost nothing on later runs**. A first pass costs roughly 10 to 15 cents.
+- Any text containing speculation words (intend, secret, agenda, hidden, conspire, really) is rejected and replaced by a plain template. Without an API key every text uses the template, and the page marks those "(auto summary)".
+- The page never calls any AI. It only reads `docs/data.json`.
+
+### The "Big picture" panel
+It appears when you lasso an area of the map or type a search. It is assembled **in your browser** from data already in `data.json`:
+1. **Headline:** counts documents and clusters, names the agencies that appear in at least 20% of the documents (ignoring GAO and OMB, which appear everywhere), and gives the date range.
+2. **Timeline:** a bar per month.
+3. **What they have in common:** every law, program, and funding line in the selected documents, minus boilerplate and anything cited by more than 150 documents, ranked by how many of the selected documents contain it.
+4. **Clusters involved:** the top six by how many selected documents they hold, each with its stored summary.
+5. **How they relate:** the stored sentences for pairs of those clusters.
+6. **Odd ones out:** selected documents that share nothing with the others and have no link to them.
+7. **Documents:** the list, collapsed until you open it.
+
+### Search
+Search covers titles, summaries, agencies, laws, programs, and the stored cluster summaries. It is ranked by relevance (titles count most), ignores plural endings, and forgives small typos in words of five or more letters ("cybersecurty" finds "cybersecurity"). If no document contains every word it falls back to partial matches and says so. On the map, a search shows the matching documents plus their direct neighbours, with the neighbours dimmed.
+
+### Map readability
+- **Too many nodes?** You now get one bubble per cluster (size = number of documents, lines = clusters that share rare laws or programs) instead of an error message. Tap a bubble to open that cluster's documents.
+- **Select area:** turn it on, then drag a rectangle (mouse or finger). Selected nodes stay bright, everything else dims, and the Big picture panel fills in. Turn it off to pan and zoom again.
+- **Labels** show on hover, on selection, and when you zoom in, never all at once.
+
+## Things I guessed at or could not do
+- The thresholds (link weight 4.5, collapse similarity 0.5 / 0.9) were chosen by eyeballing the real data, not by a formal test. Adjust them in `config.yaml` if the map feels too sparse or too busy.
+- The AI-written text was tested here with a stand-in model, not the real one, because the API key only exists as a GitHub secret. The first GitHub run is the first real test; read a few cluster summaries critically.
+- "Why it matters" is limited to what the documents themselves state (who is affected, what is funded or regulated). The model is not given anything else to draw on.
+- Select area was tested with synthetic pointer events, not a physical touchscreen. It uses standard pointer events with `touch-action: none`, which is how touch is normally supported, but please try it on your phone.
+- While Select area is on you cannot pan or zoom the map (the selection layer sits on top). Turn it off to move around.
+- Groups are formed per notice-type title, so one repetitive notice family can become several groups (for example four separate Procurement List groups).
+- Only the top 50 clusters get summaries; documents outside them are not in any cluster.
+- The keyword lanes still pull in some off-topic routine filings (for example SEC exchange rule changes). Collapsing hides most of the clutter but does not remove them. Tightening the keywords is the real fix.
 
 ## Backfilling history
 

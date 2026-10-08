@@ -51,7 +51,16 @@ lanes:
 # ---- Linking rules ----
 # Two documents are linked only if they share a program or statute, OR share an agency AND a dollar amount.
 min_link_dollar_amount: 1000000   # ignore small dollar figures ($5,000 fees match by coincidence)
-max_docs_per_shared_key: 40       # if one program/statute is shared by more docs than this, it is too generic to be a link
+max_docs_per_shared_key: 150      # hard safety cap: a program/statute shared by more nodes than this is never a link
+legacy_max_docs_per_shared_key: 40  # the old rule; used ONLY to print the before/after comparison
+min_link_weight: 4.5              # drop links weaker than this. Weight of a shared thing = ln(nodes / nodes sharing it),
+                                  # so something shared by 3 of 800 scores ~5.6 and by 100 of 800 scores ~2.1
+max_related_clusters: 4           # strongest cluster-to-cluster relations kept per cluster
+
+# ---- Collapsing near-identical notices into one node ----
+group_min_size: 3                 # fewer than this is not worth collapsing
+group_same_title_similarity: 0.5  # same agency + same notice type + summaries at least this similar (0-1)
+group_near_duplicate_similarity: 0.9  # or: near-identical wording at least this similar
 similar_docs_count: 5
 similar_min_score: 0.35
 top_clusters: 50

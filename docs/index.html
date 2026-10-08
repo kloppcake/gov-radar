@@ -37,7 +37,7 @@
   .cl .rank { color: var(--muted); min-width: 1.8em; }
   .cl .name { flex: 1; font-weight: 600; overflow-wrap: anywhere; }
   .cl .counts { color: var(--muted); font-size: .85rem; white-space: nowrap; }
-  .cl .about { color: var(--muted); font-size: .82rem; margin: 2px 0 0 2.2em; overflow-wrap: anywhere; }
+  .cl .about { color: var(--muted); font-size: .82rem; margin: 2px 0 0 2.2em; overflow-wrap: anywhere; display: block; }
   .new { color: var(--cross); font-weight: 600; }
   .tabs { display: flex; gap: 6px; margin-bottom: 10px; align-items: center; flex-wrap: wrap; }
   .tab { font: inherit; padding: 5px 14px; border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: inherit; cursor: pointer; }
@@ -47,28 +47,45 @@
   .sw { width: 12px; height: 12px; display: inline-block; }
   .grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
   @media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr; } #detail { position: sticky; top: 8px; align-self: start; max-height: 92vh; overflow-y: auto; } }
+  #mapwrap { position: relative; }
   #map { height: 62vh; min-height: 360px; border: 1px solid var(--line); border-radius: 8px; background: var(--card); position: relative; }
   .mapmsg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; color: var(--muted); }
+  #lasso { position: absolute; inset: 0; z-index: 5; cursor: crosshair; touch-action: none; border-radius: 8px; outline: 2px dashed var(--accent); outline-offset: -2px; }
+  #lassorect { position: absolute; border: 2px solid var(--accent); background: color-mix(in srgb, var(--accent) 18%, transparent); pointer-events: none; }
+  .tool { font: inherit; font-size: .85rem; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+  .tool[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent); font-weight: 600; }
   #list { list-style: none; margin: 0; padding: 0; }
   .row { width: 100%; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 10px 4px; cursor: pointer; color: inherit; font: inherit; display: block; }
-  .row:hover, .row[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+  .row:hover { background: color-mix(in srgb, var(--accent) 10%, transparent); }
   .row .t { font-weight: 600; overflow-wrap: anywhere; }
   .row .m { color: var(--muted); font-size: .8rem; margin: 1px 0; }
   .row .s { font-size: .88rem; overflow-wrap: anywhere; }
   .dot { display: inline-block; width: 9px; height: 9px; margin-right: 6px; }
   #detail { overflow-wrap: anywhere; }
-  #detail h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  #detail h3, .bp h3 { margin: 0 0 6px; font-size: 1.05rem; }
   .meta { color: var(--muted); font-size: .85rem; margin-bottom: 8px; }
   .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
   .chip { border: 1px solid var(--line); border-radius: 999px; padding: 1px 10px; font-size: .8rem; }
   .chip.lane-ai_tech { border-color: var(--ai); } .chip.lane-defense_spending { border-color: var(--def); } .chip.lane-crossover { border-color: var(--cross); }
-  .label { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 10px 0 2px; }
+  .label { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 12px 0 2px; }
   blockquote { margin: 4px 0 8px; padding: 6px 10px; border-left: 3px solid var(--accent); background: color-mix(in srgb, var(--accent) 8%, transparent); font-size: .9rem; }
   .linkbtn { background: none; border: 0; padding: 0; color: var(--accent); cursor: pointer; font: inherit; text-align: left; text-decoration: underline; }
   a { color: var(--accent); }
   ul.plain { margin: 4px 0; padding-left: 18px; }
   .hint { color: var(--muted); }
   button.small { font: inherit; font-size: .85rem; padding: 4px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: inherit; cursor: pointer; }
+  .bp { border: 1px solid var(--accent); border-radius: 8px; padding: 10px 12px; margin-bottom: 12px; background: color-mix(in srgb, var(--accent) 5%, transparent); }
+  .bp .headline { font-weight: 600; margin: 0 0 4px; }
+  .bp .why { font-size: .9rem; margin: 0 0 6px; }
+  .common li { margin: 2px 0; font-size: .92rem; }
+  .common .n { color: var(--muted); font-size: .8rem; }
+  .cbox { border-left: 3px solid var(--line); padding: 2px 0 2px 10px; margin: 6px 0; }
+  .cbox .ct { font-weight: 600; } .cbox p { margin: 2px 0; font-size: .9rem; }
+  .tl { display: flex; align-items: flex-end; gap: 2px; height: 46px; margin: 4px 0 0; }
+  .tl i { flex: 1; min-width: 2px; background: var(--accent); opacity: .75; border-radius: 1px 1px 0 0; }
+  .tlax { display: flex; justify-content: space-between; color: var(--muted); font-size: .72rem; }
+  details > summary { cursor: pointer; color: var(--accent); margin: 8px 0 2px; }
+  .auto { color: var(--muted); font-size: .75rem; }
 </style>
 </head>
 <body>
@@ -80,7 +97,7 @@
 <main>
   <section class="card" aria-label="Filters">
     <div class="filters">
-      <label>Search (title, summary, agency, law…)<input type="search" id="q" placeholder="e.g. quantum, Navy, export controls"></label>
+      <label>Search (titles, summaries, agencies, laws, programs, cluster summaries)<input type="search" id="q" placeholder="e.g. quantum, export controls, Navy shipbuilding"></label>
       <label>Topic
         <select id="lane">
           <option value="all">All topics</option>
@@ -106,7 +123,7 @@
   </section>
 
   <section class="card" aria-labelledby="ch">
-    <h2 id="ch">Clusters <span class="hint" style="font-weight:400">(groups of documents sharing a law, program, or funding; tap one to focus)</span></h2>
+    <h2 id="ch">Clusters <span class="hint" style="font-weight:400">(groups of documents sharing a rare law, program, or funding line; tap one to focus)</span></h2>
     <ol id="clusters" style="padding:0"></ol>
   </section>
 
@@ -117,21 +134,28 @@
         <button class="tab" id="tab-map" role="tab" aria-selected="false">Map</button>
         <span class="count" id="count"></span>
       </div>
+      <div id="bp-search"></div>
       <div id="listview"><ul id="list"></ul><p><button class="small" id="more" hidden>Show more</button></p></div>
       <div id="mapview" hidden>
         <div class="filters" style="margin-bottom:8px">
           <span class="legend">
             <span><i class="sw" style="background:var(--ai);border-radius:50%"></i>AI &amp; tech</span>
-            <span><i class="sw" style="background:var(--def)"></i>Defense spending</span>
+            <span><i class="sw" style="background:var(--def)"></i>Defense</span>
             <span><i class="sw" style="background:var(--cross);transform:rotate(45deg) scale(.85)"></i>Crossover</span>
+            <span><i class="sw" style="background:var(--muted);clip-path:polygon(25% 0,75% 0,100% 50%,75% 100%,25% 100%,0 50%)"></i>Group of similar notices</span>
           </span>
-          <label class="check"><input type="checkbox" id="showAll"> Include documents with no links</label>
+          <label class="check"><input type="checkbox" id="showAll"> Include nodes with no links</label>
+          <button class="tool" id="selectToggle" aria-pressed="false" title="Drag a rectangle on the map to select everything inside it">▭ Select area</button>
+          <button class="tool" id="clearSel" hidden>Clear selection</button>
         </div>
-        <div id="map" role="img" aria-label="Network map of linked government documents"></div>
-        <p class="sub" style="margin-top:8px">Tap a dot for the document. Tap a line to see why two documents are linked.</p>
+        <div id="mapwrap">
+          <div id="map" role="img" aria-label="Network map of linked government documents"></div>
+          <div id="lasso" hidden><div id="lassorect" hidden></div></div>
+        </div>
+        <p class="sub" id="maphint" style="margin-top:8px"></p>
       </div>
     </div>
-    <div class="card" id="detail" aria-live="polite"><p class="hint">Pick a cluster to see what it is about, or tap a document to read its summary.</p></div>
+    <div class="card" id="detail" aria-live="polite"><p class="hint">Pick a cluster to see what it is about, tap a document to read it, or use <b>Map → Select area</b> to get the big picture for any part of the map.</p></div>
   </section>
 </main>
 
@@ -147,197 +171,599 @@ function h(tag, attrs, ...kids) {
     else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
     else e.setAttribute(k, v);
   }
-  for (const kid of kids.flat(Infinity)) if (kid != null) e.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
+  for (const kid of kids.flat(Infinity)) if (kid != null && kid !== false) e.append(kid.nodeType ? kid : document.createTextNode(String(kid)));
   return e;
 }
-function fill(box, ...kids) { box.replaceChildren(...kids.flat(Infinity).filter(k => k != null)); }
+function fill(box, ...kids) { box.replaceChildren(...kids.flat(Infinity).filter(k => k != null && k !== false)); }
 const $ = id => document.getElementById(id);
 const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const plural = (n, w) => n + " " + w + (n === 1 ? "" : "s");
 const LANE_NAMES = { ai_tech: "AI & tech", defense_spending: "Defense spending", crossover: "Crossover" };
-const laneOf = d => d.crossover ? "crossover" : d.lanes[0];
 const MAP_LIMIT = 400, PAGE = 50;
 
-let data, docs = {}, clusterInfo = {}, linkByEdgeId = {}, network, nodes, edges;
-let focusCluster = null, view = "list", shown = PAGE, now = new Date(), drawnSig = null;
+let data, docs = {}, groups = {}, adj = new Map(), relByPair = new Map(), linkByEdgeId = {};
+let focusCluster = null, view = "list", shown = PAGE, now = new Date();
+let S = { q: "", active: false, ranked: [], score: new Map(), partial: false };      // search state
+let M = { mode: "docs", network: null, nodes: null, edges: null, sig: null, matched: new Set(), neighbors: new Set(),
+          selected: new Set(), hover: null, zoomLabels: false, bubbleCounts: {} };      // map state
 
 fetch("data.json").then(r => r.json()).then(init).catch(err => {
   $("updated").textContent = "Could not load data.json (" + err + "). If you opened this file directly, serve the folder instead: python -m http.server -d docs";
 });
 
+const nodeOf = d => d.group || d.id;
+const laneOfDoc = d => d.crossover ? "crossover" : d.lanes[0];
+const laneOfNode = id => groups[id] ? (groups[id].crossover ? "crossover" : groups[id].lanes[0]) : laneOfDoc(docs[id]);
+const clusterOfNode = id => groups[id] ? groups[id].cluster : docs[id].cluster;
+const nodeDocs = id => groups[id] ? groups[id].member_ids : [id];
+const ctitle = c => c.title || c.name;
+
 function init(d) {
   data = d;
   now = new Date(d.generated_at);
   d.documents.forEach(x => docs[x.id] = x);
-  d.clusters.forEach(c => clusterInfo[c.id] = describeCluster(c));
-  $("updated").textContent = `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents · ${d.links.length} links · ${d.clusters.length} clusters`;
-  for (const id of ["q", "lane", "time", "source"]) $(id).addEventListener(id === "q" ? "input" : "change", refresh);
-  $("clear").addEventListener("click", () => { $("q").value = ""; $("lane").value = "all"; $("time").value = "all"; $("source").value = "all"; focusCluster = null; refresh(); });
+  d.groups.forEach(g => groups[g.id] = g);
+  d.links.forEach((l, i) => {
+    l.i = i;
+    for (const [x, y] of [[l.a, l.b], [l.b, l.a]]) { if (!adj.has(x)) adj.set(x, []); adj.get(x).push({ other: y, link: l }); }
+  });
+  d.cluster_links.forEach(r => relByPair.set(r.a + "-" + r.b, r));
+  buildSearchIndex();
+  const st = d.stats;
+  $("updated").textContent = `Updated ${d.generated_at.replace("T", " ")} · ${d.documents.length} documents` +
+    (st.groups ? ` (${st.groups} groups of near-identical notices collapse into single map nodes)` : "") +
+    ` · ${d.links.length} links · ${d.clusters.length} clusters`;
+  for (const id of ["lane", "time", "source"]) $(id).addEventListener("change", refresh);
+  let timer = null;
+  $("q").addEventListener("input", () => { clearTimeout(timer); timer = setTimeout(refresh, 160); });
+  $("clear").addEventListener("click", () => { $("q").value = ""; $("lane").value = "all"; $("time").value = "all"; $("source").value = "all"; focusCluster = null; M.selected = new Set(); refresh(); });
   $("showAll").addEventListener("change", drawMap);
   $("tab-list").addEventListener("click", () => setView("list"));
   $("tab-map").addEventListener("click", () => setView("map"));
   $("more").addEventListener("click", () => { shown += PAGE; renderList(); });
+  $("selectToggle").addEventListener("click", () => setSelectMode($("selectToggle").getAttribute("aria-pressed") !== "true"));
+  $("clearSel").addEventListener("click", clearSelection);
+  initLasso();
   refresh();
 }
 
-// ---- cluster descriptions (computed here from the data, no extra model calls) ----
-function topN(items, n, skip) {
-  const c = {};
-  items.forEach(x => { if (!skip || !skip.has(x)) c[x] = (c[x] || 0) + 1; });
-  return Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, n).map(e => e[0]);
+// =====================================================================================================
+//  SEARCH: relevance-ranked, tolerant of plurals and typos, covers titles, summaries, tags, cluster text
+// =====================================================================================================
+const STOP = new Set("a an and are as at be by for from has have in into is it its of on or that the their this to was were will with within about over under".split(" "));
+function stem(w) {
+  if (/^\d/.test(w) || w.length < 4) return w;
+  if (w.endsWith("ies") && w.length > 4) return w.slice(0, -3) + "y";
+  if (w.endsWith("sses")) return w.slice(0, -2);
+  if (/(ches|shes|xes|zes)$/.test(w)) return w.slice(0, -2);
+  if (w.endsWith("s") && !w.endsWith("ss") && !w.endsWith("us") && !w.endsWith("is")) w = w.slice(0, -1);
+  if (w.endsWith("ing") && w.length > 6) w = w.slice(0, -3);
+  else if (w.endsWith("ed") && w.length > 5) w = w.slice(0, -2);
+  return w;
 }
-function describeCluster(c) {
-  const ds = c.doc_ids.map(i => docs[i]);
-  const dates = ds.map(d => d.pub_date).filter(Boolean).sort();
-  const common = new Set(["Government Accountability Office", "Office of Management and Budget"]);
-  return {
-    agencies: topN(ds.flatMap(d => d.agencies), 3, common),
-    laws: topN(ds.flatMap(d => d.statutes.concat(d.programs)), 3),
-    from: dates[0], to: dates[dates.length - 1],
-    newest: ds.slice().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || ""))[0]
-  };
+function tokens(s) {
+  return (s || "").normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().split(/[^a-z0-9]+/)
+    .filter(t => t.length > 1 && !STOP.has(t)).map(stem);
 }
-const fmtMonth = s => s ? new Date(s + "T00:00:00").toLocaleDateString(undefined, { month: "short", year: "numeric" }) : "";
+function editDistance(a, b, max) {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, j) => j);
+  for (let i = 1; i <= a.length; i++) {
+    const cur = [i]; let best = i;
+    for (let j = 1; j <= b.length; j++) {
+      cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+      if (cur[j] < best) best = cur[j];
+    }
+    if (best > max) return max + 1;
+    prev = cur;
+  }
+  return prev[b.length];
+}
+let SI = { terms: new Map(), df: new Map(), vocab: [] };
+function buildSearchIndex() {
+  const FIELD_W = { title: 3, tags: 2, summary: 1, cluster: 0.5 };
+  for (const d of data.documents) {
+    const c = d.cluster !== null && d.cluster !== undefined ? data.clusters[d.cluster] : null;
+    const fields = { title: d.title, tags: [].concat(d.agencies, d.programs, d.statutes, d.dollar_amounts).join(" "),
+                     summary: d.summary, cluster: c ? ctitle(c) + " " + c.summary : "" };
+    const tf = new Map();
+    for (const [f, text] of Object.entries(fields)) {
+      const counts = new Map();
+      for (const t of tokens(text)) counts.set(t, (counts.get(t) || 0) + 1);
+      for (const [t, n] of counts) tf.set(t, (tf.get(t) || 0) + FIELD_W[f] * (1 + Math.log(n)));
+    }
+    SI.terms.set(d.id, tf);
+    for (const t of tf.keys()) SI.df.set(t, (SI.df.get(t) || 0) + 1);
+  }
+  SI.vocab = [...SI.df.keys()];
+}
+function expand(qt) {
+  const out = new Map([[qt, 1]]);
+  const numeric = /\d/.test(qt);
+  for (const t of SI.vocab) {
+    if (out.has(t)) continue;
+    if (qt.length >= 3 && t.startsWith(qt)) out.set(t, 0.8);
+    else if (!numeric && qt.length >= 5) {
+      const max = qt.length >= 9 ? 2 : 1;
+      if (editDistance(qt, t, max) <= max) out.set(t, 0.6);
+    }
+    if (out.size > 60) break;
+  }
+  return out;
+}
+function runSearch() {
+  const q = $("q").value.trim();
+  S = { q, active: q.length > 0, ranked: [], score: new Map(), partial: false };
+  if (!S.active) return;
+  const qts = [...new Set(tokens(q))];
+  if (!qts.length) { S.active = false; return; }
+  const N = data.documents.length, exps = qts.map(expand);
+  const lower = q.toLowerCase(), rows = [];
+  for (const d of data.documents) {
+    const tf = SI.terms.get(d.id);
+    let total = 0, matched = 0;
+    exps.forEach(ex => {
+      let best = 0;
+      for (const [t, f] of ex) {
+        const w = tf.get(t);
+        if (w) best = Math.max(best, f * w * Math.log(1 + N / SI.df.get(t)));
+      }
+      if (best > 0) { matched++; total += best; }
+    });
+    if (matched === 0) continue;
+    if (d.title.toLowerCase().includes(lower)) total *= 1.5;
+    rows.push({ id: d.id, matched, score: total });
+  }
+  let hits = rows.filter(r => r.matched === qts.length);
+  if (!hits.length && qts.length > 1) { hits = rows.filter(r => r.matched >= Math.ceil(qts.length / 2)); S.partial = hits.length > 0; }
+  hits.sort((a, b) => b.score - a.score);
+  S.ranked = hits.map(r => r.id);
+  hits.forEach(r => S.score.set(r.id, r.score));
+}
 
-// ---- filtering ----
-function matches(d) {
-  const lane = $("lane").value, time = $("time").value, src = $("source").value, q = $("q").value.trim().toLowerCase();
+// =====================================================================================================
+//  FILTERS
+// =====================================================================================================
+function passesFilters(d, ignoreSearch) {
+  const lane = $("lane").value, time = $("time").value, src = $("source").value;
   if (focusCluster !== null && d.cluster !== focusCluster) return false;
   if (lane === "crossover" ? !d.crossover : (lane !== "all" && !d.lanes.includes(lane))) return false;
   if (src !== "all" && d.source !== src) return false;
   if (time !== "all" && d.pub_date && (now - new Date(d.pub_date + "T00:00:00")) / 864e5 > Number(time)) return false;
-  if (q) {
-    const hay = (d.title + " " + d.summary + " " + [].concat(d.agencies, d.programs, d.statutes, d.dollar_amounts).join(" ")).toLowerCase();
-    if (!q.split(/\s+/).every(w => hay.includes(w))) return false;
-  }
+  if (!ignoreSearch && S.active && !S.score.has(d.id)) return false;
   return true;
 }
-const visible = () => data.documents.filter(matches);
+function visibleDocs() {
+  const list = data.documents.filter(d => passesFilters(d));
+  if (S.active) list.sort((a, b) => S.score.get(b.id) - S.score.get(a.id));
+  return list;
+}
 
-function refresh() { shown = PAGE; renderClusters(); renderList(); if (view === "map") drawMap(); updateCount(); }
-
+function refresh() {
+  runSearch();
+  shown = PAGE;
+  M.selected = new Set();
+  $("clearSel").hidden = true;
+  renderClusters(); renderList(); renderSearchBP(); updateCount();
+  if (view === "map") drawMap();
+}
 function setView(v) {
   view = v;
   $("tab-list").setAttribute("aria-selected", v === "list");
   $("tab-map").setAttribute("aria-selected", v === "map");
   $("listview").hidden = v !== "list"; $("mapview").hidden = v !== "map";
-  if (v === "map") drawMap();
+  if (v === "map") drawMap(); else setSelectMode(false);
 }
 function updateCount() {
-  const n = visible().length;
-  $("count").textContent = `${n} of ${data.documents.length} documents` + (focusCluster !== null ? " · one cluster" : "");
+  const n = visibleDocs().length;
+  $("count").textContent = `${n} of ${data.documents.length} documents` + (focusCluster !== null ? " · one cluster" : "") + (S.partial ? " · partial matches" : "");
 }
 
-// ---- clusters ----
+// =====================================================================================================
+//  "BIG PICTURE": built in the browser from the precomputed data (no AI at view time)
+// =====================================================================================================
+const GENERIC_AGENCIES = new Set(["Government Accountability Office", "Office of Management and Budget", "Congress"]);
+const shortAg = n => n.replace(/^(U\.?S\.?\s+)?Department of (the )?/i, "");
+function fmtRange(a, b) {
+  const f = s => new Date(s + "T00:00:00");
+  if (!a) return "";
+  const A = f(a), B = f(b), mo = d => d.toLocaleDateString(undefined, { month: "short" }), yr = d => d.getFullYear();
+  if (yr(A) === yr(B)) return mo(A) === mo(B) ? `${mo(A)} ${yr(A)}` : `${mo(A)}–${mo(B)} ${yr(A)}`;
+  return `${mo(A)} ${yr(A)} – ${mo(B)} ${yr(B)}`;
+}
+function entityKeys(d) {                         // meaningful shared things: laws, programs, funding (not boilerplate/very common)
+  const skip = new Set(d.boiler || []), out = [];
+  for (const [list, kind] of [[d.statutes, "law"], [d.programs, "program"], [d.dollar_amounts, "funding"]])
+    for (const l of list) if (!skip.has(l) && (data.entity_df[l] || 2) <= 150) out.push([l, kind]);
+  return out;
+}
+function bigPicture(ids, title) {
+  const ds = ids.map(i => docs[i]).filter(Boolean);
+  const n = ds.length;
+  if (!n) return h("div", { class: "bp" }, h("p", { class: "hint" }, "Nothing selected."));
+  const byCluster = new Map();
+  ds.forEach(d => { const c = d.cluster === null ? -1 : d.cluster; byCluster.set(c, (byCluster.get(c) || 0) + 1); });
+  const inClusters = [...byCluster.entries()].filter(([c]) => c >= 0).sort((a, b) => b[1] - a[1]);
+  const loose = byCluster.get(-1) || 0;
+  const ag = new Map();
+  ds.forEach(d => d.agencies.forEach(a => { if (!GENERIC_AGENCIES.has(a)) ag.set(a, (ag.get(a) || 0) + 1); }));
+  const topAg = [...ag.entries()].sort((a, b) => b[1] - a[1]).filter(([, k]) => k >= Math.max(2, n * 0.2)).slice(0, 2).map(([a]) => shortAg(a));
+  const dates = ds.map(d => d.pub_date).filter(Boolean).sort();
+  const headline = `${plural(n, "document")} across ${plural(inClusters.length, "cluster")}` +
+    (loose ? ` (${loose} not in a top cluster)` : "") + (topAg.length ? `, mostly ${topAg.join(" and ")}` : "") +
+    (dates.length ? `, ${fmtRange(dates[0], dates[dates.length - 1])}` : "");
+
+  // what they have in common
+  const cnt = new Map(), kind = new Map();
+  ds.forEach(d => entityKeys(d).forEach(([l, k]) => { cnt.set(l, (cnt.get(l) || 0) + 1); kind.set(l, k); }));
+  const common = [...cnt.entries()].filter(([, k]) => k >= 2).sort((a, b) => b[1] - a[1] || (data.entity_df[a[0]] || 99) - (data.entity_df[b[0]] || 99)).slice(0, 8);
+
+  // clusters involved + how they relate
+  const top = inClusters.slice(0, 6), topIds = new Set(top.map(([c]) => c));
+  const rels = data.cluster_links.filter(r => topIds.has(r.a) && topIds.has(r.b)).slice(0, 5);
+
+  // odd ones out: share no meaningful entity with another selected doc and have no link to another selected node
+  let odd = [];
+  if (n >= 3) {
+    const nodeSet = new Set(ds.map(nodeOf));
+    odd = ds.filter(d => {
+      if (entityKeys(d).some(([l]) => cnt.get(l) >= 2)) return false;
+      return !(adj.get(nodeOf(d)) || []).some(x => nodeSet.has(x.other));
+    });
+  }
+
+  // timeline by month
+  const months = new Map();
+  dates.forEach(s => months.set(s.slice(0, 7), (months.get(s.slice(0, 7)) || 0) + 1));
+  const bars = [];
+  if (dates.length) {
+    let [y, m] = dates[0].slice(0, 7).split("-").map(Number); const [y2, m2] = dates[dates.length - 1].slice(0, 7).split("-").map(Number);
+    while (y < y2 || (y === y2 && m <= m2)) { const k = `${y}-${String(m).padStart(2, "0")}`; bars.push([k, months.get(k) || 0]); if (++m > 12) { m = 1; y++; } }
+  }
+  const maxBar = Math.max(1, ...bars.map(b => b[1]));
+
+  return h("div", { class: "bp" },
+    title ? h("div", { class: "label", style: "margin-top:0" }, title) : null,
+    h("p", { class: "headline" }, headline + "."),
+    bars.length > 1 ? [h("div", { class: "tl", role: "img", "aria-label": "Documents per month" }, bars.map(([k, v]) => h("i", { title: `${k}: ${plural(v, "document")}`, style: `height:${Math.max(2, Math.round(v / maxBar * 100))}%${v ? "" : ";opacity:.15"}` }))),
+      h("div", { class: "tlax" }, h("span", {}, bars[0][0]), h("span", {}, bars[bars.length - 1][0]))] : null,
+    h("div", { class: "label" }, "What they have in common"),
+    common.length ? h("ul", { class: "plain common" }, common.map(([l, k]) => h("li", {}, l, " ", h("span", { class: "n" }, `${kind.get(l)} · in ${k} of ${n}`))))
+      : h("p", { class: "hint" }, n === 1 ? "A single document." : "No rare law, program, or funding line is shared by two or more of these."),
+    top.length ? [h("div", { class: "label" }, "Clusters involved"), top.map(([c, k]) => {
+      const cl = data.clusters[c];
+      return h("div", { class: "cbox" },
+        h("div", { class: "ct" }, h("button", { class: "linkbtn", onclick: () => pickCluster(c) }, ctitle(cl)), h("span", { class: "n hint" }, `  ${k} of ${cl.size} documents`)),
+        h("p", {}, cl.summary, cl.ai ? null : h("span", { class: "auto" }, " (auto summary)")));
+    }), inClusters.length > top.length ? h("p", { class: "hint" }, `…and ${inClusters.length - top.length} more clusters.`) : null] : null,
+    rels.length ? [h("div", { class: "label" }, "How these clusters relate"), h("ul", { class: "plain" }, rels.map(r =>
+      h("li", {}, h("b", {}, ctitle(data.clusters[r.a]) + " ↔ " + ctitle(data.clusters[r.b]) + ": "), r.sentence, r.ai ? null : h("span", { class: "auto" }, " (auto)"))))] : null,
+    odd.length ? [h("div", { class: "label" }, `Odd ones out (${odd.length})`), h("p", { class: "hint", style: "margin:0 0 2px" }, "Share nothing with the rest of this group:"),
+      h("ul", { class: "plain" }, odd.slice(0, 8).map(d => h("li", {}, h("button", { class: "linkbtn", onclick: () => showDoc(d.id) }, d.title)))), odd.length > 8 ? h("p", { class: "hint" }, `…and ${odd.length - 8} more.`) : null] : null,
+    h("details", {}, h("summary", {}, `Documents (${n})`),
+      h("ul", { class: "plain" }, ds.slice().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || "")).slice(0, 200).map(d =>
+        h("li", {}, h("button", { class: "linkbtn", onclick: () => showDoc(d.id) }, d.title), h("span", { class: "n hint" }, " " + (d.pub_date || "")))))));
+}
+
+function renderSearchBP() {
+  const box = $("bp-search");
+  if (!S.active) { fill(box); return; }
+  const ids = visibleDocs().map(d => d.id);
+  if (!ids.length) { fill(box, h("p", { class: "hint" }, `No documents match “${S.q}”.`)); return; }
+  fill(box, h("div", { class: "bp-wrap" },
+    S.partial ? h("p", { class: "hint" }, "No document contains every word, so these are partial matches.") : null,
+    bigPicture(ids, `Big picture for “${S.q}”`)));
+}
+
+// =====================================================================================================
+//  CLUSTER LIST + DETAIL
+// =====================================================================================================
 function renderClusters() {
   const ol = $("clusters"), saved = focusCluster;
-  const counts = {};
-  const keep = focusCluster; focusCluster = null;          // count per cluster using the other filters
-  data.documents.forEach(d => { if (d.cluster !== null && matches(d)) counts[d.cluster] = (counts[d.cluster] || 0) + 1; });
+  const counts = {}, keep = focusCluster;
+  focusCluster = null;                                  // count each cluster under the other filters
+  data.documents.forEach(d => { if (d.cluster !== null && passesFilters(d)) counts[d.cluster] = (counts[d.cluster] || 0) + 1; });
   focusCluster = keep;
   const rows = data.clusters.map((c, i) => ({ c, i, n: counts[c.id] || 0 })).filter(r => r.n > 0 || saved === r.c.id);
   if (!rows.length) { fill(ol, h("li", { class: "hint" }, "No clusters match these filters.")); return; }
   fill(ol, rows.map(({ c, i, n }) => {
-    const info = clusterInfo[c.id];
-    const about = [info.agencies.length ? "Agencies: " + info.agencies.join(", ") : null, fmtMonth(info.from) + " – " + fmtMonth(info.to)].filter(Boolean).join(" · ");
+    const about = [c.agencies.length ? c.agencies.slice(0, 3).map(a => shortAg(a.name)).join(", ") : null, fmtRange(c.date_from, c.date_to),
+                   c.top_shared.length ? "cites " + c.top_shared.slice(0, 2).map(s => s.label).join(", ") : null].filter(Boolean).join(" · ");
     return h("li", {}, h("button", { class: "cl", "aria-pressed": String(saved === c.id), onclick: () => pickCluster(c.id) },
       h("span", { class: "top" },
         h("span", { class: "rank" }, (i + 1) + "."),
-        h("span", { class: "name" }, c.name),
+        h("span", { class: "name" }, ctitle(c)),
         h("span", { class: "counts" }, n + (n === c.size ? "" : " of " + c.size) + " docs · ", h("span", { class: c.new_this_week ? "new" : "" }, c.new_this_week + " new this week"))),
       h("span", { class: "about" }, about)));
   }));
 }
 function pickCluster(id) {
-  focusCluster = focusCluster === id ? null : id;
-  refresh();
-  if (focusCluster !== null) showCluster(id); else fill($("detail"), h("p", { class: "hint" }, "Pick a cluster to see what it is about, or tap a document to read its summary."));
+  focusCluster = (focusCluster === id && arguments[1] !== "force") ? null : id;
+  M.selected = new Set(); $("clearSel").hidden = true;
+  renderClusters(); renderList(); renderSearchBP(); updateCount();
+  if (view === "map") drawMap();
+  if (focusCluster !== null) showCluster(id); else resetDetail();
+}
+function resetDetail() { fill($("detail"), h("p", { class: "hint" }, "Pick a cluster to see what it is about, tap a document to read it, or use Map → Select area to get the big picture for any part of the map.")); }
+
+function chipsBlock(label, arr, fmt) {
+  if (!arr || !arr.length) return null;
+  return [h("div", { class: "label" }, label), h("div", { class: "chips" }, arr.map(x => h("span", { class: "chip" }, fmt ? fmt(x) : x)))];
 }
 function showCluster(id) {
-  const c = data.clusters[id], info = clusterInfo[id];
+  const c = data.clusters[id];
+  const rels = data.cluster_links.filter(r => r.a === id || r.b === id);
   fill($("detail"),
-    h("h3", {}, c.name),
-    h("div", { class: "meta" }, `${c.size} documents · ${fmtMonth(info.from)} – ${fmtMonth(info.to)} · ${c.new_this_week} new this week`),
-    h("p", {}, "These documents are linked because they cite the same program, law, or funding. That shows a shared reference, not a shared plan."),
-    chipsBlock("Most common agencies", info.agencies), chipsBlock("Most common laws & programs", info.laws),
+    h("h3", {}, ctitle(c)),
+    h("div", { class: "meta" }, `${plural(c.size, "document")} · ${fmtRange(c.date_from, c.date_to)} · ${c.new_this_week} new this week`),
+    h("p", {}, c.summary, c.ai ? null : h("span", { class: "auto" }, " (auto summary; AI text is added on the next daily run)")),
+    h("p", { class: "hint" }, "Linked because they cite the same rare law, program, or funding. That shows a shared reference, not a shared plan."),
+    chipsBlock("Top shared laws, programs & funding", c.top_shared, s => `${s.label} · ${s.docs} docs`),
+    chipsBlock("Agencies involved", c.agencies, a => `${a.name} · ${a.n}`),
+    rels.length ? [h("div", { class: "label" }, "Related clusters"), h("ul", { class: "plain" }, rels.map(r => {
+      const other = r.a === id ? r.b : r.a;
+      return h("li", {}, h("button", { class: "linkbtn", onclick: () => pickCluster(other, "force") }, ctitle(data.clusters[other])), ": ", r.sentence);
+    }))] : null,
     h("div", { class: "label" }, "Newest document"),
-    h("p", {}, h("button", { class: "linkbtn", onclick: () => showDoc(info.newest.id) }, info.newest.title)),
-    h("p", { class: "hint" }, "The list on the left now shows only this cluster. Use the Map tab to see how its documents connect."),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => showDoc(c.doc_ids[0]) }, docs[c.doc_ids[0]].title)),
+    h("p", { class: "hint" }, "The list now shows only this cluster. Open the Map tab to see how its documents connect."),
     h("button", { class: "small", onclick: () => pickCluster(id) }, "Show all clusters"));
 }
 
-// ---- list ----
+// =====================================================================================================
+//  DOCUMENT LIST
+// =====================================================================================================
 function renderList() {
-  const list = visible().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || ""));
+  const list = S.active ? visibleDocs() : visibleDocs().sort((a, b) => (b.pub_date || "").localeCompare(a.pub_date || ""));
   const colors = { ai_tech: "var(--ai)", defense_spending: "var(--def)", crossover: "var(--cross)" };
   if (!list.length) { fill($("list"), h("li", { class: "hint" }, "No documents match these filters.")); $("more").hidden = true; return; }
   fill($("list"), list.slice(0, shown).map(d => h("li", {},
-    h("button", { class: "row", "aria-pressed": "false", onclick: () => showDoc(d.id) },
-      h("div", { class: "t" }, h("i", { class: "dot", style: "background:" + colors[laneOf(d)] }), d.title),
-      h("div", { class: "m" }, `${d.source === "gao" ? "GAO" : "Federal Register"} · ${d.pub_date || ""} · ${LANE_NAMES[laneOf(d)]}` + (d.cluster !== null ? ` · cluster: ${data.clusters[d.cluster].name}` : "")),
+    h("button", { class: "row", onclick: () => showDoc(d.id) },
+      h("div", { class: "t" }, h("i", { class: "dot", style: "background:" + colors[laneOfDoc(d)] }), d.title),
+      h("div", { class: "m" }, `${d.source === "gao" ? "GAO" : "Federal Register"} · ${d.pub_date || ""} · ${LANE_NAMES[laneOfDoc(d)]}` +
+        (d.cluster !== null ? ` · cluster: ${ctitle(data.clusters[d.cluster])}` : "") + (d.group ? ` · one of ${groups[d.group].n} similar notices` : "")),
       h("div", { class: "s" }, d.summary)))));
   $("more").hidden = list.length <= shown;
   $("more").textContent = `Show more (${list.length - shown} left)`;
 }
 
-// ---- map ----
-function drawMap() {
+// =====================================================================================================
+//  MAP
+// =====================================================================================================
+function wrap(text, width) {
+  const words = text.split(" "), lines = []; let cur = "";
+  for (const w of words) { if ((cur + " " + w).trim().length > width && cur) { lines.push(cur); cur = w; } else cur = (cur + " " + w).trim(); }
+  if (cur) lines.push(cur);
+  return lines.slice(0, 3).join("\n") + (lines.length > 3 ? "…" : "");
+}
+function shortLabel(t, max = 30) {
+  if (t.length <= max) return t;
+  const cut = t.slice(0, max - 1), i = cut.lastIndexOf(" ");
+  return (i > 12 ? cut.slice(0, i) : cut).replace(/[\s,;:.\-–]+$/, "") + "…";
+}
+function nodeTitle(id) { return groups[id] ? groups[id].label : docs[id].title; }
+
+function mapSpec() {
+  const vis = visibleDocs();
+  const visSet = new Set(vis.map(d => d.id));
   const showAll = $("showAll").checked;
-  const colors = { ai_tech: css("--ai"), defense_spending: css("--def"), crossover: css("--cross") };
-  const shapes = { ai_tech: "dot", defense_spending: "square", crossover: "diamond" };
-  const list = visible().filter(d => showAll || d.cluster !== null);
-  const box = $("map");
-  // Nothing to redraw if the same dots would be shown (avoids pointless reshuffling).
-  const sig = list.map(d => d.id).join("|") + "#" + document.documentElement.className;
-  if (network && sig === drawnSig) return;
-  drawnSig = sig;
-  if (network) { network.destroy(); network = null; }
-  if (list.length > MAP_LIMIT) {
-    fill(box, h("div", { class: "mapmsg" }, `${list.length} documents match, which is too many to read on one map (limit ${MAP_LIMIT}). Pick a cluster above, or narrow the filters (topic, dates, search).`));
-    return;
+  let units = new Set(vis.map(nodeOf));
+  const matched = new Set(units), neighbors = new Set();
+  if (S.active) {                                          // matches + their direct neighbours
+    for (const u of matched) for (const x of adj.get(u) || []) {
+      if (matched.has(x.other)) continue;
+      if (nodeDocs(x.other).some(i => passesFilters(docs[i], true))) neighbors.add(x.other);
+    }
+    neighbors.forEach(u => units.add(u));
+  } else if (!showAll) {
+    units = new Set([...units].filter(u => clusterOfNode(u) !== null && clusterOfNode(u) !== undefined));
   }
-  if (!list.length) { fill(box, h("div", { class: "mapmsg" }, "No linked documents match these filters.")); return; }
-  box.replaceChildren();
-  const ids = new Set(list.map(d => d.id));
-  nodes = new vis.DataSet(list.map(d => {
-    const lane = laneOf(d);
-    return { id: d.id, label: list.length > 120 ? undefined : shortTitle(d.title), title: d.title, shape: shapes[lane], size: 14,
-             color: { background: colors[lane], border: colors[lane] }, font: { size: 11, color: css("--text") } };
-  }));
+  return { vis, visSet, units, matched, neighbors };
+}
+
+function drawMap() {
+  const box = $("map");
+  const spec = mapSpec();
+  const bubbles = focusCluster === null && spec.units.size > MAP_LIMIT;
+  if (bubbles) return drawBubbles(spec);
+  M.mode = "docs";
+  const ids = [...spec.units].sort();
+  const sig = "docs|" + ids.join(",") + "|" + [...spec.matched].length + "|" + S.q;
+  M.matched = spec.matched; M.neighbors = spec.neighbors;
+  $("maphint").textContent = "Tap a dot for the document, or a line to see why two are linked. Hexagons are groups of near-identical notices (tap to list them). Labels appear on hover and when zoomed in.";
+  if (!ids.length) { destroyNetwork(); fill(box, h("div", { class: "mapmsg" }, "No linked documents match these filters. Tick “Include nodes with no links” or loosen the filters.")); return; }
+  if (M.network && M.sig === sig) { restyle(); return; }
+  M.sig = sig; destroyNetwork(); box.replaceChildren();
+  const set = new Set(ids);
+  M.nodes = new vis.DataSet(ids.map(id => baseNode(id)));
   linkByEdgeId = {};
   const es = [];
-  data.links.forEach((l, i) => {
-    if (ids.has(l.a) && ids.has(l.b)) {
-      linkByEdgeId["e" + i] = l;
-      es.push({ id: "e" + i, from: l.a, to: l.b, width: 1 + Math.min(l.reasons.length, 4), color: { color: css("--muted"), opacity: .55 }, selectionWidth: 3 });
-    }
+  data.links.forEach(l => {
+    if (set.has(l.a) && set.has(l.b)) { linkByEdgeId["e" + l.i] = l; es.push({ id: "e" + l.i, from: l.a, to: l.b, width: 0.6 + Math.min(l.w / 3, 4), color: { color: css("--muted"), opacity: .5 }, selectionWidth: 3 }); }
   });
-  edges = new vis.DataSet(es);
-  network = new vis.Network(box, { nodes, edges }, {
-    layout: { randomSeed: 7 },                     // same starting positions every time, so the same data gives the same shape
+  M.edges = new vis.DataSet(es);
+  M.network = new vis.Network(box, { nodes: M.nodes, edges: M.edges }, {
+    layout: { randomSeed: 7 },
     physics: { solver: "forceAtlas2Based", stabilization: { iterations: 200 } },
     interaction: { hover: true, tooltipDelay: 150 }, edges: { smooth: false }, nodes: { borderWidth: 1 }
   });
-  network.once("stabilizationIterationsDone", () => network.setOptions({ physics: false }));
-  network.on("click", p => {
-    if (p.nodes.length) showDoc(p.nodes[0]);
-    else if (p.edges.length) showEdge(p.edges[0]);
+  M.network.once("stabilizationIterationsDone", () => { M.network.setOptions({ physics: false }); M.network.fit({ animation: false }); updateZoomLabels(); });
+  wireNetwork();
+  restyle();
+}
+function destroyNetwork() { if (M.network) { M.network.destroy(); M.network = null; M.sig = null; } }
+
+function laneColor(lane) { return { ai_tech: css("--ai"), defense_spending: css("--def"), crossover: css("--cross") }[lane]; }
+function baseNode(id) {
+  const lane = laneOfNode(id), g = groups[id];
+  return { id, shape: g ? "hexagon" : ({ ai_tech: "dot", defense_spending: "square", crossover: "diamond" })[lane],
+           size: g ? 14 + 4 * Math.log2(g.n) : 14, title: nodeTitle(id),
+           color: { background: laneColor(lane), border: laneColor(lane) }, font: { size: 12, color: css("--text"), strokeWidth: 3, strokeColor: css("--card") } };
+}
+
+// label + dimming rules: labels only on hover / selection / zoomed in; dim non-selected when a selection exists
+function restyle() {
+  if (!M.nodes) return;
+  const sel = M.selected, hasSel = sel.size > 0;
+  const upd = [];
+  M.nodes.forEach(n => {
+    const id = n.id;
+    let opacity = 1;
+    if (M.mode === "docs") {
+      if (hasSel) opacity = sel.has(id) ? 1 : 0.15;
+      else if (S.active) opacity = M.matched.has(id) ? 1 : 0.5;
+    } else if (hasSel) opacity = sel.has(id) ? 1 : 0.2;
+    const on = M.mode === "clusters" || M.hover === id || sel.has(id) || M.zoomLabels;
+    upd.push({ id, opacity, label: on ? (M.mode === "clusters" ? n.fullLabel : shortLabel(nodeTitle(id))) : undefined,
+               borderWidth: sel.has(id) ? 4 : 1, color: { background: n.color.background, border: sel.has(id) ? css("--text") : n.color.background } });
   });
+  M.nodes.update(upd);
+  if (M.edges) {
+    const eu = [];
+    M.edges.forEach(e => { eu.push({ id: e.id, color: { color: css("--muted"), opacity: hasSel ? (sel.has(e.from) && sel.has(e.to) ? .85 : .06) : .5 } }); });
+    M.edges.update(eu);
+  }
 }
-const shortTitle = t => t.length > 34 ? t.slice(0, 33) + "…" : t;
-
-function selectDoc(id) {          // used by "similar" / "linked" buttons
-  const d = docs[id];
-  if (!d) return;
-  if (view === "map" && network && nodes && nodes.get(id)) { network.selectNodes([id]); network.focus(id, { scale: 1, animation: true }); }
-  showDoc(id);
+function updateZoomLabels() {
+  if (!M.network || M.mode !== "docs") return;
+  const on = M.network.getScale() >= 1.1 && M.nodes.length <= 220;
+  if (on !== M.zoomLabels) { M.zoomLabels = on; restyle(); }
+}
+function wireNetwork() {
+  const n = M.network;
+  n.on("click", p => {
+    if (M.selectMode) return;
+    if (p.nodes.length) {
+      const id = p.nodes[0];
+      if (M.mode === "clusters") { pickCluster(Number(id.slice(1)), "force"); return; }
+      groups[id] ? showGroup(id) : showDoc(id);
+    } else if (p.edges.length) {
+      const e = linkByEdgeId[p.edges[0]];
+      if (M.mode === "clusters") showRelation(p.edges[0]); else if (e) showEdgeFor(e);
+    }
+  });
+  n.on("hoverNode", p => { M.hover = p.node; if (!M.zoomLabels) restyleOne(p.node); });
+  n.on("blurNode", () => { const id = M.hover; M.hover = null; if (id && !M.zoomLabels) restyleOne(id); });
+  n.on("zoom", () => { clearTimeout(M.zt); M.zt = setTimeout(updateZoomLabels, 120); });
+}
+function restyleOne(id) {
+  const n = M.nodes.get(id); if (!n) return;
+  const on = M.mode === "clusters" || M.hover === id || M.selected.has(id) || M.zoomLabels;
+  M.nodes.update({ id, label: on ? (M.mode === "clusters" ? n.fullLabel : shortLabel(nodeTitle(id))) : undefined });
 }
 
-// ---- detail panel ----
-function chipsBlock(label, arr) {
-  if (!arr || !arr.length) return null;
-  return [h("div", { class: "label" }, label), h("div", { class: "chips" }, arr.map(x => h("span", { class: "chip" }, x)))];
+// ---- default view when there are too many nodes: one bubble per cluster ----
+function drawBubbles(spec) {
+  const box = $("map");
+  M.mode = "clusters"; M.matched = new Set(); M.neighbors = new Set();
+  const per = {}, laneCount = {};
+  spec.vis.forEach(d => {
+    if (d.cluster === null) return;
+    per[d.cluster] = (per[d.cluster] || 0) + 1;
+    (laneCount[d.cluster] = laneCount[d.cluster] || {})[laneOfDoc(d)] = (laneCount[d.cluster][laneOfDoc(d)] || 0) + 1;
+  });
+  M.bubbleCounts = per;
+  const cids = Object.keys(per).map(Number).sort((a, b) => a - b);
+  const sig = "clusters|" + cids.map(c => c + ":" + per[c]).join(",");
+  $("maphint").textContent = `${spec.units.size} nodes match, too many to read at once, so each bubble is one cluster (size = documents). Tap a bubble to open that cluster; lines show clusters that share a rare law or program.`;
+  if (!cids.length) { destroyNetwork(); fill(box, h("div", { class: "mapmsg" }, "No clusters match these filters.")); return; }
+  if (M.network && M.sig === sig) { restyle(); return; }
+  M.sig = sig; destroyNetwork(); box.replaceChildren();
+  M.nodes = new vis.DataSet(cids.map(c => {
+    const lc = laneCount[c], total = per[c];
+    const lane = (lc.crossover || 0) >= total * 0.25 ? "crossover" : (lc.ai_tech || 0) >= (lc.defense_spending || 0) ? "ai_tech" : "defense_spending";
+    const cl = data.clusters[c];
+    return { id: "c" + c, shape: "dot", size: 10 + 5 * Math.sqrt(total), title: cl.summary, fullLabel: wrap(ctitle(cl), 18) + `\n(${total})`,
+             color: { background: laneColor(lane), border: laneColor(lane) }, font: { size: 13, color: css("--text"), strokeWidth: 3, strokeColor: css("--card") } };
+  }));
+  linkByEdgeId = {};
+  const es = [];
+  data.cluster_links.forEach(r => {
+    if (per[r.a] && per[r.b]) { const id = "r" + r.a + "-" + r.b; linkByEdgeId[id] = r; es.push({ id, from: "c" + r.a, to: "c" + r.b, width: 1 + Math.min(r.w / 12, 5), color: { color: css("--muted"), opacity: .5 } }); }
+  });
+  M.edges = new vis.DataSet(es);
+  M.network = new vis.Network(box, { nodes: M.nodes, edges: M.edges }, {
+    layout: { randomSeed: 7 }, physics: { solver: "forceAtlas2Based", stabilization: { iterations: 200 }, forceAtlas2Based: { gravitationalConstant: -120 } },
+    interaction: { hover: true, tooltipDelay: 150 }, edges: { smooth: false }
+  });
+  M.network.once("stabilizationIterationsDone", () => { M.network.setOptions({ physics: false }); M.network.fit({ animation: false }); });
+  wireNetwork();
+  restyle();
+}
+function showRelation(edgeId) {
+  const r = linkByEdgeId[edgeId], a = data.clusters[r.a], b = data.clusters[r.b];
+  fill($("detail"), h("h3", {}, "How these two clusters relate"),
+    h("p", {}, r.sentence, r.ai ? null : h("span", { class: "auto" }, " (auto)")),
+    chipsBlock("Shared by their linked documents", r.shared, s => `${s.label} · ${s.n}`),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => pickCluster(a.id, "force") }, "Open: " + ctitle(a))),
+    h("p", {}, h("button", { class: "linkbtn", onclick: () => pickCluster(b.id, "force") }, "Open: " + ctitle(b))));
 }
 
+// ---- select area (lasso / box), mouse and touch ----
+function setSelectMode(on) {
+  M.selectMode = on;
+  $("selectToggle").setAttribute("aria-pressed", String(on));
+  $("lasso").hidden = !on;
+}
+function initLasso() {
+  const lasso = $("lasso"), rect = $("lassorect");
+  let start = null;
+  const place = (a, b) => {
+    const x = Math.min(a.x, b.x), y = Math.min(a.y, b.y);
+    Object.assign(rect.style, { left: x + "px", top: y + "px", width: Math.abs(a.x - b.x) + "px", height: Math.abs(a.y - b.y) + "px" });
+  };
+  const pt = e => { const r = lasso.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+  lasso.addEventListener("pointerdown", e => { lasso.setPointerCapture(e.pointerId); start = pt(e); rect.hidden = false; place(start, start); e.preventDefault(); });
+  lasso.addEventListener("pointermove", e => { if (start) place(start, pt(e)); });
+  const end = e => {
+    if (!start) return;
+    const a = start, b = pt(e); start = null; rect.hidden = true;
+    if (Math.abs(a.x - b.x) < 8 && Math.abs(a.y - b.y) < 8) return;     // a tap, not a drag
+    if (!M.network) return;
+    const x0 = Math.min(a.x, b.x), x1 = Math.max(a.x, b.x), y0 = Math.min(a.y, b.y), y1 = Math.max(a.y, b.y);
+    const pos = M.network.getPositions(), picked = [];
+    for (const id of M.nodes.getIds()) {
+      const p = M.network.canvasToDOM(pos[id]);
+      if (p.x >= x0 && p.x <= x1 && p.y >= y0 && p.y <= y1) picked.push(id);
+    }
+    setSelection(picked);
+  };
+  lasso.addEventListener("pointerup", end);
+  lasso.addEventListener("pointercancel", () => { start = null; rect.hidden = true; });
+}
+function selectionDocIds(ids) {
+  if (M.mode === "clusters") {
+    const cs = new Set(ids.map(i => Number(i.slice(1))));
+    return visibleDocs().filter(d => cs.has(d.cluster)).map(d => d.id);
+  }
+  return ids.flatMap(nodeDocs);
+}
+function setSelection(ids) {
+  M.selected = new Set(ids);
+  restyle();
+  $("clearSel").hidden = ids.length === 0;
+  if (!ids.length) { resetDetail(); return; }
+  fill($("detail"),
+    h("div", { style: "display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px" },
+      h("h3", { style: "margin:0" }, "Selected area"), h("button", { class: "small", onclick: clearSelection }, "Clear selection")),
+    bigPicture(selectionDocIds(ids)));
+}
+function clearSelection() { M.selected = new Set(); $("clearSel").hidden = true; restyle(); resetDetail(); }
+
+// =====================================================================================================
+//  DETAIL PANELS
+// =====================================================================================================
+function showGroup(id) {
+  const g = groups[id];
+  fill($("detail"),
+    h("h3", {}, g.label),
+    h("div", { class: "meta" }, `${g.n} near-identical notices · ${fmtRange(g.date_from, g.date_to)} · ${shortAg(g.agency)}`),
+    h("p", { class: "hint" }, "These share the same agency, notice type and similar wording, so the map shows them as one node. Their cited laws and programs are combined."),
+    g.cluster !== null ? h("p", {}, "Cluster: ", h("button", { class: "linkbtn", onclick: () => pickCluster(g.cluster, "force") }, ctitle(data.clusters[g.cluster]))) : null,
+    h("div", { class: "label" }, "Member documents"),
+    h("ul", { class: "plain" }, g.member_ids.map(i => h("li", {}, h("button", { class: "linkbtn", onclick: () => showDoc(i) }, docs[i].title), h("span", { class: "hint" }, " " + (docs[i].pub_date || ""))))),
+    linkedBlock(id));
+}
 function showDoc(id) {
   const d = docs[id];
   fill($("detail"),
@@ -346,44 +772,43 @@ function showDoc(id) {
     h("div", { class: "chips" }, (d.crossover ? ["crossover"] : []).concat(d.lanes).map(l => h("span", { class: "chip lane-" + l }, LANE_NAMES[l] || l))),
     h("p", {}, d.summary),
     h("p", {}, h("a", { href: d.url }, "Open original document ↗")),
-    d.cluster !== null ? h("p", {}, "Cluster: ", h("button", { class: "linkbtn", onclick: () => { focusCluster = d.cluster; refresh(); showCluster(d.cluster); } }, data.clusters[d.cluster].name)) : null,
+    d.group ? h("p", {}, "One of ", h("button", { class: "linkbtn", onclick: () => showGroup(d.group) }, groups[d.group].label)) : null,
+    d.cluster !== null ? h("p", {}, "Cluster: ", h("button", { class: "linkbtn", onclick: () => pickCluster(d.cluster, "force") }, ctitle(data.clusters[d.cluster]))) : null,
     chipsBlock("Agencies", d.agencies), chipsBlock("Programs", d.programs), chipsBlock("Laws & rules", d.statutes), chipsBlock("Dollar amounts", d.dollar_amounts),
-    similarBlock(d), linkedBlock(d));
+    similarBlock(d), linkedBlock(nodeOf(d)));
 }
-
+function selectDoc(id) {
+  const d = docs[id]; if (!d) return;
+  if (view === "map" && M.network && M.nodes && M.nodes.get(nodeOf(d))) { M.network.selectNodes([nodeOf(d)]); M.network.focus(nodeOf(d), { scale: 1, animation: true }); }
+  showDoc(id);
+}
 function similarBlock(d) {
   if (!d.similar.length) return null;
   return [h("div", { class: "label" }, "Similar documents (by wording only, not a link)"),
     h("ul", { class: "plain" }, d.similar.map(s => h("li", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(s.id) }, docs[s.id].title), ` (${Math.round(s.score * 100)}%)`)))];
 }
-
-function linkedBlock(d) {
-  const mine = data.links.filter(l => l.a === d.id || l.b === d.id);
+function linkedBlock(nodeId) {
+  const mine = (adj.get(nodeId) || []).slice().sort((a, b) => b.link.w - a.link.w);
   if (!mine.length) return h("p", { class: "hint" }, "No linked documents.");
-  const shownLinks = mine.slice(0, 15);
-  return [h("div", { class: "label" }, `Linked documents (${mine.length})`),
-    h("ul", { class: "plain" }, shownLinks.map(l => {
-      const other = l.a === d.id ? l.b : l.a;
-      return h("li", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(other) }, docs[other].title),
-        " — ", [...new Set(l.reasons.map(r => r.label))].join("; "), " ", h("button", { class: "linkbtn", onclick: () => showEdgeFor(l) }, "(why?)"));
-    })), mine.length > 15 ? h("p", { class: "hint" }, `…and ${mine.length - 15} more. Use the Map tab to explore them.`) : null];
+  return [h("div", { class: "label" }, `Linked (${mine.length}, strongest first)`),
+    h("ul", { class: "plain" }, mine.slice(0, 15).map(({ other, link }) => h("li", {},
+      h("button", { class: "linkbtn", onclick: () => groups[other] ? showGroup(other) : selectDoc(other) }, nodeTitle(other)),
+      " — ", [...new Set(link.reasons.map(r => r.label))].slice(0, 2).join("; "), " ", h("button", { class: "linkbtn", onclick: () => showEdgeFor(link) }, "(why?)")))),
+    mine.length > 15 ? h("p", { class: "hint" }, `…and ${mine.length - 15} more. Use the Map tab to explore them.`) : null];
 }
-
-function quoteList(side, doc) {
-  return [h("div", { class: "label" }, doc.title),
-    side.map(q => h("blockquote", {}, h("strong", {}, q.role + ": "), "“" + q.quote + "”"))];
+function quoteList(side) {
+  const d = docs[side[0].doc];
+  return [h("div", { class: "label" }, d ? d.title : ""), side.map(q => h("blockquote", {}, h("strong", {}, q.role + ": "), "“" + q.quote + "”"))];
 }
-function showEdge(edgeId) { showEdgeFor(linkByEdgeId[edgeId]); }
 function showEdgeFor(l) {
-  const a = docs[l.a], b = docs[l.b];
   fill($("detail"),
-    h("h3", {}, "Why these two documents are linked"),
-    h("p", { class: "meta" }, "Each reason below is backed by exact words found in both documents."),
+    h("h3", {}, "Why these are linked"),
+    h("p", { class: "meta" }, `Link strength ${l.w} (higher = the shared things are rarer). Each reason is backed by exact words from both documents.`),
     l.reasons.map(r => h("div", {},
-      h("p", {}, h("strong", {}, ({ program: "Shared program", statute: "Shared law or rule", "agency+amount": "Same agency and dollar amount" })[r.kind] || r.kind), ": ", r.label),
-      quoteList(r.a, a), quoteList(r.b, b))),
-    h("p", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(a.id) }, "Open: " + a.title)),
-    h("p", {}, h("button", { class: "linkbtn", onclick: () => selectDoc(b.id) }, "Open: " + b.title)));
+      h("p", {}, h("strong", {}, ({ program: "Shared program", statute: "Shared law or rule", "agency+amount": "Same agency and dollar amount" })[r.kind] || r.kind),
+        ": ", r.label, " ", h("span", { class: "hint" }, `(rarity ${r.w})`)),
+      quoteList(r.a), quoteList(r.b))),
+    [l.a, l.b].map(n => h("p", {}, h("button", { class: "linkbtn", onclick: () => groups[n] ? showGroup(n) : selectDoc(n) }, "Open: " + nodeTitle(n)))));
 }
 </script>
 </body>

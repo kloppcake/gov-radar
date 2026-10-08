@@ -10,7 +10,9 @@ import argparse
 import collections
 import datetime as dt
 import email.utils
+import hashlib
 import html
+import math
 import json
 import os
 import re
@@ -66,6 +68,9 @@ def open_db(cfg):
         entities TEXT,                -- JSON of validated entities (name + verified quote), before alias normalization
         embedding BLOB,
         first_seen TEXT)""")
+    db.execute("""CREATE TABLE IF NOT EXISTS ai_text (    -- cache of AI-written cluster/pair/group text
+        hash TEXT PRIMARY KEY,        -- sha256 of (model + prompt): unchanged input = no new API call
+        kind TEXT, text TEXT, created TEXT)""")
     db.commit()
     return db
 
@@ -537,94 +542,200 @@ def similar_docs(cfg, docs):
     return out
 
 
-# --------------------------------------------------------------------------- step 6: link
+# --------------------------------------------------------------------------- step 6: collapse duplicates
 
-def build_links(cfg, docs):
-    """docs: list of dicts with 'id' and normalized 'ents'. Returns {(a,b): [reason, ...]}."""
-    links = collections.defaultdict(list)
-    index = collections.defaultdict(dict)          # (kind, key) -> {doc_id: entity}
-    agency_idx = collections.defaultdict(dict)     # agency key -> {doc_id: entity}
-    amount_idx = collections.defaultdict(dict)     # amount -> {doc_id: entity}
-    too_broad = []
+def short_agency(name):
+    n = re.sub(r"^(U\.?S\.?\s+)?Department of (the )?", "", name or "", flags=re.I)
+    return n.strip() or (name or "")
+
+
+def title_key(title):
+    """Boil a title down to its 'notice type': the last ';' segment, digits masked. Returns (key, readable tail)."""
+    segs = [x.strip() for x in title.split(";") if x.strip()]
+    tail = segs[-1] if len(segs) > 1 else title
+    key = re.sub(r"\d+", "#", norm(tail))
+    if len(key) < 20:                       # tail is too generic (e.g. 'Deletions'), use the whole title
+        key, tail = re.sub(r"\d+", "#", norm(title)), title
+    return key, tail
+
+
+def find_groups(cfg, docs):
+    """Find sets of near-identical notices: same source, agency and type, same notice-type title, and similar
+    summaries (or near-duplicate titles AND summaries). Each set of >= group_min_size becomes ONE node."""
+    import numpy as np
+    buckets = collections.defaultdict(list)
     for d in docs:
+        if d["embedding"]:
+            buckets[(d["source"], d["agency0"], d["doc_type"])].append(d)
+    parent = {}
+
+    def find(x):
+        while parent.setdefault(x, x) != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    for members in buckets.values():
+        if len(members) < cfg["group_min_size"]:
+            continue
+        sims = np.vstack([np.frombuffer(d["embedding"], dtype="float32") for d in members])
+        sims = sims @ sims.T
+        keys = [title_key(d["title"])[0] for d in members]
+        toks = [set(norm(d["title"]).split()) for d in members]
+        for i in range(len(members)):
+            for j in range(i + 1, len(members)):
+                same = keys[i] == keys[j] and sims[i, j] >= cfg["group_same_title_similarity"]
+                jac = len(toks[i] & toks[j]) / max(1, len(toks[i] | toks[j]))
+                near = sims[i, j] >= cfg["group_near_duplicate_similarity"] and jac >= 0.7
+                if same or near:
+                    parent[find(members[i]["id"])] = find(members[j]["id"])
+    comps = collections.defaultdict(list)
+    by_id = {d["id"]: d for d in docs}
+    for did in list(parent):
+        comps[find(did)].append(by_id[did])
+    groups = []
+    for members in comps.values():
+        if len(members) >= cfg["group_min_size"]:
+            members.sort(key=lambda d: d["pub_date"] or "", reverse=True)
+            groups.append(members)
+    groups.sort(key=lambda m: (-len(m), m[0]["id"]))
+    return [{"id": f"g{i}", "members": m, "agency": m[0]["agency0"], "doc_type": m[0]["doc_type"],
+             "tail": title_key(m[0]["title"])[1]} for i, m in enumerate(groups)]
+
+
+def group_label(g):
+    kind = "notices" if (g["doc_type"] or "") in ("notice", "other", "") else (g["doc_type"] + "s")
+    desc = g.get("descriptor") or g["tail"]
+    desc = desc if len(desc) <= 80 else desc[:79].rsplit(" ", 1)[0] + "…"
+    return f"{len(g['members'])} similar {kind}: {desc} ({short_agency(g['agency'])})"
+
+
+def merge_ents(members):
+    ents, seen = {t: [] for t in ENTITY_TYPES}, {t: set() for t in ENTITY_TYPES}
+    for m in members:
+        for t in ENTITY_TYPES:
+            for e in m["ents"][t]:
+                if e["key"] not in seen[t]:
+                    seen[t].add(e["key"])
+                    ents[t].append(dict(e, doc=m["id"]))
+    return ents
+
+
+def make_units(docs, groups):
+    """A unit is one node on the map: a single document, or a collapsed group of near-identical ones."""
+    grouped = {m["id"]: g["id"] for g in groups for m in g["members"]}
+    units = [{"id": g["id"], "members": g["members"], "ents": merge_ents(g["members"]), "group": g} for g in groups]
+    units += [{"id": d["id"], "members": [d], "ents": merge_ents([d]), "group": None} for d in docs if d["id"] not in grouped]
+    for u in units:
+        u["pub_date"] = max((m["pub_date"] or "") for m in u["members"])
+    return units
+
+
+# --------------------------------------------------------------------------- step 7: link (weighted by rarity)
+
+def build_links(cfg, units, cap, quiet=False):
+    """Candidate links between units, with a weight per reason = how rare the shared thing is (IDF):
+    ln(number of units / number of units that share it). Returns {(a, b): [reason, ...]}."""
+    N = len(units)
+    links = collections.defaultdict(list)
+    index = collections.defaultdict(dict)          # (kind, key) -> {unit_id: entity}
+    agency_idx = collections.defaultdict(dict)
+    amount_idx = collections.defaultdict(dict)
+    too_broad = []
+    for u in units:
         for t in ("programs", "statutes"):
-            for e in d["ents"][t]:
+            for e in u["ents"][t]:
                 if not e["boilerplate"]:
-                    index[(t, e["key"])][d["id"]] = e
-        for e in d["ents"]["agencies"]:
-            agency_idx[e["key"]][d["id"]] = e
-        for e in d["ents"]["dollar_amounts"]:
+                    index[(t, e["key"])][u["id"]] = e
+        for e in u["ents"]["agencies"]:
+            agency_idx[e["key"]][u["id"]] = e
+        for e in u["ents"]["dollar_amounts"]:
             if e["amount"] >= cfg["min_link_dollar_amount"]:
-                amount_idx[e["key"]][d["id"]] = e
+                amount_idx[e["key"]][u["id"]] = e
 
     def pairs(members):
         ids = sorted(members)
         return [(a, b) for i, a in enumerate(ids) for b in ids[i + 1:]]
 
+    def side(role, e):
+        return {"role": role, "quote": e["quote"], "doc": e["doc"]}
+
     for (t, key), members in index.items():
         if len(members) < 2:
             continue
-        if len(members) > cfg["max_docs_per_shared_key"]:
+        if len(members) > cap:
             too_broad.append((t, next(iter(members.values()))["label"], len(members)))
             continue
         kind = "program" if t == "programs" else "statute"
+        w = round(math.log(N / len(members)), 2)
         for a, b in pairs(members):
-            links[(a, b)].append({"kind": kind, "label": members[a]["label"],
-                                  "a": [{"role": kind, "quote": members[a]["quote"]}],
-                                  "b": [{"role": kind, "quote": members[b]["quote"]}]})
-    # agency AND dollar amount
+            links[(a, b)].append({"kind": kind, "label": members[a]["label"], "w": w,
+                                  "a": [side(kind, members[a])], "b": [side(kind, members[b])]})
     for amt, amembers in amount_idx.items():
-        if len(amembers) < 2:
+        if len(amembers) < 2 or len(amembers) > cap:
             continue
+        w = round(math.log(N / len(amembers)), 2)
         for a, b in pairs(amembers):
-            shared = [k for k, m in agency_idx.items() if a in m and b in m]
-            for k in shared[:3]:
+            for k in [k for k, m in agency_idx.items() if a in m and b in m][:3]:
                 ea, eb = agency_idx[k][a], agency_idx[k][b]
                 links[(a, b)].append({
-                    "kind": "agency+amount", "label": f"{ea['label']} + {amembers[a]['label']}",
-                    "a": [{"role": "agency", "quote": ea["quote"]}, {"role": "amount", "quote": amembers[a]["quote"]}],
-                    "b": [{"role": "agency", "quote": eb["quote"]}, {"role": "amount", "quote": amembers[b]["quote"]}]})
-    for t, label, n in too_broad:
-        log(f"  note: {t[:-1]} '{label}' is shared by {n} documents (> {cfg['max_docs_per_shared_key']}); too generic, not used for links")
+                    "kind": "agency+amount", "label": f"{ea['label']} + {amembers[a]['label']}", "w": w,
+                    "a": [side("agency", ea), side("amount", amembers[a])],
+                    "b": [side("agency", eb), side("amount", amembers[b])]})
+    if not quiet:
+        for t, label, n in too_broad:
+            log(f"  note: {t[:-1]} '{label}' is shared by {n} nodes (> {cap}); too generic, not used for links")
     return links
 
 
-# --------------------------------------------------------------------------- step 7: cluster
+def link_weight(reasons):
+    """Strongest reason counts fully, the next half as much, and so on, so ten weak reasons don't beat one rare one."""
+    ws = sorted((r["w"] for r in reasons), reverse=True)
+    return round(sum(w * 0.5 ** i for i, w in enumerate(ws)), 2)
 
-def build_clusters(cfg, doc_by_id, links):
-    """Group linked documents. Plain 'connected at all' grouping chains thousands of documents into one blob
-    once the library is large, so we use Louvain community detection: it keeps tightly linked groups together
-    and cuts the weak bridges between them."""
+
+def weigh_links(cfg, raw):
+    out = {}
+    for pair, reasons in raw.items():
+        w = link_weight(reasons)
+        if w >= cfg["min_link_weight"]:
+            out[pair] = {"w": w, "reasons": sorted(reasons, key=lambda r: -r["w"])}
+    return out
+
+
+# --------------------------------------------------------------------------- step 8: cluster + describe
+
+def build_clusters(cfg, units_by_id, links):
+    """Louvain community detection over units, edge weight = rarity-based link weight."""
     import networkx as nx
     graph = nx.Graph()
-    for (a, b), reasons in links.items():
-        graph.add_edge(a, b, weight=len(reasons))
+    for (a, b), l in links.items():
+        graph.add_edge(a, b, weight=l["w"])
     communities = nx.community.louvain_communities(
         graph, weight="weight", resolution=cfg.get("cluster_resolution", 1.5), seed=42) if graph else []
-    groups = {i: list(c) for i, c in enumerate(communities) if len(c) >= 2}
     today = dt.date.today()
-
-    def days_old(did):
-        try:
-            return (today - dt.date.fromisoformat(doc_by_id[did]["pub_date"])).days
-        except Exception:
-            return 9999
-
     clusters = []
-    for members in groups.values():
-        mset = set(members)
+    for comm in communities:
+        if len(comm) < 2:
+            continue
+        uids = sorted(comm)
+        docs = sorted((m for u in uids for m in units_by_id[u]["members"]), key=lambda m: m["pub_date"] or "", reverse=True)
         names = collections.Counter()
-        fallback = collections.Counter()
-        for (a, b), reasons in links.items():
-            if a in mset and b in mset:
-                for r in reasons:
-                    (fallback if r["kind"] == "agency+amount" else names)[r["label"]] += 1
-        counter = names or fallback
-        name = counter.most_common(1)[0][0] if counter else "Linked documents"
-        members.sort(key=lambda d: doc_by_id[d]["pub_date"] or "", reverse=True)
-        clusters.append({"name": name, "size": len(members), "doc_ids": members,
-                         "new_this_week": sum(days_old(d) <= 7 for d in members),
-                         "new_30_days": sum(days_old(d) <= 30 for d in members)})
+        for (a, b), l in links.items():
+            if a in comm and b in comm:
+                for r in l["reasons"]:
+                    names[r["label"]] += r["w"]
+        dates = [m["pub_date"] for m in docs if m["pub_date"]]
+
+        def age(m):
+            try:
+                return (today - dt.date.fromisoformat(m["pub_date"])).days
+            except Exception:
+                return 9999
+        clusters.append({"name": names.most_common(1)[0][0] if names else "Linked documents",
+                         "unit_ids": uids, "doc_ids": [m["id"] for m in docs], "size": len(docs),
+                         "date_from": min(dates) if dates else None, "date_to": max(dates) if dates else None,
+                         "new_this_week": sum(age(m) <= 7 for m in docs), "new_30_days": sum(age(m) <= 30 for m in docs)})
     clusters.sort(key=lambda c: (-c["new_30_days"], -c["size"], c["name"]))
     clusters = clusters[:cfg["top_clusters"]]
     for i, c in enumerate(clusters):
@@ -632,24 +743,229 @@ def build_clusters(cfg, doc_by_id, links):
     return clusters
 
 
-# --------------------------------------------------------------------------- step 8: export
+def describe_clusters(cfg, clusters, doc_by_id, entity_df, n_docs):
+    """Numbers only (no AI): top shared laws/programs/funding lines and agencies for each cluster."""
+    for c in clusters:
+        members = [doc_by_id[i] for i in c["doc_ids"]]
+        count = collections.Counter()
+        kinds = {}
+        for m in members:
+            for t, kind in (("programs", "program"), ("statutes", "law"), ("dollar_amounts", "funding")):
+                for e in m["ents"][t]:
+                    if e["boilerplate"] or (t == "dollar_amounts" and e["amount"] < cfg["min_link_dollar_amount"]):
+                        continue
+                    count[e["label"]] += 1
+                    kinds[e["label"]] = kind
+        scored = sorted(((n * math.log(n_docs / max(1, entity_df.get(l, n))), l, n) for l, n in count.items() if n >= 2),
+                        reverse=True)
+        c["top_shared"] = [{"label": l, "kind": kinds[l], "docs": n} for _, l, n in scored[:6]]
+        ag = collections.Counter(e["label"] for m in members for e in m["ents"]["agencies"])
+        c["agencies"] = [{"name": n, "n": k} for n, k in ag.most_common(5)]
 
-def step_link_cluster_export(cfg, db):
-    log("Step 4/6/7/8: normalize, link, cluster, export")
+
+def cluster_relations(cfg, clusters, links, cluster_of_unit):
+    """Cluster-to-cluster links: add up the unit links that cross between two clusters."""
+    acc = {}
+    for (a, b), l in links.items():
+        ca, cb = cluster_of_unit.get(a), cluster_of_unit.get(b)
+        if ca is None or cb is None or ca == cb:
+            continue
+        key = (min(ca, cb), max(ca, cb))
+        e = acc.setdefault(key, {"a": key[0], "b": key[1], "w": 0.0, "links": 0, "shared": collections.Counter()})
+        e["w"] += l["w"]
+        e["links"] += 1
+        for r in l["reasons"]:
+            e["shared"][r["label"]] += 1
+    rel = sorted(acc.values(), key=lambda e: -e["w"])
+    keep, per = [], collections.Counter()
+    for e in rel:                          # strongest few neighbours per cluster, so the picture stays readable
+        if per[e["a"]] < cfg["max_related_clusters"] and per[e["b"]] < cfg["max_related_clusters"]:
+            keep.append(e)
+            per[e["a"]] += 1
+            per[e["b"]] += 1
+    for e in keep:
+        e["w"] = round(e["w"], 1)
+        e["shared"] = [{"label": l, "n": n} for l, n in e["shared"].most_common(5)]
+    return keep
+
+
+# --------------------------------------------------------------------------- step 9: build-time AI text (cached)
+
+SPECULATION = re.compile(r"\b(intend\w*|intent|secret\w*|conspir\w*|agenda|hidden|really)\b", re.I)
+AI_SYSTEM = ("You write short, neutral descriptions of groups of US government documents. Use ONLY the facts supplied. "
+             "Describe what the documents share. Never guess at motives, intent, or plans, never say or imply that "
+             "anyone is coordinating, and never add facts that are not in the input. Reply with one JSON object only.")
+
+
+def cluster_prompt(c, doc_by_id):
+    ds = [doc_by_id[i] for i in c["doc_ids"]]
+    sample = "\n".join(f"- {d['title'][:120]}: {(d['summary'] or '')[:260]}" for d in ds[:8])
+    shared = "\n".join(f"- {s['label']} ({s['kind']}, in {s['docs']} of {c['size']} documents)" for s in c["top_shared"]) or "- (none)"
+    ag = ", ".join(f"{a['name']} ({a['n']})" for a in c["agencies"]) or "(none)"
+    return (f"A group of {c['size']} documents published {c['date_from']} to {c['date_to']}.\n"
+            f"Shared laws, programs and funding lines:\n{shared}\nAgencies named (number of documents): {ag}\n"
+            f"Sample documents:\n{sample}\n\n"
+            'Return {"title": "...", "summary": "..."}. title: at most 8 plain-English words naming what these '
+            "documents are about. summary: 2-3 plain-English sentences saying what this group of documents is and why "
+            "it matters, based only on what the documents themselves state (who is affected, what is regulated or funded, "
+            "amounts). Mention the main shared law or program.")
+
+
+def pair_prompt(r, clusters):
+    ca, cb = clusters[r["a"]], clusters[r["b"]]
+    shared = "; ".join(f"{s['label']} (in {s['n']} document links)" for s in r["shared"])
+    return (f"Cluster A: {ca.get('title') or ca['name']} ({ca['size']} documents). Cluster B: {cb.get('title') or cb['name']} "
+            f"({cb['size']} documents).\nThe two clusters are connected by {r['links']} links through these shared "
+            f"entities: {shared}.\n\n"
+            'Return {"sentence": "..."}: ONE plain-English sentence saying how the two clusters relate, based only on '
+            "the shared entities listed. Do not mention anything not listed.")
+
+
+def group_prompt(g):
+    titles = "\n".join(f"- {m['title'][:140]}" for m in g["members"][:5])
+    return (f"These {len(g['members'])} notices are near-duplicates from {short_agency(g['agency'])}:\n{titles}\n\n"
+            'Return {"descriptor": "..."}: a lowercase phrase of at most 8 words saying what kind of notice these are '
+            "(for example: duty-free entry of scientific instruments).")
+
+
+def step_ai_text(cfg, db, tasks, stats):
+    """tasks: [{'key','prompt','validate'}]. Returns {key: parsed dict}. Results are cached in radar.db by a
+    hash of (model, prompt), so unchanged clusters/pairs/groups cost nothing on later runs."""
+    out, todo = {}, []
+    for t in tasks:
+        h = hashlib.sha256((cfg["model"] + "\n" + t["prompt"]).encode()).hexdigest()
+        row = db.execute("SELECT text FROM ai_text WHERE hash=?", (h,)).fetchone()
+        if row:
+            out[t["key"]] = json.loads(row["text"])
+            stats["ai_cached"] += 1
+        else:
+            todo.append((t, h))
+    if not todo:
+        return out
+    if not os.environ.get("ANTHROPIC_API_KEY"):
+        log(f"  ANTHROPIC_API_KEY not set: {len(todo)} texts use plain templates instead of AI-written text")
+        return out
+    import anthropic
+    client = anthropic.Anthropic()
+
+    def work(item):
+        t, h = item
+        try:
+            resp = client.messages.create(model=cfg["model"], max_tokens=700, system=AI_SYSTEM,
+                                          messages=[{"role": "user", "content": t["prompt"]}])
+            usage = (resp.usage.input_tokens, resp.usage.output_tokens)
+            return t, h, parse_json_reply("".join(b.text for b in resp.content if b.type == "text")), usage, None
+        except Exception as e:
+            return t, h, None, (0, 0), e
+
+    with ThreadPoolExecutor(cfg["llm_workers"]) as ex:
+        for t, h, parsed, (tin, tout), err in ex.map(work, todo):
+            stats["tokens_in"] += tin
+            stats["tokens_out"] += tout
+            if parsed is None or not t["validate"](parsed):
+                stats["ai_rejected"] += 1
+                log(f"  AI text rejected for {t['key']} ({err or 'failed checks'}); using template")
+                continue
+            db.execute("INSERT OR REPLACE INTO ai_text (hash, kind, text, created) VALUES (?,?,?,?)",
+                       (h, t["key"].split(":")[0], json.dumps(parsed), dt.datetime.now().isoformat(timespec="seconds")))
+            db.commit()
+            out[t["key"]] = parsed
+            stats["ai_new"] += 1
+    return out
+
+
+def ok_text(field, limit):
+    def check(p):
+        v = p.get(field)
+        return isinstance(v, str) and 5 < len(v) <= limit and not SPECULATION.search(v)
+    return check
+
+
+def fmt_range(a, b):
+    def m(x):
+        try:
+            return dt.date.fromisoformat(x).strftime("%b %Y")
+        except Exception:
+            return x or "?"
+    return m(a) if m(a) == m(b) else f"{m(a)} to {m(b)}"
+
+
+def template_cluster_text(c):
+    shared = ", ".join(s["label"] for s in c["top_shared"][:2]) or c["name"]
+    ag = ", ".join(a["name"] for a in c["agencies"][:3])
+    return (f"{c['size']} documents published {fmt_range(c['date_from'], c['date_to'])} that share references to {shared}."
+            + (f" Agencies named most often: {ag}." if ag else ""))
+
+
+# --------------------------------------------------------------------------- step 10: export
+
+def step_link_cluster_export(cfg, db, stats):
+    log("Step 4/6-10: normalize, collapse, link, cluster, describe, export")
     norm_ = Normalizer(cfg)
-    rows = db.execute("SELECT * FROM documents WHERE status='done' ORDER BY pub_date DESC").fetchall()
     docs = []
-    for r in rows:
+    for r in db.execute("SELECT * FROM documents WHERE status='done' ORDER BY pub_date DESC"):
         d = dict(r)
         d["ents"] = norm_.doc_entities(json.loads(r["entities"] or "{}"))
+        names = (json.loads(r["raw"]).get("agency_names") or [])
+        d["agency0"] = names[0] if names else ("GAO" if r["source"] == "gao" else "Unknown")
         docs.append(d)
     n_unknown = write_unknown_entities(cfg, norm_)
     doc_by_id = {d["id"]: d for d in docs}
-    links = build_links(cfg, docs)
-    clusters = build_clusters(cfg, doc_by_id, links)
-    cluster_of = {did: c["id"] for c in clusters for did in c["doc_ids"]}
-    sims = similar_docs(cfg, docs)
 
+    # --- before: every document its own node, links not weighted (how the site worked before this change)
+    singles = [{"id": d["id"], "members": [d], "ents": merge_ents([d]), "group": None} for d in docs]
+    legacy = build_links(cfg, singles, cap=cfg["legacy_max_docs_per_shared_key"], quiet=True)
+    legacy_nodes = {n for pair in legacy for n in pair}
+
+    # --- collapse near-duplicates into single nodes
+    groups = find_groups(cfg, docs)
+    units = make_units(docs, groups)
+    units_by_id = {u["id"]: u for u in units}
+    N = len(units)
+
+    # --- link, weighted by rarity
+    raw = build_links(cfg, units, cap=cfg["max_docs_per_shared_key"])
+    weights = sorted(link_weight(r) for r in raw.values())
+    cuts = "  ".join(f">={t}: {sum(w >= t for w in weights)}" for t in (2, 3, 4, 5, 6))
+    log(f"  candidate links by weight  {cuts}")
+    links = weigh_links(cfg, raw)
+
+    # --- cluster, describe
+    clusters = build_clusters(cfg, units_by_id, links)
+    cluster_of_unit = {u: c["id"] for c in clusters for u in c["unit_ids"]}
+    cluster_of_doc = {d: c["id"] for c in clusters for d in c["doc_ids"]}
+    entity_df = collections.Counter()
+    for d in docs:
+        for lab in {e["label"] for t in ("programs", "statutes", "dollar_amounts") for e in d["ents"][t] if not e["boilerplate"]}:
+            entity_df[lab] += 1
+    describe_clusters(cfg, clusters, doc_by_id, entity_df, len(docs))
+    relations = cluster_relations(cfg, clusters, links, cluster_of_unit)
+
+    # --- AI-written text (cached); falls back to plain templates without an API key
+    tasks = [{"key": f"group:{g['id']}", "prompt": group_prompt(g), "validate": ok_text("descriptor", 90)} for g in groups]
+    tasks += [{"key": f"cluster:{c['id']}", "prompt": cluster_prompt(c, doc_by_id),
+               "validate": lambda p: ok_text("summary", 700)(p) and ok_text("title", 80)(p)} for c in clusters]
+    ai = step_ai_text(cfg, db, tasks, stats)
+    for g in groups:
+        g["descriptor"] = (ai.get(f"group:{g['id']}") or {}).get("descriptor")
+    titled = [dict(c, title=(ai.get(f"cluster:{c['id']}") or {}).get("title")) for c in clusters]
+    pair_tasks = [{"key": f"pair:{r['a']}-{r['b']}", "prompt": pair_prompt(r, titled),
+                   "validate": ok_text("sentence", 350)} for r in relations]
+    ai.update(step_ai_text(cfg, db, pair_tasks, stats))
+    for c in clusters:
+        got = ai.get(f"cluster:{c['id']}")
+        c["title"] = got["title"].strip() if got else None
+        c["summary"] = got["summary"].strip() if got else template_cluster_text(c)
+        c["ai"] = bool(got)
+    for r in relations:
+        got = ai.get(f"pair:{r['a']}-{r['b']}")
+        r["sentence"] = got["sentence"].strip() if got else \
+            "Both clusters cite " + ", ".join(s["label"] for s in r["shared"][:3]) + "."
+        r["ai"] = bool(got)
+
+    # --- similar docs, export
+    sims = similar_docs(cfg, docs)
+    group_of = {m["id"]: g["id"] for g in groups for m in g["members"]}
     out_docs = []
     for d in docs:
         lanes = json.loads(d["lanes"])
@@ -660,16 +976,36 @@ def step_link_cluster_export(cfg, db):
             "programs": [e["label"] for e in d["ents"]["programs"]],
             "statutes": [e["label"] for e in d["ents"]["statutes"]],
             "dollar_amounts": [e["label"] for e in d["ents"]["dollar_amounts"]],
-            "cluster": cluster_of.get(d["id"]), "similar": sims.get(d["id"], [])})
-    kept = set(cluster_of)
-    out_links = [{"a": a, "b": b, "reasons": rs} for (a, b), rs in links.items() if a in kept and b in kept]
-    payload = {"generated_at": dt.datetime.now().isoformat(timespec="seconds"),
-               "documents": out_docs, "links": out_links, "clusters": clusters}
+            "boiler": [e["label"] for t in ("programs", "statutes") for e in d["ents"][t] if e["boilerplate"]],
+            "group": group_of.get(d["id"]), "cluster": cluster_of_doc.get(d["id"]), "similar": sims.get(d["id"], [])})
+    out_groups = []
+    for g in groups:
+        ms = g["members"]
+        lanes = sorted({l for m in ms for l in json.loads(m["lanes"])})
+        out_groups.append({"id": g["id"], "label": group_label(g), "n": len(ms), "agency": g["agency"],
+                           "member_ids": [m["id"] for m in ms], "lanes": lanes, "crossover": len(lanes) > 1,
+                           "date_from": min(m["pub_date"] for m in ms), "date_to": max(m["pub_date"] for m in ms),
+                           "cluster": cluster_of_unit.get(g["id"])})
+    kept = set(cluster_of_unit)
+    out_links = [{"a": a, "b": b, "w": l["w"], "reasons": l["reasons"]} for (a, b), l in links.items() if a in kept and b in kept]
+    out_clusters = [{k: v for k, v in c.items() if k != "unit_ids"} for c in clusters]
+    stats_out = {"docs": len(docs), "nodes_before": len(docs), "links_before": len(legacy), "linked_nodes_before": len(legacy_nodes),
+                 "groups": len(groups), "docs_in_groups": sum(len(g["members"]) for g in groups), "nodes_after": N,
+                 "links_after": len(out_links), "linked_nodes_after": len(kept), "min_link_weight": cfg["min_link_weight"]}
+    payload = {"generated_at": dt.datetime.now().isoformat(timespec="seconds"), "documents": out_docs, "groups": out_groups,
+               "links": out_links, "clusters": out_clusters, "cluster_links": relations,
+               "entity_df": {k: v for k, v in entity_df.items() if v >= 2}, "stats": stats_out}
     site = ROOT / cfg["site_dir"]
     site.mkdir(exist_ok=True)
     (site / "data.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-    log(f"  {len(out_docs)} documents, {len(out_links)} links, {len(clusters)} clusters -> {cfg['site_dir']}/data.json; "
-        f"{n_unknown} unrecognized names logged to unknown_entities.txt")
+
+    log("  --- effect of weighting + collapsing ---")
+    log(f"  BEFORE: {len(docs):>5} nodes, {len(legacy):>6} links  ({len(legacy_nodes)} nodes had a link)")
+    log(f"  collapse: {len(groups)} groups swallowed {stats_out['docs_in_groups']} documents -> {N} nodes")
+    log(f"  AFTER : {N:>5} nodes, {len(out_links):>6} links  ({len(kept)} nodes in the {len(clusters)} top clusters; "
+        f"min link weight {cfg['min_link_weight']})")
+    log(f"  {len(out_docs)} documents, {len(clusters)} clusters, {len(relations)} cluster relations -> "
+        f"{cfg['site_dir']}/data.json; {n_unknown} unrecognized names logged to unknown_entities.txt")
     return len(out_docs), len(out_links), len(clusters)
 
 
@@ -697,7 +1033,7 @@ def main():
     step_text(cfg, db)
     step_summarize(cfg, db, stats)
     step_embed(cfg, db)
-    n_docs, n_links, n_clusters = step_link_cluster_export(cfg, db)
+    n_docs, n_links, n_clusters = step_link_cluster_export(cfg, db, stats)
 
     price = cfg["price_per_million_tokens"]
     cost = stats["tokens_in"] / 1e6 * price["input"] + stats["tokens_out"] / 1e6 * price["output"]
@@ -707,6 +1043,7 @@ def main():
     log(f"Documents summarized this run : {stats['docs_summarized']}   (still pending: {pending})")
     log(f"Tokens used                   : {stats['tokens_in']:,} in / {stats['tokens_out']:,} out")
     log(f"Estimated cost                : ${cost:.4f}  ({cfg['model']})")
+    log(f"AI texts (clusters/pairs/groups): {stats['ai_new']} written, {stats['ai_cached']} reused from cache, {stats['ai_rejected']} rejected")
     log(f"Site data                     : {n_docs} documents, {n_links} links, {n_clusters} clusters")
     log(f"Time                          : {time.time() - started:.0f}s")
     if stats["summary_attempted"] and not stats["docs_summarized"]:
