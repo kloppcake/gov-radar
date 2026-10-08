@@ -1,0 +1,3 @@
+# Names the model found that are not in the alias table (config.yaml).
+# If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
+
