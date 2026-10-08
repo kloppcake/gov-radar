@@ -98,20 +98,27 @@ def kw_regex(kw):
 
 def http_get(url, **kw):
     last = None
-    for i in range(4):
+    for i in range(6):
+        wait = 2 * (i + 1)
         try:
             r = requests.get(url, headers=UA, timeout=45, **kw)
             if r.status_code == 200:
                 return r
             last = f"HTTP {r.status_code}"
+            if r.status_code == 429:         # rate limited: back off for real, honouring Retry-After
+                try:
+                    wait = max(int(r.headers.get("Retry-After", 0)), 15 * (i + 1))
+                except ValueError:
+                    wait = 15 * (i + 1)
         except requests.RequestException as e:
             last = str(e)
-        time.sleep(2 * (i + 1))
+        time.sleep(wait)
     raise RuntimeError(f"GET {url} failed: {last}")
 
 
 def fr_body_text(raw_text_url):
     """Plain body text of a Federal Register document, without the GPO header block."""
+    time.sleep(0.4)                  # be polite: the Federal Register rate-limits rapid downloads
     t = strip_html(http_get(raw_text_url).text)
     m = re.search(r"={5,}", t[:2500])
     if m:
@@ -137,7 +144,7 @@ def confirm_fr_lanes(cfg, found):
             hay = d["title"] + " " + rec["_body"][:cfg["body_chars"]]
         d["lanes"] = {l for l in d["lanes"] if any(p.search(hay) for p in patterns[l])}
 
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(2) as ex:
         list(ex.map(check, found.values()))
     return {k: d for k, d in found.items() if d["lanes"]}
 
@@ -250,7 +257,7 @@ def build_fr_text(cfg, row):
             body = fr_body_text(raw["raw_text_url"])
         except Exception as e:
             log(f"  could not fetch body for {row['id']}: {e}")
-    return f"TITLE: {row['title']}\nABSTRACT: {raw.get('abstract') or '(none)'}\nBODY: {body[:cfg['body_chars']]}"
+    return f"TITLE: {row['title']}\nABSTRACT: {raw.get('abstract') or '(none)'}\nBODY: {(body or '')[:cfg['body_chars']]}"
 
 
 def build_gao_text(cfg, row):
@@ -266,7 +273,7 @@ def step_text(cfg, db):
     def work(row):
         return row["id"], (build_fr_text if row["source"] == "federal_register" else build_gao_text)(cfg, row)
 
-    with ThreadPoolExecutor(4) as ex:
+    with ThreadPoolExecutor(2) as ex:
         for did, text in ex.map(work, rows):
             db.execute("UPDATE documents SET text=? WHERE id=?", (text, did))
     db.commit()
