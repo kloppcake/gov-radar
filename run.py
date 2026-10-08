@@ -793,8 +793,8 @@ def cluster_relations(cfg, clusters, links, cluster_of_unit):
 
 # Phrasings that signal guessing about motive or secrecy. Plain words like "hidden ownership" or "intended use" can
 # legitimately appear in what a document says, so only speculative phrasings are blocked.
-SPECULATION = re.compile(r"\b(secret\w*|conspir\w*|agenda|really|behind the scenes"
-                         r"|(intends?|plans?|aims?|seeks?) to (secretly|covertly|quietly|undermine|control|circumvent)"
+SPECULATION = re.compile(r"\b(secret\w*|conspir\w*|really|behind the scenes"
+                         r"|(intends?|plans?|aims?|seeks?) to (secretly|covertly|quietly|undermine)"
                          r"|hidden (plan|agenda|motive)s?)\b", re.I)
 AI_SYSTEM = ("You write short, neutral descriptions of groups of US government documents. Use ONLY the facts supplied. "
              "Describe what the documents share. Never guess at motives, intent, or plans, never say or imply that "
