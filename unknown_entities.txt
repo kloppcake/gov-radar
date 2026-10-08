@@ -1,7 +1,7 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
-agencies | 154 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 156 | Committee for Purchase From People Who Are Blind or Severely Disabled
 agencies | 35 | Federal Energy Regulatory Commission
 agencies | 35 | Foreign-Trade Zones Board
 agencies | 29 | Office of Export Enforcement
@@ -15,9 +15,9 @@ agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | Transportation Security Administration
 agencies | 15 | Centers for Medicare & Medicaid Services
+agencies | 14 | National Institutes of Health
 agencies | 13 | Department of Education
 agencies | 13 | Department of Labor
-agencies | 13 | National Institutes of Health
 agencies | 13 | Office of the United States Trade Representative
 agencies | 13 | U.S. Coast Guard
 agencies | 12 | Bureau of Land Management
@@ -257,6 +257,7 @@ agencies | 1 | National Endowment for the Arts
 agencies | 1 | National Eye Institute
 agencies | 1 | National Institute for Occupational Safety and Health
 agencies | 1 | National Institute of Environmental Health Sciences
+agencies | 1 | National Institute of Neurological Disorders and Stroke
 agencies | 1 | National Interagency Fire Center
 agencies | 1 | National Renewable Energy Laboratory
 agencies | 1 | National Science and Technology Council
@@ -389,7 +390,7 @@ agencies | 1 | Virginia Department of Environmental Quality
 agencies | 1 | White House National Security Council
 agencies | 1 | White House Task Force to Address Online Harassment and Abuse
 agencies | 1 | Wireline Competition Bureau
-programs | 156 | Procurement List
+programs | 158 | Procurement List
 programs | 52 | Fixed Income and Data Services
 programs | 51 | Connectivity Fee Schedule
 programs | 32 | Javits-Wagner-O'Day Act
@@ -637,6 +638,7 @@ programs | 1 | Advancing Artificial Intelligence in Education
 programs | 1 | Advancing Women's and Girls' Civic and Political Leadership Initiative
 programs | 1 | Advisory Committee on Earthquake Hazards Reduction
 programs | 1 | Advisory Committee to the Director
+programs | 1 | Advisory Council on Parkinson's Research, Care, and Services
 programs | 1 | African Growth and Opportunity Act
 programs | 1 | Agile Learning Concept
 programs | 1 | Agreement on Port State Measures to Prevent, Deter and Eliminate Illegal, Unreported and Unregulated Fishing
@@ -1153,6 +1155,7 @@ programs | 1 | National Maritime Security Advisory Committee
 programs | 1 | National Mental Health Strategy
 programs | 1 | National Nanotechnology Advisory Panel
 programs | 1 | National Plan and Provider Enumeration System
+programs | 1 | National Plan to End Parkinson's Act of 2024
 programs | 1 | National Provider Directory
 programs | 1 | National Quantum Initiative Act
 programs | 1 | National Quantum Strategy
@@ -1480,7 +1483,7 @@ programs | 1 | wildland fire programs
 statutes | 92 | Paperwork Reduction Act of 1995
 statutes | 80 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
-statutes | 47 | Javits-Wagner-O'Day Act
+statutes | 48 | Javits-Wagner-O'Day Act
 statutes | 44 | Paperwork Reduction Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | Federal Advisory Committee Act
@@ -1552,6 +1555,7 @@ statutes | 3 | Clean Air Act
 statutes | 3 | Energy Act of 2020
 statutes | 3 | FAA Order 1050.1G
 statutes | 3 | False Claims Act
+statutes | 3 | Federal Advisory Committee Act, section 1009
 statutes | 3 | Federal Food, Drug, and Cosmetic Act
 statutes | 3 | Fiscal Year 2023 National Defense Authorization Act
 statutes | 3 | Foreign Assistance Act of 1961
@@ -1609,7 +1613,6 @@ statutes | 2 | Federal Acquisition Regulation part 12
 statutes | 2 | Federal Advisory Committee Act (FACA)
 statutes | 2 | Federal Advisory Committee Act (FACA) of 1972
 statutes | 2 | Federal Advisory Committee Act, 5 U.S.C. Ch. 10
-statutes | 2 | Federal Advisory Committee Act, section 1009
 statutes | 2 | Federal Property and Administrative Services Act of 1949
 statutes | 2 | Food, Conservation, and Energy Act of 2008
 statutes | 2 | Foreign Assistance Act of 1961, Section 506(a)(1)
