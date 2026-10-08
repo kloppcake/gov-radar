@@ -158,7 +158,7 @@ const laneOf = d => d.crossover ? "crossover" : d.lanes[0];
 const MAP_LIMIT = 400, PAGE = 50;
 
 let data, docs = {}, clusterInfo = {}, linkByEdgeId = {}, network, nodes, edges;
-let focusCluster = null, view = "list", shown = PAGE, now = new Date();
+let focusCluster = null, view = "list", shown = PAGE, now = new Date(), drawnSig = null;
 
 fetch("data.json").then(r => r.json()).then(init).catch(err => {
   $("updated").textContent = "Could not load data.json (" + err + "). If you opened this file directly, serve the folder instead: python -m http.server -d docs";
@@ -286,6 +286,10 @@ function drawMap() {
   const shapes = { ai_tech: "dot", defense_spending: "square", crossover: "diamond" };
   const list = visible().filter(d => showAll || d.cluster !== null);
   const box = $("map");
+  // Nothing to redraw if the same dots would be shown (avoids pointless reshuffling).
+  const sig = list.map(d => d.id).join("|") + "#" + document.documentElement.className;
+  if (network && sig === drawnSig) return;
+  drawnSig = sig;
   if (network) { network.destroy(); network = null; }
   if (list.length > MAP_LIMIT) {
     fill(box, h("div", { class: "mapmsg" }, `${list.length} documents match, which is too many to read on one map (limit ${MAP_LIMIT}). Pick a cluster above, or narrow the filters (topic, dates, search).`));
@@ -309,6 +313,7 @@ function drawMap() {
   });
   edges = new vis.DataSet(es);
   network = new vis.Network(box, { nodes, edges }, {
+    layout: { randomSeed: 7 },                     // same starting positions every time, so the same data gives the same shape
     physics: { solver: "forceAtlas2Based", stabilization: { iterations: 200 } },
     interaction: { hover: true, tooltipDelay: 150 }, edges: { smooth: false }, nodes: { borderWidth: 1 }
   });
