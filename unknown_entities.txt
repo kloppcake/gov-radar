@@ -1,3 +1,53 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
+agencies | 2 | Office of the National Cyber Director
+agencies | 1 | Antitrust Division
+agencies | 1 | Consumer Financial Protection Bureau
+agencies | 1 | DOD Office of the Chief Information Officer
+agencies | 1 | Federal Energy Regulatory Commission
+agencies | 1 | Financial Crimes Enforcement Network
+agencies | 1 | Financial Crimes Enforcement Network (FinCEN)
+agencies | 1 | National Commission on the Future of the Navy
+agencies | 1 | Office of Acquisition Policy
+agencies | 1 | Office of Federal Procurement Policy
+agencies | 1 | Small Business Administration
+agencies | 1 | U.S. Coast Guard
+agencies | 1 | U.S. Department of Agriculture
+programs | 1 | Federal Acquisition Regulation
+programs | 1 | Federal IT Dashboard
+programs | 1 | GPS Operational Control Segment
+programs | 1 | IoT Cybersecurity Improvement Act of 2020
+programs | 1 | National Commission on the Future of the Navy
+programs | 1 | National Survey of Mortgage Originations
+programs | 1 | Next Generation Operational Control System
+programs | 1 | Operation Economic Outcast
+programs | 1 | PNT Oversight Council
+programs | 1 | Procurement Collusion Strike Force
+programs | 1 | Procurement Collusion Strike Force Complaint Form
+programs | 1 | Reliability Backstop Procurement
+programs | 1 | Small Business Innovation Research
+programs | 1 | Small Business Technology Transfer
+programs | 1 | System for Award Management
+programs | 1 | areawide contracts
+statutes | 1 | Bank Secrecy Act
+statutes | 1 | Chief Financial Officer Act
+statutes | 1 | Combating Russian Money Laundering Act
+statutes | 1 | Commerce Control List
+statutes | 1 | FAR part 41
+statutes | 1 | FAR section 41.103
+statutes | 1 | Federal Power Act section 206
+statutes | 1 | Fiscal Year 2023 National Defense Authorization Act
+statutes | 1 | GSAR part 541
+statutes | 1 | Homebuyers Privacy Protection Act
+statutes | 1 | IoT Cybersecurity Improvement Act of 2020
+statutes | 1 | James M. Inhofe National Defense Authorization Act for Fiscal Year 2023
+statutes | 1 | National Defense Authorization Act for FY 2019
+statutes | 1 | National Defense Authorization Act for Fiscal Year 2021
+statutes | 1 | National Defense Authorization Act for Fiscal Year 2022
+statutes | 1 | National Defense Authorization Act for Fiscal Year 2026
+statutes | 1 | National Defense Authorization Act of 2023
+statutes | 1 | Paperwork Reduction Act of 1995
+statutes | 1 | Plain Writing Act of 2010
+statutes | 1 | SBIR and STTR Extension Act of 2022
+statutes | 1 | Treasury Order 180-01
