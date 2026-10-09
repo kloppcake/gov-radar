@@ -2,33 +2,33 @@
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
 agencies | 156 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 36 | Foreign-Trade Zones Board
 agencies | 35 | Federal Energy Regulatory Commission
-agencies | 35 | Foreign-Trade Zones Board
 agencies | 29 | Office of Export Enforcement
 agencies | 27 | National Park Service
 agencies | 25 | Department of the Interior
 agencies | 23 | Office of Federal Procurement Policy
-agencies | 20 | Department of Agriculture
+agencies | 21 | Department of Agriculture
 agencies | 18 | National Oceanic and Atmospheric Administration
 agencies | 18 | U.S. International Trade Commission
 agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | Transportation Security Administration
 agencies | 15 | Centers for Medicare & Medicaid Services
+agencies | 14 | Department of Education
 agencies | 14 | National Institutes of Health
-agencies | 13 | Department of Education
+agencies | 13 | Bureau of Land Management
 agencies | 13 | Department of Labor
 agencies | 13 | Office of the United States Trade Representative
 agencies | 13 | U.S. Coast Guard
-agencies | 12 | Bureau of Land Management
+agencies | 12 | Health Resources and Services Administration
 agencies | 12 | National Marine Fisheries Service
 agencies | 11 | Centers for Disease Control and Prevention
-agencies | 11 | Health Resources and Services Administration
 agencies | 11 | U.S. AbilityOne Commission
+agencies | 10 | Office of Personnel Management
 agencies | 9 | Antitrust Division
 agencies | 9 | Defense Acquisition Regulations System, Department of Defense
 agencies | 9 | Defense Commissary Agency
-agencies | 9 | Office of Personnel Management
 agencies | 9 | Secretary of State
 agencies | 9 | Tennessee Valley Authority
 agencies | 8 | Maritime Administration
@@ -46,14 +46,15 @@ agencies | 7 | Nuclear Regulatory Commission
 agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Small Business Administration
 agencies | 7 | The Nasdaq Stock Market LLC
+agencies | 7 | U.S. Army Corps of Engineers
 agencies | 7 | U.S. Postal Service
 agencies | 7 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
 agencies | 6 | Defense Logistics Agency Troop Support
 agencies | 6 | Defense Manpower Data Center
-agencies | 6 | U.S. Army Corps of Engineers
 agencies | 6 | U.S. Commission on Civil Rights
+agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
 agencies | 5 | Federal Bureau of Investigation
@@ -64,7 +65,6 @@ agencies | 5 | Office of the Under Secretary of Defense for Acquisition and Sust
 agencies | 5 | Public Safety and Homeland Security Bureau
 agencies | 5 | Secretary of the Interior
 agencies | 5 | U.S. Department of Defense, Department of the Navy
-agencies | 5 | U.S. Fish and Wildlife Service
 agencies | 4 | Defense Health Agency
 agencies | 4 | Department of Defense, DLA Troop Support
 agencies | 4 | Drug Enforcement Administration
@@ -84,9 +84,12 @@ agencies | 4 | Secretary of War
 agencies | 4 | U.S. Department of Agriculture
 agencies | 4 | United States Department of Agriculture
 agencies | 4 | Veterans Health Administration
+agencies | 3 | Agency for International Development
+agencies | 3 | Bureau of Indian Affairs
 agencies | 3 | Bureau of Labor Statistics
 agencies | 3 | Center for Devices and Radiological Health
 agencies | 3 | Committee for Purchase from People Who Are Blind or Severely Disabled
+agencies | 3 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 3 | Council on Environmental Quality
 agencies | 3 | Department of the Air Force Scientific Advisory Board
 agencies | 3 | Federal Transit Administration
@@ -107,14 +110,12 @@ agencies | 3 | U.S. Geological Survey
 agencies | 3 | U.S. Nuclear Regulatory Commission
 agencies | 3 | United States Geological Survey
 agencies | 2 | Advisory Committee on Reactor Safeguards
-agencies | 2 | Agency for International Development
 agencies | 2 | Agricultural Marketing Service
 agencies | 2 | Attorney General
-agencies | 2 | Bureau of Indian Affairs
 agencies | 2 | Bureau of International Security and Nonproliferation
+agencies | 2 | Bureau of Reclamation
 agencies | 2 | Bureau of the Census
 agencies | 2 | Consumer Financial Protection Bureau
-agencies | 2 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 2 | Court Services and Offender Supervision Agency
 agencies | 2 | Defense Logistics Agency Aviation
 agencies | 2 | Defense Nuclear Facilities Safety Board
@@ -171,6 +172,7 @@ agencies | 1 | Administration for Native Americans
 agencies | 1 | Administrative Conference of the United States
 agencies | 1 | Agency for Healthcare Research and Quality
 agencies | 1 | Agency for Toxic Substances and Disease Registry
+agencies | 1 | Air Force Global Strike Command
 agencies | 1 | Argonne National Laboratory
 agencies | 1 | Assistant to the Secretary of Defense for Public Affairs
 agencies | 1 | Atomic Energy Commission
@@ -180,7 +182,6 @@ agencies | 1 | Bureau of Alcohol, Tobacco, Firearms and Explosives
 agencies | 1 | Bureau of Alcohol, Tobacco, Firearms, and Explosives
 agencies | 1 | Bureau of Industry and Security, U.S. Department of Commerce
 agencies | 1 | Bureau of Prisons
-agencies | 1 | Bureau of Reclamation
 agencies | 1 | Center for AI Standards and Innovation
 agencies | 1 | Center for Biologics Evaluation and Research
 agencies | 1 | Center for Drug Evaluation and Research
@@ -208,6 +209,7 @@ agencies | 1 | DOD Office of the Chief Information Officer
 agencies | 1 | Defense Finance Accounting Service
 agencies | 1 | Defense Health Agency (DHA)
 agencies | 1 | Defense Human Resources Activity
+agencies | 1 | Defense Intelligence Agency
 agencies | 1 | Defense Logistics Agency Land and Maritime
 agencies | 1 | Defense Logistics Agency, DLA Troop Support
 agencies | 1 | Department of Agriculture, USDA APHIS MRPBS
@@ -358,6 +360,7 @@ agencies | 1 | The President
 agencies | 1 | Trade and Development Agency
 agencies | 1 | U.S. Artificial Intelligence Safety Institute (AISI)
 agencies | 1 | U.S. Citizenship and Immigration Services
+agencies | 1 | U.S. Department of Agriculture Farm Service Agency
 agencies | 1 | U.S. Department of Defense, Air Force, Eglin Air Force Base
 agencies | 1 | U.S. Department of Defense, Division of Air Force
 agencies | 1 | U.S. Department of Defense, Navy, Marine Corps Recruit Depot Parris Island
@@ -365,6 +368,7 @@ agencies | 1 | U.S. Department of Defense, Navy, Naval Weapons Station Seal Beac
 agencies | 1 | U.S. Department of Labor
 agencies | 1 | U.S. Department of Transportation's Pipeline and Hazardous Materials Safety Administration
 agencies | 1 | U.S. Department of the Interior
+agencies | 1 | U.S. Forest Service
 agencies | 1 | U.S. Marine Corps
 agencies | 1 | U.S. Small Business Administration
 agencies | 1 | US Census Bureau
@@ -401,10 +405,10 @@ programs | 18 | Commercial Distribution Program
 programs | 16 | Liquidity Center Network
 programs | 14 | U.S. AbilityOne Commission
 programs | 12 | Equalization Project
+programs | 12 | Organ Procurement and Transplantation Network
 programs | 12 | Partial Cabinet Solution
 programs | 11 | AbilityOne Program
 programs | 11 | Mahwah Data Center
-programs | 11 | Organ Procurement and Transplantation Network
 programs | 10 | Co-Location Services
 programs | 10 | Commerce Control List
 programs | 9 | Defense Federal Acquisition Regulation Supplement
@@ -420,6 +424,7 @@ programs | 7 | Virtual Control Circuit Service
 programs | 6 | Entity List
 programs | 6 | Federal Acquisition Regulation
 programs | 6 | Intrafirm Cabinet Connectivity Service
+programs | 6 | Scientific Registry of Transplant Recipients
 programs | 6 | Secretary's Supplemental Priorities on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
 programs | 6 | TNO Cross Connect
 programs | 6 | U.S. Munitions Import List
@@ -433,7 +438,6 @@ programs | 5 | MX2 Options
 programs | 5 | National Artificial Intelligence Advisory Committee
 programs | 5 | OpenGMSL Association
 programs | 5 | Regulation NMS
-programs | 5 | Scientific Registry of Transplant Recipients
 programs | 5 | System for Award Management
 programs | 5 | TNO Cross-Connect
 programs | 5 | U.S. Air Force Academy
@@ -532,6 +536,7 @@ programs | 2 | Foreign-Trade Zone (FTZ) 143
 programs | 2 | Foreign-Trade Zone (FTZ) 183
 programs | 2 | Foreign-Trade Zone (FTZ) 75
 programs | 2 | Foreign-Trade Zone 143
+programs | 2 | Foreign-Trade Zone 183
 programs | 2 | Form CA-1: Registration of Clearing Agencies
 programs | 2 | Global Positioning System (GPS) antenna service
 programs | 2 | Green Chile Project
@@ -927,7 +932,6 @@ programs | 1 | Foreign-Trade Zone (FTZ) 39
 programs | 1 | Foreign-Trade Zone (FTZ) 41
 programs | 1 | Foreign-Trade Zone (FTZ) 83
 programs | 1 | Foreign-Trade Zone (FTZ) 93
-programs | 1 | Foreign-Trade Zone 183
 programs | 1 | Foreign-Trade Zone 230
 programs | 1 | Foreign-Trade Zone 24
 programs | 1 | Foreign-Trade Zone 27
@@ -959,6 +963,7 @@ programs | 1 | Great Lakes Pilotage Division
 programs | 1 | Gregory Energy Center
 programs | 1 | Grid Resiliency and Innovation Partnerships Grants
 programs | 1 | Gross Income Assessment
+programs | 1 | Ground Based Strategic Deterrent (GBSD) Program
 programs | 1 | Guidelines for Designating Biobased Products for Federal Procurement
 programs | 1 | Gulf of Mexico Alliance
 programs | 1 | HALEU Availability Program
@@ -1335,6 +1340,8 @@ programs | 1 | Security Directive 1582-21-01
 programs | 1 | Security Program for Hydropower Guidance
 programs | 1 | Selective Midpoint Order
 programs | 1 | Seminoe Pumped Storage Project
+programs | 1 | Senior Executive Service
+programs | 1 | Sentinel Weapon System Program
 programs | 1 | Sergeant First Class Heath Robinson Honoring our Promise to Address Comprehensive Toxics (PACT) Act
 programs | 1 | Service Request Form for Enterprise Assessment Services
 programs | 1 | Shawnee SO 2 Controls project
@@ -1480,7 +1487,7 @@ programs | 1 | regional ocean partnership
 programs | 1 | temporary denial order
 programs | 1 | unmanned aircraft flight restriction
 programs | 1 | wildland fire programs
-statutes | 92 | Paperwork Reduction Act of 1995
+statutes | 93 | Paperwork Reduction Act of 1995
 statutes | 80 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 48 | Javits-Wagner-O'Day Act
@@ -1507,12 +1514,12 @@ statutes | 9 | National Defense Authorization Act for Fiscal Year 2022
 statutes | 9 | Native American Graves Protection and Repatriation Act
 statutes | 9 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
 statutes | 8 | Educational, Scientific and Cultural Materials Importation Act of 1966
+statutes | 8 | FTZ Act
 statutes | 8 | Government in the Sunshine Act
 statutes | 8 | National Defense Authorization Act for Fiscal Year 2020
 statutes | 8 | National Environmental Policy Act
 statutes | 8 | Native American Graves Protection and Repatriation Act (NAGPRA)
 statutes | 8 | section 232 of the Trade Expansion Act of 1962
-statutes | 7 | FTZ Act
 statutes | 7 | National Defense Authorization Act for Fiscal Year 2024
 statutes | 7 | Public Health Service Act section 371(b)(1)
 statutes | 7 | Section 232 of the Trade Expansion Act of 1962
@@ -1539,8 +1546,10 @@ statutes | 4 | 44 U.S.C. chapter 35
 statutes | 4 | Export Administration Act
 statutes | 4 | Homeland Security Act of 2002
 statutes | 4 | Infrastructure Investment and Jobs Act
+statutes | 4 | Inspector General Act of 1978
 statutes | 4 | National Defense Authorization Act for Fiscal Year 2026
 statutes | 4 | National Defense Authorization Act of 2023
+statutes | 4 | National Environmental Policy Act of 1969
 statutes | 4 | Natural Gas Act
 statutes | 4 | Section 122 of the Trade Act of 1974
 statutes | 4 | Section 1260H
@@ -1561,16 +1570,16 @@ statutes | 3 | Fiscal Year 2023 National Defense Authorization Act
 statutes | 3 | Foreign Assistance Act of 1961
 statutes | 3 | Foreign Assistance Act of 1961, Section 621
 statutes | 3 | Individuals with Disabilities Education Act (IDEA)
-statutes | 3 | Inspector General Act of 1978
+statutes | 3 | Inspector General Reform Act of 2008
 statutes | 3 | Iran, North Korea, and Syria Nonproliferation Act
 statutes | 3 | Marine Mammal Protection Act (MMPA)
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2012
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2013
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2021
-statutes | 3 | National Environmental Policy Act of 1969
 statutes | 3 | National Security Memorandum 22
 statutes | 3 | OMB Memorandum M-25-26
 statutes | 3 | Presidential Memorandum of June 3, 2013
+statutes | 3 | Public Health Service Act Section 372
 statutes | 3 | Regulatory Flexibility Act of 1980
 statutes | 3 | Section 205(d)
 statutes | 3 | Section 337 of the Tariff Act of 1930
@@ -1579,6 +1588,7 @@ statutes | 3 | Securities Exchange Act of 1934, Section 6(b)
 statutes | 3 | Trade Agreements Act of 1979
 statutes | 3 | USDOT Order 5610.1D
 statutes | 3 | Unfunded Mandates Reform Act of 1995
+statutes | 3 | section 400.14
 statutes | 2 | 21st Century Emergency Communications Act of 2006
 statutes | 2 | 34 CFR Chapter III
 statutes | 2 | 35.17(b)
@@ -1621,7 +1631,6 @@ statutes | 2 | Health Insurance Portability and Accountability Act of 1996
 statutes | 2 | ICC Termination Act of 1995
 statutes | 2 | Immigration and Nationality Act of 1952
 statutes | 2 | Implementing Recommendations of the 9/11 Commission Act of 2007
-statutes | 2 | Inspector General Reform Act of 2008
 statutes | 2 | National Defense Authorization Act for Fiscal Year 1997
 statutes | 2 | National Organ Transplant Act
 statutes | 2 | National Organ Transplant Act of 1984
@@ -1636,7 +1645,6 @@ statutes | 2 | Proclamation 9705
 statutes | 2 | Proclamation 9888
 statutes | 2 | Program Fraud Civil Remedies Act of 1986
 statutes | 2 | Public Health Service Act Section 306(b)(4)
-statutes | 2 | Public Health Service Act Section 372
 statutes | 2 | Regulation NMS
 statutes | 2 | Regulatory Flexibility Act
 statutes | 2 | Rule 17Ab2-1
@@ -1669,7 +1677,6 @@ statutes | 2 | chapter 10 of title 5 United States Code
 statutes | 2 | section 1009(d) of title 5, United States Code
 statutes | 2 | section 301 of title 3, United States Code
 statutes | 2 | section 337 of Tariff Act of 1930
-statutes | 2 | section 400.14
 statutes | 2 | section 508 of the Rehabilitation Act of 1973
 statutes | 2 | section 552b of title 5, United States Code
 statutes | 1 | 10 U.S.C. chapter 56
@@ -1896,6 +1903,7 @@ statutes | 1 | Federal Trade Commission Act
 statutes | 1 | Federal Trade Commission Act, section 5
 statutes | 1 | Federal Trade Commission Act, section 6(g)
 statutes | 1 | Federal Vacancies Reform Act of 1998
+statutes | 1 | Fiscal Responsibility Act of 2023
 statutes | 1 | Fixing America's Surface Transportation Act
 statutes | 1 | Food and Drug Administration Modernization Act of 1997
 statutes | 1 | Food and Drug Administration Safety and Innovation Act
