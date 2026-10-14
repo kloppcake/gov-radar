@@ -15,8 +15,8 @@ agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | Transportation Security Administration
 agencies | 15 | Centers for Medicare & Medicaid Services
+agencies | 15 | National Institutes of Health
 agencies | 14 | Department of Education
-agencies | 14 | National Institutes of Health
 agencies | 13 | Bureau of Land Management
 agencies | 13 | Department of Labor
 agencies | 13 | Office of the United States Trade Representative
@@ -57,6 +57,7 @@ agencies | 6 | U.S. Commission on Civil Rights
 agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
+agencies | 5 | Defense Health Agency
 agencies | 5 | Federal Bureau of Investigation
 agencies | 5 | Federal Emergency Management Agency
 agencies | 5 | Internal Revenue Service
@@ -65,7 +66,6 @@ agencies | 5 | Office of the Under Secretary of Defense for Acquisition and Sust
 agencies | 5 | Public Safety and Homeland Security Bureau
 agencies | 5 | Secretary of the Interior
 agencies | 5 | U.S. Department of Defense, Department of the Navy
-agencies | 4 | Defense Health Agency
 agencies | 4 | Department of Defense, DLA Troop Support
 agencies | 4 | Drug Enforcement Administration
 agencies | 4 | Energy Information Administration
@@ -92,6 +92,7 @@ agencies | 3 | Committee for Purchase from People Who Are Blind or Severely Disa
 agencies | 3 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 3 | Council on Environmental Quality
 agencies | 3 | Department of the Air Force Scientific Advisory Board
+agencies | 3 | Deputy Assistant Secretary of Defense for Military Community and Family Policy
 agencies | 3 | Federal Transit Administration
 agencies | 3 | Forest Service
 agencies | 3 | Infrastructure Security Division
@@ -120,7 +121,6 @@ agencies | 2 | Court Services and Offender Supervision Agency
 agencies | 2 | Defense Logistics Agency Aviation
 agencies | 2 | Defense Nuclear Facilities Safety Board
 agencies | 2 | Department of Commerce, Bureau of Industry and Security
-agencies | 2 | Deputy Assistant Secretary of Defense for Military Community and Family Policy
 agencies | 2 | Directorate of Defense Trade Controls
 agencies | 2 | Emergency Communications Division
 agencies | 2 | Employment and Training Administration
@@ -155,6 +155,7 @@ agencies | 2 | Secretary of Agriculture
 agencies | 2 | Social Security Administration
 agencies | 2 | U.S. Department of Defense, Defense Health Agency, National Museum of Health and Medicine
 agencies | 2 | U.S. Department of Defense, Navy
+agencies | 2 | U.S. Marine Corps
 agencies | 2 | US Army
 agencies | 2 | USDA Agricultural Research Service
 agencies | 2 | United States Agency for International Development
@@ -182,6 +183,7 @@ agencies | 1 | Bureau of Alcohol, Tobacco, Firearms and Explosives
 agencies | 1 | Bureau of Alcohol, Tobacco, Firearms, and Explosives
 agencies | 1 | Bureau of Industry and Security, U.S. Department of Commerce
 agencies | 1 | Bureau of Prisons
+agencies | 1 | Bureau of the Fiscal Service
 agencies | 1 | Center for AI Standards and Innovation
 agencies | 1 | Center for Biologics Evaluation and Research
 agencies | 1 | Center for Drug Evaluation and Research
@@ -320,6 +322,7 @@ agencies | 1 | Office of the Assistant Secretary of Defense Finance and Accounti
 agencies | 1 | Office of the Assistant Secretary of Defense for Health Affairs
 agencies | 1 | Office of the Assistant to the Secretary of Defense for Privacy, Civil Liberties, and Transparency
 agencies | 1 | Office of the Chief Acquisition Executive (OCAE)
+agencies | 1 | Office of the Chief Digital and AI Officer
 agencies | 1 | Office of the Chief Financial Officer (OCFO)
 agencies | 1 | Office of the Chief Information Officer
 agencies | 1 | Office of the Chief Security Officer (OCSO)
@@ -330,6 +333,7 @@ agencies | 1 | Office of the President
 agencies | 1 | Office of the President / Assistant to the President for National Security Affairs
 agencies | 1 | Office of the Procurement Executive
 agencies | 1 | Office of the Procurement Executive, Department of State
+agencies | 1 | Office of the Secretary, Department of Defense
 agencies | 1 | Office of the Secretary, Department of Homeland Security
 agencies | 1 | Office of the U.S. Trade Representative
 agencies | 1 | Office of the Under Secretary of Defense (Acquisition and Sustainment), Department of Defense
@@ -369,7 +373,6 @@ agencies | 1 | U.S. Department of Labor
 agencies | 1 | U.S. Department of Transportation's Pipeline and Hazardous Materials Safety Administration
 agencies | 1 | U.S. Department of the Interior
 agencies | 1 | U.S. Forest Service
-agencies | 1 | U.S. Marine Corps
 agencies | 1 | U.S. Small Business Administration
 agencies | 1 | US Census Bureau
 agencies | 1 | US Department of Homeland Security
@@ -470,6 +473,7 @@ programs | 3 | Community College of the Air Force
 programs | 3 | Defense Federal Acquisition Regulation Supplement (DFARS)
 programs | 3 | Defense Industrial Based Consortium
 programs | 3 | Department of the Air Force Scientific Advisory Board
+programs | 3 | Do Not Pay Working System
 programs | 3 | Electronic Document Information System (EDIS)
 programs | 3 | Emerging Technologies Division
 programs | 3 | Expanded Co-Location Services
@@ -519,7 +523,6 @@ programs | 2 | Data Center Validated End User authorization
 programs | 2 | Defense Sexual Assault Incident Database
 programs | 2 | Department of Defense Board of Actuaries
 programs | 2 | Department of Defense Wage Committee
-programs | 2 | Do Not Pay Working System
 programs | 2 | DroneZone
 programs | 2 | Effective U.S. Control (EUSC)/Parent Company
 programs | 2 | Electronic Tax Administration Advisory Committee
@@ -692,6 +695,7 @@ programs | 1 | BIS Program Evaluation
 programs | 1 | BMAP Stakeholder Feedback Form
 programs | 1 | BRAC
 programs | 1 | BRAC Program
+programs | 1 | Basic Allowance for Housing
 programs | 1 | Basic Sciences and Enabling and Disruptive Technologies Subcommittee
 programs | 1 | Battery Options to Support TVA Capacity Needs
 programs | 1 | Benefits Delivery Network
@@ -854,6 +858,7 @@ programs | 1 | Distinguished Visitor (DV)/ Friends of the Navy (FON) Embark Requ
 programs | 1 | District of Columbia Advisory Committee
 programs | 1 | Diversion Control Division
 programs | 1 | Diversity, Equity, and Inclusion (DEI) programs
+programs | 1 | Division of Program Coordination, Planning, and Strategic Initiatives
 programs | 1 | DoD Insider Threat Management and Analysis Center (DITMAC)
 programs | 1 | DoD Medicare-Eligible Retiree Health Care Board of Actuaries
 programs | 1 | DoD Medicare-Eligible Retiree Health Care Fund
@@ -1088,7 +1093,9 @@ programs | 1 | Micron Semiconductor Manufacturing Facility
 programs | 1 | Microplastics Research and Resource Coordination Core Center
 programs | 1 | Mid-Atlantic Regional Council on the Ocean
 programs | 1 | Military Exigency Clause in State Family Leave Laws
+programs | 1 | Military Health Benefits—TRICARE West Region Program
 programs | 1 | Military Health System Modified Payment and Waiver Program
+programs | 1 | Military Spouse Hiring Preference
 programs | 1 | Military Spouse Priority Placement Program
 programs | 1 | Missile Technology Control Regime
 programs | 1 | Modernization of Special Airworthiness Certification
@@ -1205,13 +1212,16 @@ programs | 1 | Ocean Policy Committee
 programs | 1 | Ocean Research Advisory Panel
 programs | 1 | Office for Special Peace Missions
 programs | 1 | Office of Compliance and Enforcement
+programs | 1 | Office of Dietary Supplements
 programs | 1 | Office of Electronic Government
 programs | 1 | Office of Federal Financial Management
 programs | 1 | Office of Federal Procurement Policy
 programs | 1 | Office of Information and Regulatory Affairs
 programs | 1 | Office of Inspector General
+programs | 1 | Office of Nutrition Research
 programs | 1 | Office of Strategic Capital
 programs | 1 | Office of Unfair Import Investigations
+programs | 1 | Office of the NIH Chief Artificial Intelligence Officer
 programs | 1 | One Big Beautiful Bill Act
 programs | 1 | Online Age Verification
 programs | 1 | Open FAR Cases report
@@ -1295,6 +1305,9 @@ programs | 1 | Reserve Officer Training Corps (ROTC)
 programs | 1 | Resilience Measure Index
 programs | 1 | Resilient Infrastructure + Secure Energy Consortium
 programs | 1 | Resource Grants in Biotechnology, National Centers for Biomedical Imaging and Bioengineering
+programs | 1 | Responsible AI
+programs | 1 | Responsible AI Division
+programs | 1 | Responsible AI Working Council
 programs | 1 | Retired Serviceman's Family Protection Plan
 programs | 1 | Ridgeline Expansion Project
 programs | 1 | Right to Try
@@ -1495,7 +1508,7 @@ statutes | 44 | Paperwork Reduction Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | Federal Advisory Committee Act
 statutes | 32 | National Cooperative Research and Production Act of 1993
-statutes | 21 | Privacy Act of 1974
+statutes | 22 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
 statutes | 13 | Arms Export Control Act
 statutes | 12 | 5 U.S.C. Chapter 10
@@ -1561,6 +1574,7 @@ statutes | 3 | 48 CFR Chapter 1
 statutes | 3 | Bank Secrecy Act
 statutes | 3 | Chemical and Biological Weapons Control and Warfare Elimination Act of 1991
 statutes | 3 | Clean Air Act
+statutes | 3 | Computer Matching and Privacy Protection Act of 1988
 statutes | 3 | Energy Act of 2020
 statutes | 3 | FAA Order 1050.1G
 statutes | 3 | False Claims Act
@@ -1603,7 +1617,6 @@ statutes | 2 | Build America, Buy America Act
 statutes | 2 | Buy American Act
 statutes | 2 | Clean Air Act Section 309(a)
 statutes | 2 | Combating Russian Money Laundering Act
-statutes | 2 | Computer Matching and Privacy Protection Act of 1988
 statutes | 2 | Consolidated Appropriations Act, 2023
 statutes | 2 | Controlled Substances Act
 statutes | 2 | Cybersecurity and Infrastructure Security Agency Act of 2018
@@ -1636,6 +1649,7 @@ statutes | 2 | National Organ Transplant Act
 statutes | 2 | National Organ Transplant Act of 1984
 statutes | 2 | Order No. 881
 statutes | 2 | Part 107
+statutes | 2 | Payment Integrity Information Act of 2019
 statutes | 2 | Pollution Prevention Act
 statutes | 2 | Presidential Policy Directive 21
 statutes | 2 | Preventing Emerging Threats Act of 2018
@@ -1964,6 +1978,7 @@ statutes | 1 | Mutual Educational and Cultural Exchange Act of 1961
 statutes | 1 | NDAA for FY 2021 section 535
 statutes | 1 | NDAA for Fiscal Year 2019
 statutes | 1 | NDAA section 7321
+statutes | 1 | NIH Reform Act of 2006
 statutes | 1 | NIST SP 800-171
 statutes | 1 | NIST Special Publication 800-181
 statutes | 1 | NYSE Arca Rule 7.31-E
@@ -2001,6 +2016,7 @@ statutes | 1 | OMB Memoranda M-19-17
 statutes | 1 | OMB Memoranda M-22-09
 statutes | 1 | OMB Memorandum 25-21
 statutes | 1 | OMB Memorandum M-25-22
+statutes | 1 | OMB Memorandum M-25-32
 statutes | 1 | OPEN Government Act of 2007
 statutes | 1 | Office of Federal Procurement Policy (OFPP) Act
 statutes | 1 | Office of Federal Procurement Policy Act
@@ -2009,7 +2025,6 @@ statutes | 1 | Order No. 2023
 statutes | 1 | Part 91
 statutes | 1 | Patient Protection and Affordable Care Act, Section 1557
 statutes | 1 | Patient Safety and Quality Improvement Act of 2005
-statutes | 1 | Payment Integrity Information Act of 2019
 statutes | 1 | Pension Protection Act of 2006
 statutes | 1 | Plain Writing Act of 2010
 statutes | 1 | Pollution Prevention Act (PPA)
@@ -2116,6 +2131,7 @@ statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and (5)
 statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, Sections 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, section 19(b)(1)
+statutes | 1 | Senate Report 118-188
 statutes | 1 | Service Members Occupational Conversion and Training Act of 1992
 statutes | 1 | Small Business Investment Act of 1958
 statutes | 1 | Small Business Regulatory Enforcement Fairness Act of 1996
