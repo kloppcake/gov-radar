@@ -1,8 +1,8 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
-agencies | 156 | Committee for Purchase From People Who Are Blind or Severely Disabled
-agencies | 36 | Foreign-Trade Zones Board
+agencies | 158 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 39 | Foreign-Trade Zones Board
 agencies | 35 | Federal Energy Regulatory Commission
 agencies | 29 | Office of Export Enforcement
 agencies | 27 | National Park Service
@@ -37,6 +37,7 @@ agencies | 8 | Secretary of Commerce
 agencies | 8 | Secretary of Defense
 agencies | 8 | Secretary of Energy
 agencies | 8 | Secretary of the Treasury
+agencies | 8 | U.S. Army Corps of Engineers
 agencies | 8 | U.S. Census Bureau
 agencies | 8 | U.S. Customs and Border Protection
 agencies | 8 | U.S. Department of Education
@@ -46,7 +47,6 @@ agencies | 7 | Nuclear Regulatory Commission
 agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Small Business Administration
 agencies | 7 | The Nasdaq Stock Market LLC
-agencies | 7 | U.S. Army Corps of Engineers
 agencies | 7 | U.S. Postal Service
 agencies | 7 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | United States Coast Guard
@@ -58,6 +58,7 @@ agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
 agencies | 5 | Defense Health Agency
+agencies | 5 | Department of Defense, DLA Troop Support
 agencies | 5 | Federal Bureau of Investigation
 agencies | 5 | Federal Emergency Management Agency
 agencies | 5 | Internal Revenue Service
@@ -66,7 +67,6 @@ agencies | 5 | Office of the Under Secretary of Defense for Acquisition and Sust
 agencies | 5 | Public Safety and Homeland Security Bureau
 agencies | 5 | Secretary of the Interior
 agencies | 5 | U.S. Department of Defense, Department of the Navy
-agencies | 4 | Department of Defense, DLA Troop Support
 agencies | 4 | Drug Enforcement Administration
 agencies | 4 | Energy Information Administration
 agencies | 4 | Federal Acquisition Regulatory Council
@@ -121,6 +121,7 @@ agencies | 2 | Court Services and Offender Supervision Agency
 agencies | 2 | Defense Logistics Agency Aviation
 agencies | 2 | Defense Nuclear Facilities Safety Board
 agencies | 2 | Department of Commerce, Bureau of Industry and Security
+agencies | 2 | Department of Defense, U.S. Fleet Forces Command
 agencies | 2 | Directorate of Defense Trade Controls
 agencies | 2 | Emergency Communications Division
 agencies | 2 | Employment and Training Administration
@@ -150,6 +151,7 @@ agencies | 2 | Office of Partnerships and Public Engagement
 agencies | 2 | Office of Professional Responsibility
 agencies | 2 | Office of Strategic Industries and Economic Security
 agencies | 2 | Office of the Under Secretary of Defense (Comptroller)/Chief Financial Officer (CFO)
+agencies | 2 | Office of the Under Secretary of Defense for Research and Engineering
 agencies | 2 | Pipeline and Hazardous Materials Safety Administration
 agencies | 2 | Secretary of Agriculture
 agencies | 2 | Social Security Administration
@@ -218,7 +220,6 @@ agencies | 1 | Department of Agriculture, USDA APHIS MRPBS
 agencies | 1 | Department of Commerce International Trade Administration
 agencies | 1 | Department of Defense, DLA Aviation
 agencies | 1 | Department of Defense, Defense Logistics Agency
-agencies | 1 | Department of Defense, U.S. Fleet Forces Command
 agencies | 1 | Department of Housing and Urban Development
 agencies | 1 | Department of Human Services
 agencies | 1 | Department of Justice Antitrust Division
@@ -234,6 +235,7 @@ agencies | 1 | Federal Claims Control Center
 agencies | 1 | Federal Emergency Management Agency (FEMA)
 agencies | 1 | Federal Government
 agencies | 1 | Federal Law Enforcement Training Center
+agencies | 1 | Federal Maritime Commission
 agencies | 1 | Federal agencies
 agencies | 1 | Financial Industry Regulatory Authority, Inc.
 agencies | 1 | Food and Nutrition Administration
@@ -338,7 +340,6 @@ agencies | 1 | Office of the Secretary, Department of Homeland Security
 agencies | 1 | Office of the U.S. Trade Representative
 agencies | 1 | Office of the Under Secretary of Defense (Acquisition and Sustainment), Department of Defense
 agencies | 1 | Office of the Under Secretary of Defense (Comptroller)/Chief Financial Officer
-agencies | 1 | Office of the Under Secretary of Defense for Research and Engineering
 agencies | 1 | Office of the Undersecretary of Defense
 agencies | 1 | Oncology Center of Excellence
 agencies | 1 | Options Price Reporting Authority
@@ -362,6 +363,7 @@ agencies | 1 | Substance Abuse and Mental Health Services Administration
 agencies | 1 | Telecommunications Access Policy Division, Wireline Competition Bureau
 agencies | 1 | The President
 agencies | 1 | Trade and Development Agency
+agencies | 1 | U.S. Army Intelligence and Security Command
 agencies | 1 | U.S. Artificial Intelligence Safety Institute (AISI)
 agencies | 1 | U.S. Citizenship and Immigration Services
 agencies | 1 | U.S. Department of Agriculture Farm Service Agency
@@ -397,10 +399,10 @@ agencies | 1 | Virginia Department of Environmental Quality
 agencies | 1 | White House National Security Council
 agencies | 1 | White House Task Force to Address Online Harassment and Abuse
 agencies | 1 | Wireline Competition Bureau
-programs | 158 | Procurement List
+programs | 160 | Procurement List
 programs | 52 | Fixed Income and Data Services
 programs | 51 | Connectivity Fee Schedule
-programs | 32 | Javits-Wagner-O'Day Act
+programs | 33 | Javits-Wagner-O'Day Act
 programs | 27 | Export Administration Regulations
 programs | 27 | Office of Exporter Services
 programs | 26 | Office of Export Enforcement
@@ -426,6 +428,7 @@ programs | 7 | U.S. Munitions List
 programs | 7 | Virtual Control Circuit Service
 programs | 6 | Entity List
 programs | 6 | Federal Acquisition Regulation
+programs | 6 | Foreign-Trade Zone (FTZ) 45
 programs | 6 | Intrafirm Cabinet Connectivity Service
 programs | 6 | Scientific Registry of Transplant Recipients
 programs | 6 | Secretary's Supplemental Priorities on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
@@ -435,7 +438,6 @@ programs | 5 | America's AI Action Plan
 programs | 5 | Cost Accounting Standards
 programs | 5 | Export Control Reform Act
 programs | 5 | Foreign-Trade Zone (FTZ) 18
-programs | 5 | Foreign-Trade Zone (FTZ) 45
 programs | 5 | Liquid-Cooled Cabinets
 programs | 5 | MX2 Options
 programs | 5 | National Artificial Intelligence Advisory Committee
@@ -495,6 +497,8 @@ programs | 3 | Partial Cabinet Solution bundles
 programs | 3 | Secretary's Supplemental Priority and Definitions on Career Pathways and Workforce Readiness
 programs | 3 | Secretary's Supplemental Priority on Artificial Intelligence
 programs | 3 | Small Unmanned Aircraft Registration System
+programs | 3 | Subzone 230K
+programs | 3 | Subzone 45K
 programs | 3 | Toxics Release Inventory
 programs | 3 | Training & Readiness Accelerator II
 programs | 2 | AI-Enabled Optimization of Early-Phase Clinical Trials Pilot Program
@@ -537,6 +541,8 @@ programs | 2 | Family Advocacy Program
 programs | 2 | Food Distribution Program on Indian Reservations
 programs | 2 | Foreign-Trade Zone (FTZ) 143
 programs | 2 | Foreign-Trade Zone (FTZ) 183
+programs | 2 | Foreign-Trade Zone (FTZ) 230
+programs | 2 | Foreign-Trade Zone (FTZ) 39
 programs | 2 | Foreign-Trade Zone (FTZ) 75
 programs | 2 | Foreign-Trade Zone 143
 programs | 2 | Foreign-Trade Zone 183
@@ -599,8 +605,6 @@ programs | 2 | Southwest Museum Collection
 programs | 2 | Standard Application Process
 programs | 2 | State Policy Priorities
 programs | 2 | Statutory Import Programs Staff
-programs | 2 | Subzone 230K
-programs | 2 | Subzone 45K
 programs | 2 | Supplier Performance Risk System (SPRS)
 programs | 2 | Surveillance Towed Array Sensor System Low Frequency Active Sonar
 programs | 2 | Suspension and Debarment Records
@@ -932,8 +936,6 @@ programs | 1 | Foreign Military Sales
 programs | 1 | Foreign Military Sales (FMS) program
 programs | 1 | Foreign-Trade Zone (FTZ) 110
 programs | 1 | Foreign-Trade Zone (FTZ) 12
-programs | 1 | Foreign-Trade Zone (FTZ) 230
-programs | 1 | Foreign-Trade Zone (FTZ) 39
 programs | 1 | Foreign-Trade Zone (FTZ) 41
 programs | 1 | Foreign-Trade Zone (FTZ) 83
 programs | 1 | Foreign-Trade Zone (FTZ) 93
@@ -1299,6 +1301,7 @@ programs | 1 | Registered Apprenticeships
 programs | 1 | Regulatory Implementation & Guidance Program
 programs | 1 | Reliability Backstop Procurement
 programs | 1 | Remain in Mexico policy
+programs | 1 | Report of Inventions and Subcontracts
 programs | 1 | Repository for Software Attestation and Artifacts
 programs | 1 | Reserve Forces Policy Board
 programs | 1 | Reserve Officer Training Corps (ROTC)
@@ -1453,6 +1456,7 @@ programs | 1 | United States Naval Academy Board of Visitors
 programs | 1 | United States Naval Academy Sponsor Program
 programs | 1 | United States Port Security Initiative
 programs | 1 | United States Tech Force Information Cybersecurity Specialist
+programs | 1 | Universal Service Contract
 programs | 1 | Universal Service Fund
 programs | 1 | Unmanned Aircraft System Traffic Management services
 programs | 1 | Unmanned Aircraft Systems (UAS) BEYOND
@@ -1504,7 +1508,7 @@ statutes | 93 | Paperwork Reduction Act of 1995
 statutes | 80 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 48 | Javits-Wagner-O'Day Act
-statutes | 44 | Paperwork Reduction Act
+statutes | 45 | Paperwork Reduction Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | Federal Advisory Committee Act
 statutes | 32 | National Cooperative Research and Production Act of 1993
@@ -1521,13 +1525,13 @@ statutes | 10 | James M. Inhofe National Defense Authorization Act for Fiscal Ye
 statutes | 10 | National Emergencies Act
 statutes | 10 | Rule 19b-4
 statutes | 10 | Rule General 8, Section 1
+statutes | 9 | FTZ Act
 statutes | 9 | Federal Advisory Committee Act of 1972
 statutes | 9 | National Defense Authorization Act for Fiscal Year 2019
 statutes | 9 | National Defense Authorization Act for Fiscal Year 2022
 statutes | 9 | Native American Graves Protection and Repatriation Act
 statutes | 9 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
 statutes | 8 | Educational, Scientific and Cultural Materials Importation Act of 1966
-statutes | 8 | FTZ Act
 statutes | 8 | Government in the Sunshine Act
 statutes | 8 | National Defense Authorization Act for Fiscal Year 2020
 statutes | 8 | National Environmental Policy Act
@@ -1547,6 +1551,7 @@ statutes | 6 | Social Security Act section 1138(a)(2)(B)
 statutes | 6 | Sunshine Act
 statutes | 6 | Trade Act of 1974 section 301
 statutes | 6 | Trade Expansion Act of 1962 section 232
+statutes | 6 | section 400.14
 statutes | 5 | 44 U.S.C. Chapter 35
 statutes | 5 | 5 U.S.C. chapter 10
 statutes | 5 | Atomic Energy Act of 1954
@@ -1602,7 +1607,6 @@ statutes | 3 | Securities Exchange Act of 1934, Section 6(b)
 statutes | 3 | Trade Agreements Act of 1979
 statutes | 3 | USDOT Order 5610.1D
 statutes | 3 | Unfunded Mandates Reform Act of 1995
-statutes | 3 | section 400.14
 statutes | 2 | 21st Century Emergency Communications Act of 2006
 statutes | 2 | 34 CFR Chapter III
 statutes | 2 | 35.17(b)
@@ -1775,6 +1779,7 @@ statutes | 1 | Arms Export Control Act Section 38
 statutes | 1 | Army Appropriations Act of 1919
 statutes | 1 | Article I, section 8, United States Constitution
 statutes | 1 | Article VI, clause 2, United States Constitution
+statutes | 1 | Bayh-Dole Act
 statutes | 1 | Bipartisan Budget Act of 2018
 statutes | 1 | Buy American statute
 statutes | 1 | CABDA § 708
@@ -2133,6 +2138,7 @@ statutes | 1 | Securities Exchange Act of 1934, Sections 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, section 19(b)(1)
 statutes | 1 | Senate Report 118-188
 statutes | 1 | Service Members Occupational Conversion and Training Act of 1992
+statutes | 1 | Shipping Act of 1984
 statutes | 1 | Small Business Investment Act of 1958
 statutes | 1 | Small Business Regulatory Enforcement Fairness Act of 1996
 statutes | 1 | Social Security Act section 1138(a)(2)(D)
