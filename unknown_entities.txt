@@ -9,8 +9,8 @@ agencies | 27 | National Park Service
 agencies | 25 | Department of the Interior
 agencies | 23 | Office of Federal Procurement Policy
 agencies | 21 | Department of Agriculture
+agencies | 19 | U.S. International Trade Commission
 agencies | 18 | National Oceanic and Atmospheric Administration
-agencies | 18 | U.S. International Trade Commission
 agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | Transportation Security Administration
@@ -41,6 +41,7 @@ agencies | 8 | U.S. Army Corps of Engineers
 agencies | 8 | U.S. Census Bureau
 agencies | 8 | U.S. Customs and Border Protection
 agencies | 8 | U.S. Department of Education
+agencies | 8 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Board of Visitors of the U.S. Air Force Academy
 agencies | 7 | Cost Accounting Standards Board
 agencies | 7 | Nuclear Regulatory Commission
@@ -48,7 +49,6 @@ agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readin
 agencies | 7 | Small Business Administration
 agencies | 7 | The Nasdaq Stock Market LLC
 agencies | 7 | U.S. Postal Service
-agencies | 7 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
 agencies | 6 | Defense Logistics Agency Troop Support
@@ -474,6 +474,7 @@ programs | 3 | Cboe C2 Exchange
 programs | 3 | Community College of the Air Force
 programs | 3 | Defense Federal Acquisition Regulation Supplement (DFARS)
 programs | 3 | Defense Industrial Based Consortium
+programs | 3 | Department of Defense Wage Committee
 programs | 3 | Department of the Air Force Scientific Advisory Board
 programs | 3 | Do Not Pay Working System
 programs | 3 | Electronic Document Information System (EDIS)
@@ -501,6 +502,7 @@ programs | 3 | Subzone 230K
 programs | 3 | Subzone 45K
 programs | 3 | Toxics Release Inventory
 programs | 3 | Training & Readiness Accelerator II
+programs | 3 | United States Military Academy Board of Visitors
 programs | 2 | AI-Enabled Optimization of Early-Phase Clinical Trials Pilot Program
 programs | 2 | Adaptative Acquisition Framework
 programs | 2 | Advisory Committee on the Medical Uses of Isotopes
@@ -508,6 +510,7 @@ programs | 2 | America First Arms Transfer Strategy
 programs | 2 | Arctic Research Activities
 programs | 2 | Automated Export System (AES) Program
 programs | 2 | Balance of Payments Program
+programs | 2 | Board of Visitors of the United States Air Force Academy
 programs | 2 | CHIPS Act of 2022
 programs | 2 | CHIPS and Science Act
 programs | 2 | CISA Speakers Bureau
@@ -526,7 +529,6 @@ programs | 2 | Covered List
 programs | 2 | Data Center Validated End User authorization
 programs | 2 | Defense Sexual Assault Incident Database
 programs | 2 | Department of Defense Board of Actuaries
-programs | 2 | Department of Defense Wage Committee
 programs | 2 | DroneZone
 programs | 2 | Effective U.S. Control (EUSC)/Parent Company
 programs | 2 | Electronic Tax Administration Advisory Committee
@@ -615,7 +617,7 @@ programs | 2 | Technical Assistance Stakeholder Feedback Forms
 programs | 2 | USDA Web Based Supply Chain Management System (WBSCM)
 programs | 2 | Ultra High Density Cabinet
 programs | 2 | Unit Level Assessment Tool
-programs | 2 | United States Military Academy Board of Visitors
+programs | 2 | United States Naval Academy Board of Visitors
 programs | 2 | Unmanned Aircraft Systems (UAS) Support Center Case Management System (CMS)
 programs | 2 | VA Form 10101
 programs | 2 | VA Form 6298
@@ -712,7 +714,6 @@ programs | 1 | Black Butte Coal Company Federal Lease WYW-6266 Mining Plan Modif
 programs | 1 | Board of Contract Appeals
 programs | 1 | Board of Overseers of the Malcolm Baldrige National Quality Award
 programs | 1 | Board of Regents, Uniformed Services University of the Health Sciences
-programs | 1 | Board of Visitors of the United States Air Force Academy
 programs | 1 | Board of Visitors, National Defense University
 programs | 1 | Board of Visitors, United States Military Academy (USMA BoV)
 programs | 1 | Broadband Equity Access and Deployment (BEAD) Program
@@ -1452,7 +1453,6 @@ programs | 1 | United States Government Policy for Oversight of Dual Use Researc
 programs | 1 | United States Marine Highway Program
 programs | 1 | United States Marine Highway Program Grant Program
 programs | 1 | United States Munitions List
-programs | 1 | United States Naval Academy Board of Visitors
 programs | 1 | United States Naval Academy Sponsor Program
 programs | 1 | United States Port Security Initiative
 programs | 1 | United States Tech Force Information Cybersecurity Specialist
@@ -1518,8 +1518,8 @@ statutes | 13 | Arms Export Control Act
 statutes | 12 | 5 U.S.C. Chapter 10
 statutes | 12 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
 statutes | 12 | National Defense Authorization Act for Fiscal Year 2004
+statutes | 12 | section 337 of the Tariff Act of 1930
 statutes | 11 | Marine Mammal Protection Act
-statutes | 11 | section 337 of the Tariff Act of 1930
 statutes | 10 | Government in the Sunshine Act of 1976
 statutes | 10 | James M. Inhofe National Defense Authorization Act for Fiscal Year 2023
 statutes | 10 | National Emergencies Act
@@ -1551,6 +1551,7 @@ statutes | 6 | Social Security Act section 1138(a)(2)(B)
 statutes | 6 | Sunshine Act
 statutes | 6 | Trade Act of 1974 section 301
 statutes | 6 | Trade Expansion Act of 1962 section 232
+statutes | 6 | chapter 10 of title 5, United States Code
 statutes | 6 | section 400.14
 statutes | 5 | 44 U.S.C. Chapter 35
 statutes | 5 | 5 U.S.C. chapter 10
@@ -1559,7 +1560,6 @@ statutes | 5 | FAA Reauthorization Act of 2024
 statutes | 5 | Rule General 8, Section 1(d)
 statutes | 5 | Section 766.24 of the Export Administration Regulations
 statutes | 5 | Trade Act of 1974, section 301
-statutes | 5 | chapter 10 of title 5, United States Code
 statutes | 4 | 44 U.S.C. chapter 35
 statutes | 4 | Export Administration Act
 statutes | 4 | Homeland Security Act of 2002
