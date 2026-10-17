@@ -51,13 +51,13 @@ agencies | 7 | The Nasdaq Stock Market LLC
 agencies | 7 | U.S. Postal Service
 agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
+agencies | 6 | Defense Health Agency
 agencies | 6 | Defense Logistics Agency Troop Support
 agencies | 6 | Defense Manpower Data Center
 agencies | 6 | U.S. Commission on Civil Rights
 agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
-agencies | 5 | Defense Health Agency
 agencies | 5 | Department of Defense, DLA Troop Support
 agencies | 5 | Federal Bureau of Investigation
 agencies | 5 | Federal Emergency Management Agency
@@ -1205,6 +1205,7 @@ programs | 1 | Northeast Regional Ocean Council
 programs | 1 | Northeast Unmanned Aviation Research Alliance
 programs | 1 | Northern California Range Complex
 programs | 1 | Northridge Center for Public Archaeology
+programs | 1 | Nuclear Fuel Cycle Integrated Hubs
 programs | 1 | OASIS+
 programs | 1 | OPM/Central-9, OPM Suitability Adjudications Files
 programs | 1 | OPM/Internal-3, Information Technology, Information System, and Network Activity and Access Records
@@ -1512,7 +1513,7 @@ statutes | 45 | Paperwork Reduction Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | Federal Advisory Committee Act
 statutes | 32 | National Cooperative Research and Production Act of 1993
-statutes | 22 | Privacy Act of 1974
+statutes | 23 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
 statutes | 13 | Arms Export Control Act
 statutes | 12 | 5 U.S.C. Chapter 10
@@ -1588,6 +1589,7 @@ statutes | 3 | Federal Food, Drug, and Cosmetic Act
 statutes | 3 | Fiscal Year 2023 National Defense Authorization Act
 statutes | 3 | Foreign Assistance Act of 1961
 statutes | 3 | Foreign Assistance Act of 1961, Section 621
+statutes | 3 | Freedom of Information Act
 statutes | 3 | Individuals with Disabilities Education Act (IDEA)
 statutes | 3 | Inspector General Reform Act of 2008
 statutes | 3 | Iran, North Korea, and Syria Nonproliferation Act
@@ -1643,7 +1645,6 @@ statutes | 2 | Federal Advisory Committee Act, 5 U.S.C. Ch. 10
 statutes | 2 | Federal Property and Administrative Services Act of 1949
 statutes | 2 | Food, Conservation, and Energy Act of 2008
 statutes | 2 | Foreign Assistance Act of 1961, Section 506(a)(1)
-statutes | 2 | Freedom of Information Act
 statutes | 2 | Health Insurance Portability and Accountability Act of 1996
 statutes | 2 | ICC Termination Act of 1995
 statutes | 2 | Immigration and Nationality Act of 1952
@@ -1680,6 +1681,7 @@ statutes | 2 | Section 48D
 statutes | 2 | Section 50
 statutes | 2 | Section 766.24
 statutes | 2 | Section 820 of the 2017 National Defense Authorization Act
+statutes | 2 | Senate Report 118-188
 statutes | 2 | Small Business Paperwork Relief Act of 2002
 statutes | 2 | Social Security Act Section 1138
 statutes | 2 | Staggers Rail Act of 1980
@@ -1946,11 +1948,13 @@ statutes | 1 | Hart-Scott-Rodino Antitrust Improvements Act of 1976
 statutes | 1 | Hazardous and Solid Waste Amendments of 1984
 statutes | 1 | Health Information Technology for Economic and Clinical Health Act
 statutes | 1 | Health Information Technology for Economic and Clinical Health Act of 2009
+statutes | 1 | Health Insurance Portability and Accountability Act
 statutes | 1 | High Seas Driftnet Fishing Moratorium Protection Act
 statutes | 1 | High-Performance Computing Act of 1991
 statutes | 1 | Homebuyers Privacy Protection Act
 statutes | 1 | Homeland Security Act
 statutes | 1 | Homeland Security Act Section 201
+statutes | 1 | House Report 118-125
 statutes | 1 | IFCA Section 1245(a)(1)(B)
 statutes | 1 | IFCA Section 1245(a)(1)(C)
 statutes | 1 | IFCA Section 1245(d)
@@ -2136,7 +2140,6 @@ statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and (5)
 statutes | 1 | Securities Exchange Act of 1934, Section 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, Sections 6(b)(4) and 6(b)(5)
 statutes | 1 | Securities Exchange Act of 1934, section 19(b)(1)
-statutes | 1 | Senate Report 118-188
 statutes | 1 | Service Members Occupational Conversion and Training Act of 1992
 statutes | 1 | Shipping Act of 1984
 statutes | 1 | Small Business Investment Act of 1958
