@@ -63,6 +63,7 @@ agencies | 5 | Federal Bureau of Investigation
 agencies | 5 | Federal Emergency Management Agency
 agencies | 5 | Internal Revenue Service
 agencies | 5 | Office of Unfair Import Investigations
+agencies | 5 | Office of the Secretary
 agencies | 5 | Office of the Under Secretary of Defense for Acquisition and Sustainment
 agencies | 5 | Public Safety and Homeland Security Bureau
 agencies | 5 | Secretary of the Interior
@@ -76,7 +77,6 @@ agencies | 4 | National Commission on the Future of the Navy
 agencies | 4 | National Marine Fisheries Service (NMFS)
 agencies | 4 | National Oceanic and Atmospheric Administration (NOAA)
 agencies | 4 | New York Stock Exchange LLC
-agencies | 4 | Office of the Secretary
 agencies | 4 | Office of the Under Secretary of Defense (Acquisition and Sustainment)
 agencies | 4 | Procurement Policy and Warrant Management Service
 agencies | 4 | Secretary of Homeland Security
@@ -110,6 +110,7 @@ agencies | 3 | U.S. Department of Defense, Defense Health Agency
 agencies | 3 | U.S. Geological Survey
 agencies | 3 | U.S. Nuclear Regulatory Commission
 agencies | 3 | United States Geological Survey
+agencies | 3 | United States Trade Representative
 agencies | 2 | Advisory Committee on Reactor Safeguards
 agencies | 2 | Agricultural Marketing Service
 agencies | 2 | Attorney General
@@ -164,7 +165,6 @@ agencies | 2 | United States Agency for International Development
 agencies | 2 | United States Army Corps of Engineers
 agencies | 2 | United States International Trade Commission
 agencies | 2 | United States Marine Corps
-agencies | 2 | United States Trade Representative
 agencies | 2 | Utah Department of Transportation
 agencies | 2 | VA Office of Research and Development
 agencies | 2 | Veterans Benefits Administration
@@ -186,6 +186,7 @@ agencies | 1 | Bureau of Alcohol, Tobacco, Firearms, and Explosives
 agencies | 1 | Bureau of Industry and Security, U.S. Department of Commerce
 agencies | 1 | Bureau of Prisons
 agencies | 1 | Bureau of the Fiscal Service
+agencies | 1 | CISA Cybersecurity Division
 agencies | 1 | Center for AI Standards and Innovation
 agencies | 1 | Center for Biologics Evaluation and Research
 agencies | 1 | Center for Drug Evaluation and Research
@@ -267,6 +268,7 @@ agencies | 1 | National Institute of Neurological Disorders and Stroke
 agencies | 1 | National Interagency Fire Center
 agencies | 1 | National Renewable Energy Laboratory
 agencies | 1 | National Science and Technology Council
+agencies | 1 | National Security Council
 agencies | 1 | National Space Council
 agencies | 1 | National Technical Information Service
 agencies | 1 | National Technical Information Service (NTIS)
@@ -527,6 +529,7 @@ programs | 2 | Connect America Fund
 programs | 2 | Coordinated Vulnerability Disclosure (CVD)
 programs | 2 | Covered List
 programs | 2 | Data Center Validated End User authorization
+programs | 2 | Defense Policy Board
 programs | 2 | Defense Sexual Assault Incident Database
 programs | 2 | Department of Defense Board of Actuaries
 programs | 2 | DroneZone
@@ -841,7 +844,6 @@ programs | 1 | Defense Health Board
 programs | 1 | Defense Industrial Base
 programs | 1 | Defense Language Institute Foreign Language (DLIFLC) BoV Subcommittee
 programs | 1 | Defense Manpower Data Center Data Base
-programs | 1 | Defense Policy Board
 programs | 1 | Defense-State Liaison Office
 programs | 1 | Delegated Examining
 programs | 1 | Delta Conveyance Project
@@ -917,6 +919,7 @@ programs | 1 | FY27 Secretary of the Air Force directed studies
 programs | 1 | Falcon Launch Program
 programs | 1 | False Claims Act
 programs | 1 | Farm to School Program
+programs | 1 | Federal Acquisition Supply Chain Security Act
 programs | 1 | Federal Acquisition System
 programs | 1 | Federal Claims Control Center (FCCC)
 programs | 1 | Federal Docket Management System
@@ -1544,6 +1547,7 @@ statutes | 7 | Section 232 of the Trade Expansion Act of 1962
 statutes | 7 | Section 301 of the Trade Act of 1974
 statutes | 7 | Section 6(b) of the Act
 statutes | 7 | Social Security Act section 1138(a)(1)(C)
+statutes | 6 | 5 U.S.C. chapter 10
 statutes | 6 | Congressional Review Act
 statutes | 6 | International Emergency Economic Powers Act section 1702(a)(1)(B)
 statutes | 6 | Social Security Act section 1138(a)(1)(A)(iii)
@@ -1555,7 +1559,6 @@ statutes | 6 | Trade Expansion Act of 1962 section 232
 statutes | 6 | chapter 10 of title 5, United States Code
 statutes | 6 | section 400.14
 statutes | 5 | 44 U.S.C. Chapter 35
-statutes | 5 | 5 U.S.C. chapter 10
 statutes | 5 | Atomic Energy Act of 1954
 statutes | 5 | FAA Reauthorization Act of 2024
 statutes | 5 | Rule General 8, Section 1(d)
