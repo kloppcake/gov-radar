@@ -1,7 +1,7 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
-agencies | 158 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 160 | Committee for Purchase From People Who Are Blind or Severely Disabled
 agencies | 39 | Foreign-Trade Zones Board
 agencies | 35 | Federal Energy Regulatory Commission
 agencies | 29 | Office of Export Enforcement
@@ -208,6 +208,7 @@ agencies | 1 | Council of Advisors on Science and Technology
 agencies | 1 | Council of Economic Advisers
 agencies | 1 | Critical Minerals and Energy Innovation, Department of Energy
 agencies | 1 | Cybersecurity Division
+agencies | 1 | DEPARTMENT OF AGRICULTURE, USDA FNS
 agencies | 1 | DLA AVIATION
 agencies | 1 | DLA LAND AND MARITIME
 agencies | 1 | DOD Office of the Chief Information Officer
@@ -379,6 +380,7 @@ agencies | 1 | U.S. Department of the Interior
 agencies | 1 | U.S. Forest Service
 agencies | 1 | U.S. Small Business Administration
 agencies | 1 | US Census Bureau
+agencies | 1 | US Department of Agriculture, Food and Nutrition Service
 agencies | 1 | US Department of Homeland Security
 agencies | 1 | US Postal Service
 agencies | 1 | USDA Forest Service
@@ -401,10 +403,10 @@ agencies | 1 | Virginia Department of Environmental Quality
 agencies | 1 | White House National Security Council
 agencies | 1 | White House Task Force to Address Online Harassment and Abuse
 agencies | 1 | Wireline Competition Bureau
-programs | 160 | Procurement List
+programs | 162 | Procurement List
 programs | 52 | Fixed Income and Data Services
 programs | 51 | Connectivity Fee Schedule
-programs | 33 | Javits-Wagner-O'Day Act
+programs | 34 | Javits-Wagner-O'Day Act
 programs | 27 | Export Administration Regulations
 programs | 27 | Office of Exporter Services
 programs | 26 | Office of Export Enforcement
