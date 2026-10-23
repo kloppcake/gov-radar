@@ -48,13 +48,13 @@ agencies | 7 | Nuclear Regulatory Commission
 agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Small Business Administration
 agencies | 7 | The Nasdaq Stock Market LLC
+agencies | 7 | U.S. Commission on Civil Rights
 agencies | 7 | U.S. Postal Service
 agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
 agencies | 6 | Defense Health Agency
 agencies | 6 | Defense Logistics Agency Troop Support
 agencies | 6 | Defense Manpower Data Center
-agencies | 6 | U.S. Commission on Civil Rights
 agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
@@ -240,6 +240,7 @@ agencies | 1 | Federal Law Enforcement Training Center
 agencies | 1 | Federal Maritime Commission
 agencies | 1 | Federal agencies
 agencies | 1 | Financial Industry Regulatory Authority, Inc.
+agencies | 1 | Financial Stability Oversight Council
 agencies | 1 | Food and Nutrition Administration
 agencies | 1 | GSA Public Buildings Service
 agencies | 1 | General Accounting Office (GAO)
@@ -507,6 +508,8 @@ programs | 3 | Subzone 45K
 programs | 3 | Toxics Release Inventory
 programs | 3 | Training & Readiness Accelerator II
 programs | 3 | United States Military Academy Board of Visitors
+programs | 2 | .gov Registry Program
+programs | 2 | .gov registrar
 programs | 2 | AI-Enabled Optimization of Early-Phase Clinical Trials Pilot Program
 programs | 2 | Adaptative Acquisition Framework
 programs | 2 | Advisory Committee on the Medical Uses of Isotopes
@@ -570,6 +573,7 @@ programs | 2 | Maritime Action Plan
 programs | 2 | Maritime Security Program
 programs | 2 | Medicaid
 programs | 2 | Medicare
+programs | 2 | Michigan Advisory Committee
 programs | 2 | Military Health System
 programs | 2 | Military Panel
 programs | 2 | Military Retirement Fund
@@ -629,8 +633,6 @@ programs | 2 | VA Form 6298
 programs | 2 | Veteran Small Business Certification Program
 programs | 2 | Virtual Control Circuits
 programs | 2 | Vulnerability Disclosure Submission Form
-programs | 1 | .gov Registry Program
-programs | 1 | .gov registrar
 programs | 1 | 2021 NTIA SBOM Minimum Elements
 programs | 1 | 2023 Section 1260H List of Chinese Military Companies Operating in the United States
 programs | 1 | 2025 Minimum Elements for a Software Bill of Materials (SBOM)
@@ -1095,7 +1097,6 @@ programs | 1 | Medicare Hospital Outpatient Prospective Payment System
 programs | 1 | Medicare-Eligible Retiree Health Care Fund
 programs | 1 | Medicare.gov
 programs | 1 | Mentored, Career Transition, and Mid-Career K Awards
-programs | 1 | Michigan Advisory Committee
 programs | 1 | Microbiology and Infectious Diseases Research
 programs | 1 | Micron Semiconductor Manufacturing Facility
 programs | 1 | Microplastics Research and Resource Coordination Core Center
@@ -1212,6 +1213,7 @@ programs | 1 | Northern California Range Complex
 programs | 1 | Northridge Center for Public Archaeology
 programs | 1 | Nuclear Fuel Cycle Integrated Hubs
 programs | 1 | OASIS+
+programs | 1 | OCC Rule 213
 programs | 1 | OPM/Central-9, OPM Suitability Adjudications Files
 programs | 1 | OPM/Internal-3, Information Technology, Information System, and Network Activity and Access Records
 programs | 1 | OPRA Plan
@@ -1511,12 +1513,12 @@ programs | 1 | temporary denial order
 programs | 1 | unmanned aircraft flight restriction
 programs | 1 | wildland fire programs
 statutes | 93 | Paperwork Reduction Act of 1995
-statutes | 80 | Securities Exchange Act of 1934, Section 19(b)(1)
+statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 48 | Javits-Wagner-O'Day Act
 statutes | 45 | Paperwork Reduction Act
+statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
-statutes | 32 | Federal Advisory Committee Act
 statutes | 32 | National Cooperative Research and Production Act of 1993
 statutes | 23 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
@@ -1637,6 +1639,7 @@ statutes | 2 | DFARS 252.209-7008
 statutes | 2 | DFARS 252.209-7012
 statutes | 2 | DFARS 252.239-7009
 statutes | 2 | DFARS 252.239-7010
+statutes | 2 | DOTGOV Act of 2020
 statutes | 2 | Defense Base Closure and Realignment Act of 1990
 statutes | 2 | Department of Treasury Directive 21-03
 statutes | 2 | DoD Instruction 5200.01
@@ -1854,7 +1857,6 @@ statutes | 1 | DFARS Part 225
 statutes | 1 | DFARS Part 232
 statutes | 1 | DFARS Part 242
 statutes | 1 | DFARS Subpart 215.4
-statutes | 1 | DOTGOV Act of 2020
 statutes | 1 | Debt Collection Improvement Act of 1996
 statutes | 1 | Department of Transportation Act Section 4(f)
 statutes | 1 | Department of War Instruction 1342.22
@@ -1869,6 +1871,7 @@ statutes | 1 | DoDI 6130.03 Volume 2
 statutes | 1 | DoDM 6400.01, Volume 2
 statutes | 1 | DoW Financial Management Regulation 7000.14-R, Volume 7B, Chapter 46, paragraph 460103A (1)
 statutes | 1 | Docket No. RM20-12-000
+statutes | 1 | Dodd-Frank Wall Street Reform and Consumer Protection Act of 2010
 statutes | 1 | Duncan Hunter NDAA for Fiscal Year 2009
 statutes | 1 | Earthquake Hazards Reduction Act of 1977
 statutes | 1 | Emergency Medical Treatment and Labor Act
@@ -2171,6 +2174,7 @@ statutes | 1 | Title III of the Trade Agreements Act of 1979
 statutes | 1 | Title IX
 statutes | 1 | Title VI of the Civil Rights Act of 1964
 statutes | 1 | Title VII of the U.S. Code
+statutes | 1 | Title VIII of the Dodd-Frank Act
 statutes | 1 | Trade Act of 1974, Section 301(b)
 statutes | 1 | Trade Act of 1974, Section 307(a)
 statutes | 1 | Trade Act of 1974, Section 307(a)(2)(b)
