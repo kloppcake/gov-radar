@@ -17,9 +17,9 @@ agencies | 16 | Transportation Security Administration
 agencies | 15 | Centers for Medicare & Medicaid Services
 agencies | 15 | National Institutes of Health
 agencies | 14 | Department of Education
+agencies | 14 | Office of the United States Trade Representative
 agencies | 13 | Bureau of Land Management
 agencies | 13 | Department of Labor
-agencies | 13 | Office of the United States Trade Representative
 agencies | 13 | U.S. Coast Guard
 agencies | 12 | Health Resources and Services Administration
 agencies | 12 | National Marine Fisheries Service
@@ -1613,6 +1613,7 @@ statutes | 3 | Section 205(d)
 statutes | 3 | Section 337 of the Tariff Act of 1930
 statutes | 3 | Section 372 of the Public Health Service Act
 statutes | 3 | Securities Exchange Act of 1934, Section 6(b)
+statutes | 3 | Trade Act of 1974, sections 301(b), 301(c), and 304(a)
 statutes | 3 | Trade Agreements Act of 1979
 statutes | 3 | USDOT Order 5610.1D
 statutes | 3 | Unfunded Mandates Reform Act of 1995
@@ -1696,7 +1697,6 @@ statutes | 2 | Staggers Rail Act of 1980
 statutes | 2 | Trade Act of 1974, Section 122
 statutes | 2 | Trade Act of 1974, Section 301
 statutes | 2 | Trade Act of 1974, section 604
-statutes | 2 | Trade Act of 1974, sections 301(b), 301(c), and 304(a)
 statutes | 2 | Trade Expansion Act of 1962
 statutes | 2 | Uniform Code of Military Justice
 statutes | 2 | VA Acquisition Regulation Clause 852.236-79
@@ -2105,6 +2105,7 @@ statutes | 1 | Section 302(b)(1)(B) of the Trade Act
 statutes | 1 | Section 303(a) of the Trade Act
 statutes | 1 | Section 304 of the Trade Act
 statutes | 1 | Section 307(a)(1) of the Trade Act
+statutes | 1 | Section 307(a)(2) of the Trade Act
 statutes | 1 | Section 312 of the Act
 statutes | 1 | Section 318 of the Tariff Act of 1930
 statutes | 1 | Section 32 of the Act of August 24, 1935
