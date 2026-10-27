@@ -4,7 +4,7 @@
 agencies | 160 | Committee for Purchase From People Who Are Blind or Severely Disabled
 agencies | 39 | Foreign-Trade Zones Board
 agencies | 35 | Federal Energy Regulatory Commission
-agencies | 29 | Office of Export Enforcement
+agencies | 30 | Office of Export Enforcement
 agencies | 27 | National Park Service
 agencies | 25 | Department of the Interior
 agencies | 23 | Office of Federal Procurement Policy
@@ -20,8 +20,8 @@ agencies | 14 | Department of Education
 agencies | 14 | Office of the United States Trade Representative
 agencies | 13 | Bureau of Land Management
 agencies | 13 | Department of Labor
+agencies | 13 | Health Resources and Services Administration
 agencies | 13 | U.S. Coast Guard
-agencies | 12 | Health Resources and Services Administration
 agencies | 12 | National Marine Fisheries Service
 agencies | 11 | Centers for Disease Control and Prevention
 agencies | 11 | U.S. AbilityOne Commission
@@ -82,6 +82,7 @@ agencies | 4 | Procurement Policy and Warrant Management Service
 agencies | 4 | Secretary of Homeland Security
 agencies | 4 | Secretary of War
 agencies | 4 | U.S. Department of Agriculture
+agencies | 4 | U.S. Geological Survey
 agencies | 4 | United States Department of Agriculture
 agencies | 4 | Veterans Health Administration
 agencies | 3 | Agency for International Development
@@ -107,7 +108,6 @@ agencies | 3 | Office of the Federal Register
 agencies | 3 | Office of the National Cyber Director
 agencies | 3 | Surface Transportation Board
 agencies | 3 | U.S. Department of Defense, Defense Health Agency
-agencies | 3 | U.S. Geological Survey
 agencies | 3 | U.S. Nuclear Regulatory Commission
 agencies | 3 | United States Geological Survey
 agencies | 3 | United States Trade Representative
@@ -294,6 +294,7 @@ agencies | 1 | Office of Acquisition and Logistics
 agencies | 1 | Office of Career, Technical, and Adult Education
 agencies | 1 | Office of Career, Technical, and Adult Education (OCTAE)
 agencies | 1 | Office of Combination Products
+agencies | 1 | Office of Critical Minerals and Energy Innovation
 agencies | 1 | Office of Cybersecurity, Energy Security, and Emergency Response
 agencies | 1 | Office of Energy Projects
 agencies | 1 | Office of Federal Contract Compliance Programs
@@ -414,8 +415,8 @@ programs | 26 | Office of Export Enforcement
 programs | 18 | Commercial Distribution Program
 programs | 16 | Liquidity Center Network
 programs | 14 | U.S. AbilityOne Commission
+programs | 13 | Organ Procurement and Transplantation Network
 programs | 12 | Equalization Project
-programs | 12 | Organ Procurement and Transplantation Network
 programs | 12 | Partial Cabinet Solution
 programs | 11 | AbilityOne Program
 programs | 11 | Mahwah Data Center
@@ -589,6 +590,7 @@ programs | 2 | National Strategy to End the Use of Paper Straws
 programs | 2 | Naval Surface Technology & Innovation
 programs | 2 | Nondestructive Testing of Certain Cargo Tanks on Unmanned Barges
 programs | 2 | Nutrition Service Incentive Program
+programs | 2 | OPTN Modernization Initiative
 programs | 2 | Optic Access Circuit
 programs | 2 | Outreach and Assistance to Socially Disadvantaged Farmers and Ranchers and Veteran Farmers and Ranchers Program (2501 Program)
 programs | 2 | Pipeline Corporate Security Review
@@ -806,6 +808,8 @@ programs | 1 | Critical Incident Response Group
 programs | 1 | Critical Infrastructure Partnership Advisory Council
 programs | 1 | Critical Infrastructure Protection Reliability Standards
 programs | 1 | Critical Infrastructure Security and Resilience
+programs | 1 | Critical Material List
+programs | 1 | Critical Materials Assessment
 programs | 1 | Critical Minerals List
 programs | 1 | Cryptographic Module Validation Program
 programs | 1 | Customer Contact Center 2
@@ -1217,7 +1221,6 @@ programs | 1 | OCC Rule 213
 programs | 1 | OPM/Central-9, OPM Suitability Adjudications Files
 programs | 1 | OPM/Internal-3, Information Technology, Information System, and Network Activity and Access Records
 programs | 1 | OPRA Plan
-programs | 1 | OPTN Modernization Initiative
 programs | 1 | Occupational Information Network (O*NET) Program
 programs | 1 | Ocean Policy Committee
 programs | 1 | Ocean Research Advisory Panel
@@ -1512,7 +1515,7 @@ programs | 1 | regional ocean partnership
 programs | 1 | temporary denial order
 programs | 1 | unmanned aircraft flight restriction
 programs | 1 | wildland fire programs
-statutes | 93 | Paperwork Reduction Act of 1995
+statutes | 94 | Paperwork Reduction Act of 1995
 statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 48 | Javits-Wagner-O'Day Act
@@ -1523,8 +1526,8 @@ statutes | 32 | National Cooperative Research and Production Act of 1993
 statutes | 23 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
 statutes | 13 | Arms Export Control Act
+statutes | 13 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
 statutes | 12 | 5 U.S.C. Chapter 10
-statutes | 12 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
 statutes | 12 | National Defense Authorization Act for Fiscal Year 2004
 statutes | 12 | section 337 of the Tariff Act of 1930
 statutes | 11 | Marine Mammal Protection Act
@@ -1569,6 +1572,7 @@ statutes | 5 | Rule General 8, Section 1(d)
 statutes | 5 | Section 766.24 of the Export Administration Regulations
 statutes | 5 | Trade Act of 1974, section 301
 statutes | 4 | 44 U.S.C. chapter 35
+statutes | 4 | Energy Act of 2020
 statutes | 4 | Export Administration Act
 statutes | 4 | Homeland Security Act of 2002
 statutes | 4 | Infrastructure Investment and Jobs Act
@@ -1588,7 +1592,6 @@ statutes | 3 | Bank Secrecy Act
 statutes | 3 | Chemical and Biological Weapons Control and Warfare Elimination Act of 1991
 statutes | 3 | Clean Air Act
 statutes | 3 | Computer Matching and Privacy Protection Act of 1988
-statutes | 3 | Energy Act of 2020
 statutes | 3 | FAA Order 1050.1G
 statutes | 3 | False Claims Act
 statutes | 3 | Federal Advisory Committee Act, section 1009
@@ -1604,6 +1607,7 @@ statutes | 3 | Marine Mammal Protection Act (MMPA)
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2012
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2013
 statutes | 3 | National Defense Authorization Act for Fiscal Year 2021
+statutes | 3 | National Organ Transplant Act of 1984
 statutes | 3 | National Security Memorandum 22
 statutes | 3 | OMB Memorandum M-25-26
 statutes | 3 | Presidential Memorandum of June 3, 2013
@@ -1660,7 +1664,6 @@ statutes | 2 | Immigration and Nationality Act of 1952
 statutes | 2 | Implementing Recommendations of the 9/11 Commission Act of 2007
 statutes | 2 | National Defense Authorization Act for Fiscal Year 1997
 statutes | 2 | National Organ Transplant Act
-statutes | 2 | National Organ Transplant Act of 1984
 statutes | 2 | Order No. 881
 statutes | 2 | Part 107
 statutes | 2 | Payment Integrity Information Act of 2019
