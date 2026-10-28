@@ -3,7 +3,7 @@
 
 agencies | 160 | Committee for Purchase From People Who Are Blind or Severely Disabled
 agencies | 39 | Foreign-Trade Zones Board
-agencies | 35 | Federal Energy Regulatory Commission
+agencies | 36 | Federal Energy Regulatory Commission
 agencies | 30 | Office of Export Enforcement
 agencies | 27 | National Park Service
 agencies | 25 | Department of the Interior
@@ -29,11 +29,11 @@ agencies | 10 | Office of Personnel Management
 agencies | 9 | Antitrust Division
 agencies | 9 | Defense Acquisition Regulations System, Department of Defense
 agencies | 9 | Defense Commissary Agency
+agencies | 9 | Secretary of Commerce
 agencies | 9 | Secretary of State
 agencies | 9 | Tennessee Valley Authority
 agencies | 8 | Maritime Administration
 agencies | 8 | Office of Exporter Services
-agencies | 8 | Secretary of Commerce
 agencies | 8 | Secretary of Defense
 agencies | 8 | Secretary of Energy
 agencies | 8 | Secretary of the Treasury
@@ -44,6 +44,7 @@ agencies | 8 | U.S. Department of Education
 agencies | 8 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Board of Visitors of the U.S. Air Force Academy
 agencies | 7 | Cost Accounting Standards Board
+agencies | 7 | Defense Manpower Data Center
 agencies | 7 | Nuclear Regulatory Commission
 agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Small Business Administration
@@ -54,7 +55,6 @@ agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
 agencies | 6 | Defense Health Agency
 agencies | 6 | Defense Logistics Agency Troop Support
-agencies | 6 | Defense Manpower Data Center
 agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 6 | US Air Force
 agencies | 5 | DLA TROOP SUPPORT
@@ -106,6 +106,7 @@ agencies | 3 | Neighborhood Reinvestment Corporation
 agencies | 3 | North American Electric Reliability Corporation
 agencies | 3 | Office of the Federal Register
 agencies | 3 | Office of the National Cyber Director
+agencies | 3 | Social Security Administration
 agencies | 3 | Surface Transportation Board
 agencies | 3 | U.S. Department of Defense, Defense Health Agency
 agencies | 3 | U.S. Nuclear Regulatory Commission
@@ -155,7 +156,6 @@ agencies | 2 | Office of the Under Secretary of Defense (Comptroller)/Chief Fina
 agencies | 2 | Office of the Under Secretary of Defense for Research and Engineering
 agencies | 2 | Pipeline and Hazardous Materials Safety Administration
 agencies | 2 | Secretary of Agriculture
-agencies | 2 | Social Security Administration
 agencies | 2 | U.S. Department of Defense, Defense Health Agency, National Museum of Health and Medicine
 agencies | 2 | U.S. Department of Defense, Navy
 agencies | 2 | U.S. Marine Corps
@@ -558,6 +558,7 @@ programs | 2 | Foreign-Trade Zone (FTZ) 75
 programs | 2 | Foreign-Trade Zone 143
 programs | 2 | Foreign-Trade Zone 183
 programs | 2 | Form CA-1: Registration of Clearing Agencies
+programs | 2 | Franklin Farms Project
 programs | 2 | Global Positioning System (GPS) antenna service
 programs | 2 | Green Chile Project
 programs | 2 | Hawaii Range Complex
@@ -962,7 +963,6 @@ programs | 1 | Fostering the Future
 programs | 1 | Framework for Artificial Intelligence Diffusion
 programs | 1 | Framework for Nucleic Acid Synthesis Screening
 programs | 1 | Framework for the Assessment of Environmental Performance Standards and Ecolabels for Federal Purchasing
-programs | 1 | Franklin Farms Project
 programs | 1 | Freedom 250 Grand Prix
 programs | 1 | Fulton Elliott-Chelsea Redevelopment Project
 programs | 1 | GI Bill
@@ -1388,6 +1388,7 @@ programs | 1 | Southeast Virginia Energy Storage Project
 programs | 1 | Southern California Range Complex
 programs | 1 | Speaker Request Form
 programs | 1 | Special Milk Program for Children
+programs | 1 | Special Veterans Benefits
 programs | 1 | Spectrum IT Modernization
 programs | 1 | Spring Valley II Solar Project
 programs | 1 | Sprinter light rail service
@@ -1413,6 +1414,7 @@ programs | 1 | Subzone 75C
 programs | 1 | Suitability Executive Agent Program
 programs | 1 | Summer Food Service Program
 programs | 1 | Supplemental Nutrition Assistance Program (SNAP)
+programs | 1 | Supplemental Security Income
 programs | 1 | Supplier Registration System
 programs | 1 | Supplier Risk Management Offeror Questionnaire
 programs | 1 | Supply Chain Risk Management
@@ -1523,7 +1525,7 @@ statutes | 45 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | National Cooperative Research and Production Act of 1993
-statutes | 23 | Privacy Act of 1974
+statutes | 24 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
 statutes | 13 | Arms Export Control Act
 statutes | 13 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
@@ -1540,14 +1542,14 @@ statutes | 9 | FTZ Act
 statutes | 9 | Federal Advisory Committee Act of 1972
 statutes | 9 | National Defense Authorization Act for Fiscal Year 2019
 statutes | 9 | National Defense Authorization Act for Fiscal Year 2022
+statutes | 9 | National Environmental Policy Act
 statutes | 9 | Native American Graves Protection and Repatriation Act
 statutes | 9 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
+statutes | 9 | section 232 of the Trade Expansion Act of 1962
 statutes | 8 | Educational, Scientific and Cultural Materials Importation Act of 1966
 statutes | 8 | Government in the Sunshine Act
 statutes | 8 | National Defense Authorization Act for Fiscal Year 2020
-statutes | 8 | National Environmental Policy Act
 statutes | 8 | Native American Graves Protection and Repatriation Act (NAGPRA)
-statutes | 8 | section 232 of the Trade Expansion Act of 1962
 statutes | 7 | National Defense Authorization Act for Fiscal Year 2024
 statutes | 7 | Public Health Service Act section 371(b)(1)
 statutes | 7 | Section 232 of the Trade Expansion Act of 1962
@@ -1572,6 +1574,7 @@ statutes | 5 | Rule General 8, Section 1(d)
 statutes | 5 | Section 766.24 of the Export Administration Regulations
 statutes | 5 | Trade Act of 1974, section 301
 statutes | 4 | 44 U.S.C. chapter 35
+statutes | 4 | Computer Matching and Privacy Protection Act of 1988
 statutes | 4 | Energy Act of 2020
 statutes | 4 | Export Administration Act
 statutes | 4 | Homeland Security Act of 2002
@@ -1591,7 +1594,6 @@ statutes | 3 | 48 CFR Chapter 1
 statutes | 3 | Bank Secrecy Act
 statutes | 3 | Chemical and Biological Weapons Control and Warfare Elimination Act of 1991
 statutes | 3 | Clean Air Act
-statutes | 3 | Computer Matching and Privacy Protection Act of 1988
 statutes | 3 | FAA Order 1050.1G
 statutes | 3 | False Claims Act
 statutes | 3 | Federal Advisory Committee Act, section 1009
@@ -2133,6 +2135,7 @@ statutes | 1 | Section 709 of the Servicemember Quality of Life Improvement and 
 statutes | 1 | Section 70916(c) of the Build America, Buy America Act
 statutes | 1 | Section 743 of Division C of the Consolidated Appropriations Act of 2010
 statutes | 1 | Section 766.25 of the Export Administration Regulations
+statutes | 1 | Section 7c of the Natural Gas Act
 statutes | 1 | Section 809 of the 2016 National Defense Authorization Act
 statutes | 1 | Section 812
 statutes | 1 | Section 812 of the National Defense Authorization Act for Fiscal Year 2024
