@@ -25,9 +25,9 @@ agencies | 13 | U.S. Coast Guard
 agencies | 12 | National Marine Fisheries Service
 agencies | 12 | U.S. AbilityOne Commission
 agencies | 11 | Centers for Disease Control and Prevention
+agencies | 10 | Defense Acquisition Regulations System, Department of Defense
 agencies | 10 | Office of Personnel Management
 agencies | 9 | Antitrust Division
-agencies | 9 | Defense Acquisition Regulations System, Department of Defense
 agencies | 9 | Defense Commissary Agency
 agencies | 9 | Secretary of Commerce
 agencies | 9 | Secretary of State
@@ -844,6 +844,7 @@ programs | 1 | Defense Advisory Committee on Diversity and Inclusion
 programs | 1 | Defense Advisory Committee on Women in the Services
 programs | 1 | Defense Business Board
 programs | 1 | Defense Enrollment Eligibility Reporting System (DEERS)
+programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Appendix I
 programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 204
 programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 215, Only One Offer
 programs | 1 | Defense Federal Acquisition Regulation Supplement (DFARS) Part 232, Contract Financing
@@ -1524,7 +1525,7 @@ statutes | 94 | Paperwork Reduction Act of 1995
 statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 49 | Javits-Wagner-O'Day Act
-statutes | 45 | Paperwork Reduction Act
+statutes | 46 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | National Cooperative Research and Production Act of 1993
@@ -2094,6 +2095,7 @@ statutes | 1 | Section 1245 of the National Defense Authorization Act for Fiscal
 statutes | 1 | Section 1245(d)(4)(B) and (C) of the National Defense Authorization Act for Fiscal Year 2012
 statutes | 1 | Section 1245(e)
 statutes | 1 | Section 1760(e) of ECRA
+statutes | 1 | Section 18(d)(7) of the Small Business Act
 statutes | 1 | Section 1806 of the 2026 National Defense Authorization Act
 statutes | 1 | Section 182b of the Atomic Energy Act
 statutes | 1 | Section 19(b) of the Investment Company Act
@@ -2142,6 +2144,7 @@ statutes | 1 | Section 7c of the Natural Gas Act
 statutes | 1 | Section 809 of the 2016 National Defense Authorization Act
 statutes | 1 | Section 812
 statutes | 1 | Section 812 of the National Defense Authorization Act for Fiscal Year 2024
+statutes | 1 | Section 831 of the National Defense Authorization Act for Fiscal Year 1991
 statutes | 1 | Section 871(a) of the Homeland Security Act of 2002
 statutes | 1 | Section 874 of the National Defense Authorization Act for Fiscal Year 2024
 statutes | 1 | Section 9002 of FSRIA
