@@ -2,7 +2,7 @@
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
 agencies | 161 | Committee for Purchase From People Who Are Blind or Severely Disabled
-agencies | 39 | Foreign-Trade Zones Board
+agencies | 40 | Foreign-Trade Zones Board
 agencies | 36 | Federal Energy Regulatory Commission
 agencies | 30 | Office of Export Enforcement
 agencies | 27 | National Park Service
@@ -27,16 +27,16 @@ agencies | 12 | U.S. AbilityOne Commission
 agencies | 11 | Centers for Disease Control and Prevention
 agencies | 10 | Defense Acquisition Regulations System, Department of Defense
 agencies | 10 | Office of Personnel Management
+agencies | 10 | Secretary of Commerce
+agencies | 10 | Secretary of State
 agencies | 9 | Antitrust Division
 agencies | 9 | Defense Commissary Agency
-agencies | 9 | Secretary of Commerce
-agencies | 9 | Secretary of State
+agencies | 9 | Secretary of the Treasury
 agencies | 9 | Tennessee Valley Authority
 agencies | 8 | Maritime Administration
 agencies | 8 | Office of Exporter Services
 agencies | 8 | Secretary of Defense
 agencies | 8 | Secretary of Energy
-agencies | 8 | Secretary of the Treasury
 agencies | 8 | U.S. Army Corps of Engineers
 agencies | 8 | U.S. Census Bureau
 agencies | 8 | U.S. Customs and Border Protection
@@ -955,6 +955,7 @@ programs | 1 | Foreign-Trade Zone (FTZ) 12
 programs | 1 | Foreign-Trade Zone (FTZ) 41
 programs | 1 | Foreign-Trade Zone (FTZ) 83
 programs | 1 | Foreign-Trade Zone (FTZ) 93
+programs | 1 | Foreign-Trade Zone 17
 programs | 1 | Foreign-Trade Zone 230
 programs | 1 | Foreign-Trade Zone 24
 programs | 1 | Foreign-Trade Zone 27
@@ -1542,6 +1543,7 @@ statutes | 10 | James M. Inhofe National Defense Authorization Act for Fiscal Ye
 statutes | 10 | National Emergencies Act
 statutes | 10 | Rule 19b-4
 statutes | 10 | Rule General 8, Section 1
+statutes | 10 | section 232 of the Trade Expansion Act of 1962
 statutes | 9 | FTZ Act
 statutes | 9 | Federal Advisory Committee Act of 1972
 statutes | 9 | National Defense Authorization Act for Fiscal Year 2019
@@ -1549,7 +1551,6 @@ statutes | 9 | National Defense Authorization Act for Fiscal Year 2022
 statutes | 9 | National Environmental Policy Act
 statutes | 9 | Native American Graves Protection and Repatriation Act
 statutes | 9 | William M. (Mac) Thornberry National Defense Authorization Act for Fiscal Year 2021
-statutes | 9 | section 232 of the Trade Expansion Act of 1962
 statutes | 8 | Educational, Scientific and Cultural Materials Importation Act of 1966
 statutes | 8 | Government in the Sunshine Act
 statutes | 8 | National Defense Authorization Act for Fiscal Year 2020
@@ -2107,6 +2108,7 @@ statutes | 1 | Section 204 of the Federal Power Act
 statutes | 1 | Section 2203 of the FAA Extension, Safety, and Security Act of 2016
 statutes | 1 | Section 29 of the Atomic Energy Act
 statutes | 1 | Section 301
+statutes | 1 | Section 301 of title 3, United States Code
 statutes | 1 | Section 301(b)
 statutes | 1 | Section 302(a)(1) of the Trade Act of 1974
 statutes | 1 | Section 302(a)(2) of the Trade Act
@@ -2145,6 +2147,7 @@ statutes | 1 | Section 809 of the 2016 National Defense Authorization Act
 statutes | 1 | Section 812
 statutes | 1 | Section 812 of the National Defense Authorization Act for Fiscal Year 2024
 statutes | 1 | Section 831 of the National Defense Authorization Act for Fiscal Year 1991
+statutes | 1 | Section 8335 of the National Defense Authorization Act for Fiscal Year 2026
 statutes | 1 | Section 871(a) of the Homeland Security Act of 2002
 statutes | 1 | Section 874 of the National Defense Authorization Act for Fiscal Year 2024
 statutes | 1 | Section 9002 of FSRIA
@@ -2228,6 +2231,7 @@ statutes | 1 | section 552b(c)(1) of title 5, United States Code
 statutes | 1 | section 766.24
 statutes | 1 | section 766.5
 statutes | 1 | section 824o-1(c) of title 16, United States Code
+statutes | 1 | section 8335 of the National Defense Authorization Act for Fiscal Year 2026
 statutes | 1 | section 893 of the National Defense Authorization Act for Fiscal Year 2012
 statutes | 1 | title 10 United States Code 1408
 statutes | 1 | title 3, United States Code, section 301
