@@ -11,11 +11,11 @@ agencies | 23 | Office of Federal Procurement Policy
 agencies | 21 | Department of Agriculture
 agencies | 19 | U.S. International Trade Commission
 agencies | 18 | National Oceanic and Atmospheric Administration
+agencies | 16 | Centers for Medicare & Medicaid Services
 agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | National Institutes of Health
 agencies | 16 | Transportation Security Administration
-agencies | 15 | Centers for Medicare & Medicaid Services
 agencies | 14 | Department of Education
 agencies | 14 | Office of the United States Trade Representative
 agencies | 13 | Bureau of Land Management
@@ -415,8 +415,8 @@ programs | 27 | Office of Exporter Services
 programs | 26 | Office of Export Enforcement
 programs | 18 | Commercial Distribution Program
 programs | 16 | Liquidity Center Network
+programs | 14 | Organ Procurement and Transplantation Network
 programs | 14 | U.S. AbilityOne Commission
-programs | 13 | Organ Procurement and Transplantation Network
 programs | 12 | Equalization Project
 programs | 12 | Partial Cabinet Solution
 programs | 11 | AbilityOne Program
@@ -441,6 +441,7 @@ programs | 6 | Scientific Registry of Transplant Recipients
 programs | 6 | Secretary's Supplemental Priorities on Evidence-Based Literacy, Educational Choice, and Returning Education to the States
 programs | 6 | TNO Cross Connect
 programs | 6 | U.S. Munitions Import List
+programs | 6 | UAS Traffic Management
 programs | 5 | America's AI Action Plan
 programs | 5 | Cost Accounting Standards
 programs | 5 | Export Control Reform Act
@@ -453,7 +454,6 @@ programs | 5 | Regulation NMS
 programs | 5 | System for Award Management
 programs | 5 | TNO Cross-Connect
 programs | 5 | U.S. Air Force Academy
-programs | 5 | UAS Traffic Management
 programs | 4 | Air University Board of Visitors
 programs | 4 | Cboe BZX Exchange
 programs | 4 | Cboe C2 Exchange, Inc.
@@ -1216,6 +1216,7 @@ programs | 1 | Network of Patient Safety Databases
 programs | 1 | Newborn Screening and Molecular Biology Branch
 programs | 1 | Next Generation Operational Control System
 programs | 1 | Nonprocurement Common Rule
+programs | 1 | Normalizing Unmanned Aircraft Systems Beyond Visual Line of Sight Operations
 programs | 1 | Northeast Regional Ocean Council
 programs | 1 | Northeast Unmanned Aviation Research Alliance
 programs | 1 | Northern California Range Complex
@@ -1530,7 +1531,7 @@ statutes | 46 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | National Cooperative Research and Production Act of 1993
-statutes | 24 | Privacy Act of 1974
+statutes | 25 | Privacy Act of 1974
 statutes | 18 | International Emergency Economic Powers Act
 statutes | 13 | Arms Export Control Act
 statutes | 13 | John S. McCain National Defense Authorization Act for Fiscal Year 2019
@@ -1563,6 +1564,7 @@ statutes | 7 | Section 6(b) of the Act
 statutes | 7 | Social Security Act section 1138(a)(1)(C)
 statutes | 6 | 5 U.S.C. chapter 10
 statutes | 6 | Congressional Review Act
+statutes | 6 | FAA Reauthorization Act of 2024
 statutes | 6 | International Emergency Economic Powers Act section 1702(a)(1)(B)
 statutes | 6 | Social Security Act section 1138(a)(1)(A)(iii)
 statutes | 6 | Social Security Act section 1138(a)(2)(A)
@@ -1574,7 +1576,6 @@ statutes | 6 | chapter 10 of title 5, United States Code
 statutes | 6 | section 400.14
 statutes | 5 | 44 U.S.C. Chapter 35
 statutes | 5 | Atomic Energy Act of 1954
-statutes | 5 | FAA Reauthorization Act of 2024
 statutes | 5 | Rule General 8, Section 1(d)
 statutes | 5 | Section 766.24 of the Export Administration Regulations
 statutes | 5 | Trade Act of 1974, section 301
@@ -1770,6 +1771,9 @@ statutes | 1 | 46 U.S.C. Chapter 93
 statutes | 1 | 48 CFR
 statutes | 1 | 48 CFR CMMC
 statutes | 1 | 48 CFR Ch. 1
+statutes | 1 | 49 U.S.C. Chapter 448, Section 44811
+statutes | 1 | 49 U.S.C. Section 106
+statutes | 1 | 49 U.S.C. Section 44807
 statutes | 1 | 5 Code of Federal Regulations 532.209
 statutes | 1 | 5 Code of Federal Regulations 532.227
 statutes | 1 | 5 U.S.C. Ch. 10
