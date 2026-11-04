@@ -566,6 +566,7 @@ programs | 2 | Hawaii Range Complex
 programs | 2 | Hawaii-California Training and Testing
 programs | 2 | IEEE Industry Connections Activities
 programs | 2 | Integrated Airman Certification and Rating Application
+programs | 2 | Integrated Security Management System
 programs | 2 | Known Exploited Vulnerabilities Catalog
 programs | 2 | License Exception Commercial Space Activities
 programs | 2 | License Exception Strategic Trade Authorization
@@ -707,6 +708,7 @@ programs | 1 | Assessment of Environmental Performance Standards and Ecolabels f
 programs | 1 | Atlantic Fleet Training and Testing
 programs | 1 | Atlantic Fleet Training and Testing Study Area
 programs | 1 | Automated Export System
+programs | 1 | Automated Installation Entry (AIE) System
 programs | 1 | Avery Point Public Oil Docks Redevelopment--Phase 1: Expanding Oil Dock 3
 programs | 1 | BIS Program Evaluation
 programs | 1 | BMAP Stakeholder Feedback Form
@@ -1044,7 +1046,6 @@ programs | 1 | Innovation Advisory Committee
 programs | 1 | Inpatient Prospective Payment System
 programs | 1 | Inspector General Criminal Investigation Records
 programs | 1 | Integrated Photonics Institute for Manufacturing Innovation
-programs | 1 | Integrated Security Management System
 programs | 1 | Intelligence and Assessment Subcommittee
 programs | 1 | Interagency CUAS Application Data Collection
 programs | 1 | Interagency Suspension and Debarment Committee
@@ -1404,6 +1405,7 @@ programs | 1 | State Implementation Plan
 programs | 1 | State Order 7002B
 programs | 1 | State Order 8027
 programs | 1 | State and Local Cybersecurity Grant Program (SLCGP)
+programs | 1 | State, Local, Tribal and Private Sector (SLTPS) Clearance Program
 programs | 1 | Statewide Communication Interoperability Plan (SCIP) Template and Progress Report
 programs | 1 | Strategic Academic Advisory Council
 programs | 1 | Strategic Active Pharmaceutical Ingredients Reserve
@@ -1527,7 +1529,7 @@ statutes | 94 | Paperwork Reduction Act of 1995
 statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 49 | Javits-Wagner-O'Day Act
-statutes | 46 | Paperwork Reduction Act
+statutes | 47 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | National Cooperative Research and Production Act of 1993
@@ -1976,6 +1978,7 @@ statutes | 1 | High-Performance Computing Act of 1991
 statutes | 1 | Homebuyers Privacy Protection Act
 statutes | 1 | Homeland Security Act
 statutes | 1 | Homeland Security Act Section 201
+statutes | 1 | Homeland Security Act Section 201 and 229
 statutes | 1 | House Report 118-125
 statutes | 1 | IFCA Section 1245(a)(1)(B)
 statutes | 1 | IFCA Section 1245(a)(1)(C)
