@@ -1,18 +1,18 @@
 # Names the model found that are not in the alias table (config.yaml).
 # If two lines are really the same thing, add them under 'aliases:'. Format: type | count | name
 
-agencies | 161 | Committee for Purchase From People Who Are Blind or Severely Disabled
+agencies | 163 | Committee for Purchase From People Who Are Blind or Severely Disabled
 agencies | 40 | Foreign-Trade Zones Board
 agencies | 36 | Federal Energy Regulatory Commission
-agencies | 30 | Office of Export Enforcement
+agencies | 31 | Office of Export Enforcement
 agencies | 27 | National Park Service
 agencies | 25 | Department of the Interior
 agencies | 23 | Office of Federal Procurement Policy
 agencies | 21 | Department of Agriculture
 agencies | 19 | U.S. International Trade Commission
 agencies | 18 | National Oceanic and Atmospheric Administration
+agencies | 17 | Food and Drug Administration
 agencies | 16 | Centers for Medicare & Medicaid Services
-agencies | 16 | Food and Drug Administration
 agencies | 16 | International Trade Administration
 agencies | 16 | National Institutes of Health
 agencies | 16 | Transportation Security Administration
@@ -33,6 +33,7 @@ agencies | 9 | Antitrust Division
 agencies | 9 | Defense Commissary Agency
 agencies | 9 | Secretary of the Treasury
 agencies | 9 | Tennessee Valley Authority
+agencies | 9 | U.S. Department of Education
 agencies | 8 | Maritime Administration
 agencies | 8 | Office of Exporter Services
 agencies | 8 | Secretary of Defense
@@ -40,10 +41,10 @@ agencies | 8 | Secretary of Energy
 agencies | 8 | U.S. Army Corps of Engineers
 agencies | 8 | U.S. Census Bureau
 agencies | 8 | U.S. Customs and Border Protection
-agencies | 8 | U.S. Department of Education
 agencies | 8 | Under Secretary of Defense for Personnel and Readiness
 agencies | 7 | Board of Visitors of the U.S. Air Force Academy
 agencies | 7 | Cost Accounting Standards Board
+agencies | 7 | Defense Logistics Agency Troop Support
 agencies | 7 | Defense Manpower Data Center
 agencies | 7 | Nuclear Regulatory Commission
 agencies | 7 | Office of the Under Secretary of Defense for Personnel and Readiness
@@ -55,7 +56,6 @@ agencies | 7 | US Air Force
 agencies | 7 | United States Coast Guard
 agencies | 6 | Coast Guard
 agencies | 6 | Defense Health Agency
-agencies | 6 | Defense Logistics Agency Troop Support
 agencies | 6 | U.S. Fish and Wildlife Service
 agencies | 5 | DLA TROOP SUPPORT
 agencies | 5 | Department of Defense, DLA Troop Support
@@ -68,10 +68,13 @@ agencies | 5 | Office of the Under Secretary of Defense for Acquisition and Sust
 agencies | 5 | Public Safety and Homeland Security Bureau
 agencies | 5 | Secretary of the Interior
 agencies | 5 | U.S. Department of Defense, Department of the Navy
+agencies | 4 | Center for Devices and Radiological Health
 agencies | 4 | Drug Enforcement Administration
 agencies | 4 | Energy Information Administration
 agencies | 4 | Federal Acquisition Regulatory Council
 agencies | 4 | Federal Highway Administration
+agencies | 4 | Legal Services Corporation
+agencies | 4 | Maritime Administration (MARAD)
 agencies | 4 | National Cancer Institute
 agencies | 4 | National Commission on the Future of the Navy
 agencies | 4 | National Marine Fisheries Service (NMFS)
@@ -88,7 +91,6 @@ agencies | 4 | Veterans Health Administration
 agencies | 3 | Agency for International Development
 agencies | 3 | Bureau of Indian Affairs
 agencies | 3 | Bureau of Labor Statistics
-agencies | 3 | Center for Devices and Radiological Health
 agencies | 3 | Committee for Purchase from People Who Are Blind or Severely Disabled
 agencies | 3 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 3 | Council on Environmental Quality
@@ -97,13 +99,13 @@ agencies | 3 | Deputy Assistant Secretary of Defense for Military Community and 
 agencies | 3 | Federal Transit Administration
 agencies | 3 | Forest Service
 agencies | 3 | Infrastructure Security Division
-agencies | 3 | Legal Services Corporation
-agencies | 3 | Maritime Administration (MARAD)
 agencies | 3 | National Center for Health Statistics
 agencies | 3 | National Energy Dominance Council
 agencies | 3 | National Museum of Health and Medicine
 agencies | 3 | Neighborhood Reinvestment Corporation
 agencies | 3 | North American Electric Reliability Corporation
+agencies | 3 | Office of Compliance and Enforcement
+agencies | 3 | Office of Inspector General
 agencies | 3 | Office of the Federal Register
 agencies | 3 | Office of the National Cyber Director
 agencies | 3 | Social Security Administration
@@ -140,11 +142,9 @@ agencies | 2 | National Credit Union Administration
 agencies | 2 | National Endowment for the Humanities
 agencies | 2 | National Geospatial-Intelligence Agency
 agencies | 2 | National Institute of Allergy and Infectious Diseases
-agencies | 2 | Office of Compliance and Enforcement
 agencies | 2 | Office of Defense Trade Controls Policy
 agencies | 2 | Office of Engineering and Technology
 agencies | 2 | Office of Federal Activities
-agencies | 2 | Office of Inspector General
 agencies | 2 | Office of Missile, Biological, and Chemical Nonproliferation
 agencies | 2 | Office of Naval Research
 agencies | 2 | Office of Nuclear Energy, Department of Energy
@@ -390,6 +390,7 @@ agencies | 1 | USDA Forest Service
 agencies | 1 | Under Secretary of Defense for Acquisition & Sustainment
 agencies | 1 | United Nations
 agencies | 1 | United States Border Patrol
+agencies | 1 | United States Coast Guard (USCG)
 agencies | 1 | United States Commission on Civil Rights
 agencies | 1 | United States District Court for the District of Columbia
 agencies | 1 | United States Immigration and Customs Enforcement
@@ -406,17 +407,17 @@ agencies | 1 | Virginia Department of Environmental Quality
 agencies | 1 | White House National Security Council
 agencies | 1 | White House Task Force to Address Online Harassment and Abuse
 agencies | 1 | Wireline Competition Bureau
-programs | 163 | Procurement List
+programs | 165 | Procurement List
 programs | 52 | Fixed Income and Data Services
 programs | 51 | Connectivity Fee Schedule
 programs | 34 | Javits-Wagner-O'Day Act
-programs | 27 | Export Administration Regulations
+programs | 28 | Export Administration Regulations
 programs | 27 | Office of Exporter Services
 programs | 26 | Office of Export Enforcement
-programs | 18 | Commercial Distribution Program
+programs | 19 | Commercial Distribution Program
 programs | 16 | Liquidity Center Network
+programs | 15 | U.S. AbilityOne Commission
 programs | 14 | Organ Procurement and Transplantation Network
-programs | 14 | U.S. AbilityOne Commission
 programs | 12 | Equalization Project
 programs | 12 | Partial Cabinet Solution
 programs | 11 | AbilityOne Program
@@ -980,6 +981,7 @@ programs | 1 | General Aviation and Commercial Branch, Emerging Technologies Div
 programs | 1 | General License 25
 programs | 1 | General Order No. 2
 programs | 1 | Genesis Mission
+programs | 1 | Genius Digital Diagnostics System
 programs | 1 | Geographic Names Information System
 programs | 1 | Global Entry
 programs | 1 | Gould Wash Flood Protection Project
@@ -1233,6 +1235,7 @@ programs | 1 | Ocean Policy Committee
 programs | 1 | Ocean Research Advisory Panel
 programs | 1 | Office for Special Peace Missions
 programs | 1 | Office of Compliance and Enforcement
+programs | 1 | Office of Deepwater Port Licensing and Port Conveyance
 programs | 1 | Office of Dietary Supplements
 programs | 1 | Office of Electronic Government
 programs | 1 | Office of Federal Financial Management
@@ -1528,7 +1531,7 @@ programs | 1 | wildland fire programs
 statutes | 94 | Paperwork Reduction Act of 1995
 statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
-statutes | 49 | Javits-Wagner-O'Day Act
+statutes | 50 | Javits-Wagner-O'Day Act
 statutes | 47 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
@@ -1578,6 +1581,8 @@ statutes | 6 | chapter 10 of title 5, United States Code
 statutes | 6 | section 400.14
 statutes | 5 | 44 U.S.C. Chapter 35
 statutes | 5 | Atomic Energy Act of 1954
+statutes | 5 | National Defense Authorization Act for Fiscal Year 2026
+statutes | 5 | National Environmental Policy Act of 1969
 statutes | 5 | Rule General 8, Section 1(d)
 statutes | 5 | Section 766.24 of the Export Administration Regulations
 statutes | 5 | Trade Act of 1974, section 301
@@ -1589,9 +1594,7 @@ statutes | 4 | Federal Advisory Committee Act, section 1009
 statutes | 4 | Homeland Security Act of 2002
 statutes | 4 | Infrastructure Investment and Jobs Act
 statutes | 4 | Inspector General Act of 1978
-statutes | 4 | National Defense Authorization Act for Fiscal Year 2026
 statutes | 4 | National Defense Authorization Act of 2023
-statutes | 4 | National Environmental Policy Act of 1969
 statutes | 4 | Natural Gas Act
 statutes | 4 | Section 122 of the Trade Act of 1974
 statutes | 4 | Section 1260H
@@ -1666,12 +1669,16 @@ statutes | 2 | Federal Advisory Committee Act (FACA)
 statutes | 2 | Federal Advisory Committee Act (FACA) of 1972
 statutes | 2 | Federal Advisory Committee Act, 5 U.S.C. Ch. 10
 statutes | 2 | Federal Property and Administrative Services Act of 1949
+statutes | 2 | Food and Drug Administration Modernization Act of 1997
+statutes | 2 | Food and Drug Administration Safety and Innovation Act
 statutes | 2 | Food, Conservation, and Energy Act of 2008
 statutes | 2 | Foreign Assistance Act of 1961, Section 506(a)(1)
 statutes | 2 | Health Insurance Portability and Accountability Act of 1996
+statutes | 2 | Homeland Security Act
 statutes | 2 | ICC Termination Act of 1995
 statutes | 2 | Immigration and Nationality Act of 1952
 statutes | 2 | Implementing Recommendations of the 9/11 Commission Act of 2007
+statutes | 2 | Legal Services Corporation Act of 1974
 statutes | 2 | National Defense Authorization Act for Fiscal Year 1997
 statutes | 2 | National Organ Transplant Act
 statutes | 2 | Order No. 881
@@ -1719,6 +1726,10 @@ statutes | 2 | section 1009(d) of title 5, United States Code
 statutes | 2 | section 301 of title 3, United States Code
 statutes | 2 | section 337 of Tariff Act of 1930
 statutes | 2 | section 508 of the Rehabilitation Act of 1973
+statutes | 2 | section 510(k) of the FD&C Act
+statutes | 2 | section 513(a)(1) of the FD&C Act
+statutes | 2 | section 513(f)(2) of the FD&C Act
+statutes | 2 | section 513(i) of the FD&C Act
 statutes | 2 | section 552b of title 5, United States Code
 statutes | 1 | 10 U.S.C. chapter 56
 statutes | 1 | 10 U.S.C., Subtitle A, Part IV, Chapter 153, 2576b
@@ -1874,6 +1885,7 @@ statutes | 1 | DFARS Part 232
 statutes | 1 | DFARS Part 242
 statutes | 1 | DFARS Subpart 215.4
 statutes | 1 | Debt Collection Improvement Act of 1996
+statutes | 1 | Deepwater Port Act of 1974
 statutes | 1 | Department of Transportation Act Section 4(f)
 statutes | 1 | Department of War Instruction 1342.22
 statutes | 1 | DoD Directive 5122.05
@@ -1950,8 +1962,6 @@ statutes | 1 | Federal Trade Commission Act, section 6(g)
 statutes | 1 | Federal Vacancies Reform Act of 1998
 statutes | 1 | Fiscal Responsibility Act of 2023
 statutes | 1 | Fixing America's Surface Transportation Act
-statutes | 1 | Food and Drug Administration Modernization Act of 1997
-statutes | 1 | Food and Drug Administration Safety and Innovation Act
 statutes | 1 | Foreign Assistance Act of 1961, Section 506(a)(3)
 statutes | 1 | Foreign Assistance Act of 1961, Section 614(a)(1)
 statutes | 1 | Foreign Assistance Act of 1961, section 506(a)(3)
@@ -1976,7 +1986,6 @@ statutes | 1 | Health Insurance Portability and Accountability Act
 statutes | 1 | High Seas Driftnet Fishing Moratorium Protection Act
 statutes | 1 | High-Performance Computing Act of 1991
 statutes | 1 | Homebuyers Privacy Protection Act
-statutes | 1 | Homeland Security Act
 statutes | 1 | Homeland Security Act Section 201
 statutes | 1 | Homeland Security Act Section 201 and 229
 statutes | 1 | House Report 118-125
@@ -2002,7 +2011,6 @@ statutes | 1 | Javits-Wagner-O'Day Act (41 U.S.C. chapter 85)
 statutes | 1 | John S. McCain National Defense Authorization Act (NDAA) for Fiscal Year (FY) 2019
 statutes | 1 | Joint Resolution approved May 20, 1933
 statutes | 1 | Launch Communications Act
-statutes | 1 | Legal Services Corporation Act of 1974
 statutes | 1 | Maritime Transportation Security Act of 2002
 statutes | 1 | Mineral Leasing Act for Acquired Lands of 1947
 statutes | 1 | Mineral Leasing Act of 1920
@@ -2229,11 +2237,7 @@ statutes | 1 | section 1656(b) of the National Defense Authorization Act for Fis
 statutes | 1 | section 1702(a)(1)(B) of the International Emergency Economic Powers Act
 statutes | 1 | section 214 of the Communications Act
 statutes | 1 | section 2209, of the FAA Extension, Safety and Security Act of 2016
-statutes | 1 | section 510(k) of the FD&C Act
-statutes | 1 | section 513(a)(1) of the FD&C Act
 statutes | 1 | section 513(f)(1) of the FD&C Act
-statutes | 1 | section 513(f)(2) of the FD&C Act
-statutes | 1 | section 513(i) of the FD&C Act
 statutes | 1 | section 552b(c)(1) of title 5, United States Code
 statutes | 1 | section 766.24
 statutes | 1 | section 766.5
