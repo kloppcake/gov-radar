@@ -96,6 +96,7 @@ agencies | 3 | Council of the Inspectors General on Integrity and Efficiency
 agencies | 3 | Council on Environmental Quality
 agencies | 3 | Department of the Air Force Scientific Advisory Board
 agencies | 3 | Deputy Assistant Secretary of Defense for Military Community and Family Policy
+agencies | 3 | Emergency Communications Division
 agencies | 3 | Federal Transit Administration
 agencies | 3 | Forest Service
 agencies | 3 | Infrastructure Security Division
@@ -127,7 +128,6 @@ agencies | 2 | Defense Nuclear Facilities Safety Board
 agencies | 2 | Department of Commerce, Bureau of Industry and Security
 agencies | 2 | Department of Defense, U.S. Fleet Forces Command
 agencies | 2 | Directorate of Defense Trade Controls
-agencies | 2 | Emergency Communications Division
 agencies | 2 | Employment and Training Administration
 agencies | 2 | Export-Import Bank of the United States
 agencies | 2 | Financial Crimes Enforcement Network
@@ -486,6 +486,7 @@ programs | 3 | Department of Defense Wage Committee
 programs | 3 | Department of the Air Force Scientific Advisory Board
 programs | 3 | Do Not Pay Working System
 programs | 3 | Electronic Document Information System (EDIS)
+programs | 3 | Emergency Communications Division
 programs | 3 | Emerging Technologies Division
 programs | 3 | Expanded Co-Location Services
 programs | 3 | Federal Acquisition Regulatory Council
@@ -532,6 +533,7 @@ programs | 2 | Child and Adult Care Food Program
 programs | 2 | Co-location Services
 programs | 2 | Co-location services
 programs | 2 | Commodity Supplemental Food Program
+programs | 2 | Communications Assets Survey and Mapping (CASM) Tool
 programs | 2 | Compensation and Pension Benefits Programs
 programs | 2 | Connect America Fund
 programs | 2 | Coordinated Vulnerability Disclosure (CVD)
@@ -543,7 +545,6 @@ programs | 2 | Department of Defense Board of Actuaries
 programs | 2 | DroneZone
 programs | 2 | Effective U.S. Control (EUSC)/Parent Company
 programs | 2 | Electronic Tax Administration Advisory Committee
-programs | 2 | Emergency Communications Division
 programs | 2 | Exemption No. 23205
 programs | 2 | Export Control Reform Act of 2018
 programs | 2 | FAA Drone Zone
@@ -607,6 +608,7 @@ programs | 2 | Proximity-On-Demand (POD)
 programs | 2 | Quarterly Readiness of Strategic Seaport Facilities Reporting
 programs | 2 | Revolutionary FAR Overhaul
 programs | 2 | Rule General 8
+programs | 2 | SAFECOM
 programs | 2 | SDVOSB Program
 programs | 2 | Secretary's Supplemental Priorities on Meaningful Learning Opportunities
 programs | 2 | Secretary's Supplemental Priority and Definitions on Meaningful Learning Opportunities
@@ -742,6 +744,7 @@ programs | 1 | Buy American statute
 programs | 1 | Buy Canadian
 programs | 1 | C5ISR and Digital (Information Technologies) Subcommittee
 programs | 1 | CASM Resource Finder Mobile App
+programs | 1 | CASM resource finder mobile app
 programs | 1 | CATCH Program
 programs | 1 | CCDI Data Ecosystem
 programs | 1 | CISA Incident Reporting System
@@ -784,7 +787,6 @@ programs | 1 | Command and General Staff College (CGSC) Board of Visitors (BoV) 
 programs | 1 | Commercial Space Activities (CSA)
 programs | 1 | Common Formats
 programs | 1 | Common Vulnerabilities and Exposures
-programs | 1 | Communications Assets Survey and Mapping (CASM) Tool
 programs | 1 | Communications Unit (COMU) training
 programs | 1 | Community Champions for Disability Health Challenge
 programs | 1 | Community Food Systems Division
@@ -1032,6 +1034,7 @@ programs | 1 | Ice Exercise Activities 2026 (ICEX26)
 programs | 1 | Icebreaker Collaboration Effort (ICE) Pact
 programs | 1 | Icebreaker Collaboration Effort U.S. National Workforce Development Plan
 programs | 1 | Illinois Advisory Committee
+programs | 1 | Incident Communications Activity Report
 programs | 1 | Incident Reporting Form
 programs | 1 | Incident Reporting Portal
 programs | 1 | Incidental Harassment Authorization
@@ -1166,6 +1169,7 @@ programs | 1 | National Center for Health Statistics
 programs | 1 | National Center for Native Training and Technical Assistance
 programs | 1 | National Construction Safety Team Advisory Committee
 programs | 1 | National Coordination Center
+programs | 1 | National Council of Statewide Interoperability Coordinators
 programs | 1 | National Cyber Incident Response Plan (NCIRP)
 programs | 1 | National Cyber Incident Response Plan (NCIRP) Update
 programs | 1 | National Cybersecurity Awareness Month
@@ -1342,7 +1346,6 @@ programs | 1 | Rule General 8, Section 1
 programs | 1 | Rule of Many
 programs | 1 | Rural Emergency Hospital Quality Reporting Program
 programs | 1 | Russian and Belarusian Industry Sector Sanctions
-programs | 1 | SAFECOM
 programs | 1 | SAFECOM Membership Questionnaire
 programs | 1 | SAFECOM Nationwide Survey
 programs | 1 | SAFECOM Nationwide Surveys Generic Clearance
@@ -1532,7 +1535,7 @@ statutes | 94 | Paperwork Reduction Act of 1995
 statutes | 81 | Securities Exchange Act of 1934, Section 19(b)(1)
 statutes | 56 | Section 19(b)(1) of the Securities Exchange Act of 1934
 statutes | 50 | Javits-Wagner-O'Day Act
-statutes | 47 | Paperwork Reduction Act
+statutes | 48 | Paperwork Reduction Act
 statutes | 33 | Federal Advisory Committee Act
 statutes | 33 | Securities Exchange Act of 1934
 statutes | 32 | National Cooperative Research and Production Act of 1993
@@ -1650,6 +1653,7 @@ statutes | 2 | Clean Air Act Section 309(a)
 statutes | 2 | Combating Russian Money Laundering Act
 statutes | 2 | Consolidated Appropriations Act, 2023
 statutes | 2 | Controlled Substances Act
+statutes | 2 | Cybersecurity and Infrastructure Security Act of 2018
 statutes | 2 | Cybersecurity and Infrastructure Security Agency Act of 2018
 statutes | 2 | DFARS 252.204-7008
 statutes | 2 | DFARS 252.204-7012
@@ -1841,7 +1845,6 @@ statutes | 1 | Contract Disputes Act
 statutes | 1 | Coral Reef Conservation Act of 2000
 statutes | 1 | Cyber Incident Reporting for Critical Infrastructure Act of 2022
 statutes | 1 | Cybersecurity Information Sharing Act of 2015
-statutes | 1 | Cybersecurity and Infrastructure Security Act of 2018
 statutes | 1 | DCMA INST 8210.1
 statutes | 1 | DFARS 204.404-70(a)
 statutes | 1 | DFARS 205.470
@@ -2207,6 +2210,7 @@ statutes | 1 | Title IX
 statutes | 1 | Title VI of the Civil Rights Act of 1964
 statutes | 1 | Title VII of the U.S. Code
 statutes | 1 | Title VIII of the Dodd-Frank Act
+statutes | 1 | Title XVIII of the Homeland Security Act of 2002
 statutes | 1 | Trade Act of 1974, Section 301(b)
 statutes | 1 | Trade Act of 1974, Section 307(a)
 statutes | 1 | Trade Act of 1974, Section 307(a)(2)(b)
